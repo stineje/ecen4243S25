@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar  1 14:47:40 2023
+# Process ID: 169309
+# Current directory: /home/ross/repos/ELVIS/lab2/lab2.runs/design_1_processing_system7_0_0_synth_1
+# Command line: vivado -log design_1_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_processing_system7_0_0.tcl
+# Log file: /home/ross/repos/ELVIS/lab2/lab2.runs/design_1_processing_system7_0_0_synth_1/design_1_processing_system7_0_0.vds
+# Journal file: /home/ross/repos/ELVIS/lab2/lab2.runs/design_1_processing_system7_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_processing_system7_0_0.tcl -notrace

@@ -1,0 +1,46 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Mar  1 14:47:23 2023
+| Host         : coco running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_top_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_top_0_0 (xilinx.com:module_ref:top:1.0 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Wed Mar  1 14:47:23 2023
+| Host         : coco running 64-bit Ubuntu 22.04.2 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_smc_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_axi_smc_0 (xilinx.com:ip:smartconnect:1.0) from (Rev. 11) to (Rev. 14)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection and Interface Information
+---------------------------------------
+
+Connection and Interface information can not be compared for deferred elaboration IPs.
+design_1_axi_smc_0 may have connection or interface changes.
+
+

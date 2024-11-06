@@ -1,0 +1,63 @@
+
+riscvtest.elf:     file format elf32-littleriscv
+
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 13015000 9301c000 938371ff 33e22300  ..P.......q.3.#.
+ 80000010 b3f24100 b3824200 63887202 33a24100  ..A...B.c.r.3.A.
+ 80000020 63040200 93020000 33a22300 b3035200  c.......3.#...R.
+ 80000030 b3832340 23aa7104 03210006 b3045100  ..#@#.q..!....Q.
+ 80000040 ef018000 13011000 33019100 23a02102  ........3...#.!.
+ 80000050 63002100                             c.!.            
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <main-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <main>:
+main():
+80000000:	00500113          	li	sp,5
+80000004:	00c00193          	li	gp,12
+80000008:	ff718393          	addi	t2,gp,-9
+8000000c:	0023e233          	or	tp,t2,sp
+80000010:	0041f2b3          	and	t0,gp,tp
+80000014:	004282b3          	add	t0,t0,tp
+80000018:	02728863          	beq	t0,t2,80000048 <end>
+8000001c:	0041a233          	slt	tp,gp,tp
+80000020:	00020463          	beqz	tp,80000028 <around>
+80000024:	00000293          	li	t0,0
+
+80000028 <around>:
+around():
+80000028:	0023a233          	slt	tp,t2,sp
+8000002c:	005203b3          	add	t2,tp,t0
+80000030:	402383b3          	sub	t2,t2,sp
+80000034:	0471aa23          	sw	t2,84(gp)
+80000038:	06002103          	lw	sp,96(zero) # 60 <main-0x7fffffa0>
+8000003c:	005104b3          	add	s1,sp,t0
+80000040:	008001ef          	jal	gp,80000048 <end>
+80000044:	00100113          	li	sp,1
+
+80000048 <end>:
+end():
+80000048:	00910133          	add	sp,sp,s1
+8000004c:	0221a023          	sw	sp,32(gp)
+
+80000050 <done>:
+done():
+80000050:	00210063          	beq	sp,sp,80000050 <done>

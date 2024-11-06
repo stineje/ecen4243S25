@@ -1,0 +1,43 @@
+# do FSM.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 07:47:07 on Jan 18,2023
+# vlog FSM.sv FSM_tb.sv 
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 07:47:07 on Jan 18,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 07:47:07 on Jan 18,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.FSM(fast)
+# .list
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# End time: 07:47:09 on Jan 18,2023, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0

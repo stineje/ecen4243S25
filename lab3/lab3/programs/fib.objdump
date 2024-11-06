@@ -1,0 +1,52 @@
+
+fib.elf:     file format elf32-littleriscv
+
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3000               .rv32i2p0.      
+Contents of section .text:
+ 80000000 930e4010 130e6002 93030000 13031000  ..@...`.........
+ 80000010 93020000 630c0e00 b3035300 93020300  ....c.....S.....
+ 80000020 13830300 130efeff 6ff0dffe 23a05e00  ........o...#.^.
+ 80000030 23a26e00 03a50e00 73000000           #.n.....s...    
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.2byte	0x1941
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	zero,a6,14 <fib-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.2byte	0x7205
+  12:	3376                	.2byte	0x3376
+  14:	6932                	.2byte	0x6932
+  16:	7032                	.2byte	0x7032
+  18:	0030                	.2byte	0x30
+
+Disassembly of section .text:
+
+80000000 <fib>:
+fib():
+80000000:	10400e93          	li	t4,260
+80000004:	02600e13          	li	t3,38
+80000008:	00000393          	li	t2,0
+8000000c:	00100313          	li	t1,1
+80000010:	00000293          	li	t0,0
+
+80000014 <fib_helper>:
+fib_helper():
+80000014:	000e0c63          	beqz	t3,8000002c <finish>
+80000018:	005303b3          	add	t2,t1,t0
+8000001c:	00030293          	mv	t0,t1
+80000020:	00038313          	mv	t1,t2
+80000024:	fffe0e13          	addi	t3,t3,-1
+80000028:	fedff06f          	j	80000014 <fib_helper>
+
+8000002c <finish>:
+finish():
+8000002c:	005ea023          	sw	t0,0(t4)
+80000030:	006ea223          	sw	t1,4(t4)
+80000034:	000ea503          	lw	a0,0(t4)
+80000038:	00000073          	ecall

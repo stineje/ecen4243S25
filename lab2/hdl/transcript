@@ -1,0 +1,135 @@
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do riscv_single.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@sakuya.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 13:32:20 on Mar 22,2023
+# vlog -reportprogress 300 riscv_single.sv 
+# -- Compiling module testbench
+# -- Compiling module riscvsingle
+# -- Compiling module controller
+# -- Compiling module maindec
+# -- Compiling module aludec
+# -- Compiling module datapath
+# -- Compiling module adder
+# -- Compiling module extend
+# -- Compiling module flopr
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module top
+# -- Compiling module imem
+# -- Compiling module dmem
+# -- Compiling module alu
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	testbench
+# 	flopenr
+# End time: 13:32:20 on Mar 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -debugdb -voptargs="+acc" work.testbench 
+# Start time: 13:32:20 on Mar 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=256, type=RAM at location riscv_single.sv:299
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.top(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# Simulation succeeded
+# ** Note: $stop    : riscv_single.sv(66)
+#    Time: 195 ns  Iteration: 1  Instance: /testbench
+# Break in Module testbench at riscv_single.sv line 66
+# A time value could not be extracted from the current line
+run 10ns
+do riscv_single.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@sakuya.ecen.okstate.edu.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is jstine@yukari.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 13:36:35 on Mar 22,2023
+# vlog -reportprogress 300 riscv_single.sv 
+# -- Compiling module testbench
+# -- Compiling module riscvsingle
+# -- Compiling module controller
+# -- Compiling module maindec
+# -- Compiling module aludec
+# -- Compiling module datapath
+# -- Compiling module adder
+# -- Compiling module extend
+# -- Compiling module flopr
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module top
+# -- Compiling module imem
+# -- Compiling module dmem
+# -- Compiling module alu
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	testbench
+# 	flopenr
+# End time: 13:36:35 on Mar 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:36:36 on Mar 22,2023, Elapsed time: 0:04:16
+# Errors: 0, Warnings: 0
+# vsim -debugdb -voptargs="+acc" work.testbench 
+# Start time: 13:36:36 on Mar 22,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.testbench(fast)
+# Loading work.top(fast)
+# Loading work.riscvsingle(fast)
+# Loading work.controller(fast)
+# Loading work.maindec(fast)
+# Loading work.aludec(fast)
+# Loading work.datapath(fast)
+# Loading work.flopr(fast)
+# Loading work.adder(fast)
+# Loading work.mux2(fast)
+# Loading work.regfile(fast)
+# Loading work.extend(fast)
+# Loading work.alu(fast)
+# Loading work.mux3(fast)
+# Loading work.imem(fast)
+# Loading work.dmem(fast)
+# ** Note: (vsim-8716) Reusing existing debug database vsim.dbg.
+# Simulation succeeded
+# ** Note: $stop    : riscv_single.sv(66)
+#    Time: 195 ns  Iteration: 1  Instance: /testbench
+# Break in Module testbench at riscv_single.sv line 66
+# DebugDB::get_child_count_from_duid no such table: shape_tblShowFullView error1 DebugDB QueryError:
+#   GetInstInfo1 = no such table: rw_du_inst_tbl
+# End time: 14:19:10 on Mar 22,2023, Elapsed time: 0:42:34
+# Errors: 0, Warnings: 0

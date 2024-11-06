@@ -1,0 +1,71 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3_1 2021.08, Aug 15 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/jstine/ecen4243/ecen4243S23/lab0
+T_opt
+Z1 !s110 1674049627
+V?jonNT_TfcTl`=LjQ=9AY1
+04 8 4 work stimulus fast 0
+=1-d45d645256b9-63c7f85b-7cd5f-44b4
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.3_1;73
+vFSM
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
+!i10b 1
+!s100 ;9UlQO`CZ6V49mWLXegBc0
+IKe2XOFzb5ZN:LTcXS[dna2
+S1
+R0
+w1674049623
+8FSM.sv
+FFSM.sv
+!i122 0
+L0 1 41
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.3_1;73
+r1
+!s85 0
+31
+Z6 !s108 1674049627.000000
+Z7 !s107 FSM_tb.sv|FSM.sv|
+Z8 !s90 FSM.sv|FSM_tb.sv|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@f@s@m
+vstimulus
+R3
+R1
+!i10b 1
+!s100 k_ZVFkNbCjP]^NaBm`GW[2
+I4n78T5WARghE5[fMo7VB]0
+S1
+R0
+w1674049582
+8FSM_tb.sv
+FFSM_tb.sv
+!i122 0
+L0 1 46
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2

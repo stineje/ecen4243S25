@@ -1,0 +1,26 @@
+
+example:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+80000000 <rvtest_entry_point>:
+80000000:	02a00513          	li	a0,42
+
+80000004 <self_loop>:
+80000004:	0000006f          	j	80000004 <self_loop>
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.2byte	0x1941
+   2:	0000                	.2byte	0x0
+   4:	7200                	.2byte	0x7200
+   6:	7369                	.2byte	0x7369
+   8:	01007663          	bgeu	zero,a6,14 <rvtest_entry_point-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.2byte	0x7205
+  12:	3376                	.2byte	0x3376
+  14:	6932                	.2byte	0x6932
+  16:	7032                	.2byte	0x7032
+  18:	0030                	.2byte	0x30

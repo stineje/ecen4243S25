@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar  1 15:49:05 2023
+# Process ID: 312986
+# Current directory: /home/ross/repos/ELVIS/lab2/lab2.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/ross/repos/ELVIS/lab2/lab2.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/ross/repos/ELVIS/lab2/lab2.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

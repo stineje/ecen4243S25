@@ -1,0 +1,483 @@
+\documentclass{article}
+\usepackage{amsmath, amsfonts, amsthm, amssymb}  
+
+\usepackage{secdot}
+\usepackage{epsfig}
+\usepackage[T1]{fontenc}
+\usepackage{epstopdf}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[T1]{fontenc}
+
+\usepackage{geometry}
+\geometry{letterpaper, left=1in, right=1in, top=1in, bottom=1in}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage/\pageref{LastPage}}
+\lhead{OSU ECEN 4243 - Computer Architecture - Spring 2019}
+\rfoot{\LaTeX}
+
+
+% ----- Identifying Information -----------------------------------------------
+\newcommand{\myassignment}{Lab 1: Instruction-Level ARM Simulator}
+\newcommand{\myduedate}{Assigned: Monday 1/14; Due \textbf{Monday 2/4} (midnight)}
+\newcommand{\myinstructor}{Instructor: James E. Stine, Jr.}
+\newcommand{\mytas}{TAs: Rachana Erra}
+% -----------------------------------------------------------------------------
+
+\begin{document}
+\begin{center}
+  {\huge \myassignment} \\
+  {\large \myduedate} \\
+  \begin{flushright}
+  \myinstructor \\
+  \mytas \\
+  \end{flushright}
+\end{center}
+
+\section{Introduction}
+
+For this assignment, you will write a C program which is an
+instruction-level simulator for a limited subset of the ARM
+instruction set. This instruction-level simulator will model the
+behavior of each instruction, and will allow the user to run ARM
+programs and see their outputs.  As we mentioned in class, these types
+of queuing-type simulators are important in determining good choices
+in microarchitecture design and subsequently its architecture.
+
+This lab's objective is really accomplishes two tasks.  First, it
+introduces you to software and the process in running code.  It
+introduces you to the basics of compiling in C and what simulators
+mean.  Second, it will introduce you to the ARM ISA.
+% james  
+All computer architects, programmers, and digitial
+designers know how processors work by reading the reference manual.
+And, this lab, will certainly introduce you to this.
+
+The simulator will process an input file that contains an ARM
+program. Each line of the input file corresponds to a single ARM
+instruction written as a hexadecimal string. For example,
+\verb+E282100A+ is
+the hexadecimal representation of \verb+add r1, r2, #10+. We will
+provide several input files. But you should also create additional
+input files in order to test your simulator more comprehensively.
+
+The simulator will execute the input program one instruction at a
+time. After each instruction, the simulator will modify the ARM
+architectural state: values stored in registers and memory. The
+simulator is partitioned into two main sections: the (1) shell and the
+(2) simulation routine. Your job is to implement the simulation
+routine.
+
+The source code for the lab are provided 
+through D2L In the \verb+src/+ directory, we provide two
+files (\verb+shell.c+ and \verb+shell.h+) that already implement the shell. 
+There is a third file (sim.c) where you will implement the simulator
+routine.
+
+\section{Compilation Environment}
+
+We will use the C language for our programming language and although
+many of you may not have had experience in this, it is similar in
+terms of its usage as Java.  Also, this lab gives you the underlying
+framework and more complicated items and you are left to implementing
+architectural items.  A wonderful introduction to the C
+programming language is available in the text by Y. Patt and S. Patel,
+which is also available on reserve in the Edmon Low
+Library~\cite{Patt:2003:ICS:861709}.  More terse and complete texts
+are available in other texts including the one of the original texts
+on the subject by the inventors of C, Brian Kernighan and
+Dennis Ritchie~\cite{Kernighan:1978:CPL:7519}.   There is also a great
+reference from your ECEN 3233 textbook in Appendix
+C~\cite{Harris:2015:DDC:2815529}\footnote{Available on D2L}. 
+
+The problem with programming languages, like C and Java, is sometimes
+you do not know how to compile someone else's program.  For Verilog in
+Lab 0 we solved this with the DO file.  With the DO file you can
+basically compile and simulate any program from another user provided
+a DO file exists (i.e., \verb+vsim -do file.do+).  Most programming
+languages solve this similarly
+with a \verb+Makefile+.  A Makefile is a file that tells your system how to
+compile your files for a specific programming language as well as
+provide any needed command-line arguments necessary to have the
+program compile correctly.  In fact, you can actually use a
+\verb+Makefile+ with any type of compiled or interpreted language,
+even Verilog. For this lab, a
+\verb+Makfile+ is provided in the repository 
+and all you have to do to compile the
+program is type \verb+make+ provided the files are located in your
+subdirectory that you are working in.  To compile the initial
+skeleton, go to the subdirectory where you files exist and type
+\verb+make+.  
+
+There are many C compilers available, but you should have an ARMv8 GNU
+binutils compilers installed on the Windows boxes in Endeavor 360.
+You can also download from the link on D2L Brightspace and install on your
+laptop/desktops (which is highly encouraged).  Although there are many
+ways to interact with the compiler, I would recommend using the
+command line interface.  Its easier to use the Command Line or Power
+Shell through Windows 10.  There are other methods, but this is
+probably the most recommended.  
+
+\section{ARMsim}
+
+The goal of this lab is to get you to think about how to model the ARM
+ISA.  I have tried to give you a good framework for the simulator
+written in C.  The ARMsim simulator is broken into two main C files:
+\verb+shell.c+ and \verb+sim.c+.  The first file handles the
+simulation from the user's point of view (i.e., the interface).  The
+second file is the main simulator that makes sure instructions are
+modeled corrected.  Each instruction is decoded and then \verb+isa.h+
+handles the emulation in a function. 
+
+\subsection{The Shell}
+
+The purpose of the shell is to provide the user with commands to
+control the execution of the simulator. The shell accepts one or more
+program files as command line arguments and loads them into the memory
+image. In order to extract information from the simulator, a file
+named \verb+dumpsim+ will be created to hold information requested
+from the simulator. The shell supports the following commands:
+
+\begin{itemize}
+\item go: simulate the program until it indicates that the simulator
+  should halt. (As we define below, this is when a SWI instruction is
+  executed with a value of \verb+0x0A+.)
+\item run <n>: simulate the execution of the machine for n instructions.
+\item mdump <low> <high>: dump the contents of memory, from location low
+to location high to the screen and
+the dump file (dumpsim).
+\item rdump: dump the current instruction count, the contents of 
+  R0 – R14, R15 (PC), and the CPSR to
+the screen and the dump file (dumpsim).
+\item input \verb+reg_num+ \verb+reg_val+: set general purpose
+  register \verb+reg_num+ to value \verb+reg_val+.
+\item ?: print out a list of all shell commands.
+\item quit: quit the shell.
+\end{itemize}
+
+\subsection{The Simulation Routine}
+
+The simulation routine carries out the instruction-level simulation of
+the input ARM program. During the execution of an instruction, the
+simulator should take the current architectural state and modify it
+according to the ISA description of the instruction in the ARM
+Architecture Reference Manual that is provided on the course
+website. The architectural state includes the the general purpose
+registers, the CPSR, and the memory image. The state is contained in the
+following global variables:
+\begin{verbatim}
+#define ARM_REGS 16
+
+typedef struct CPU_State {
+  uint32_t REGS[ARM_REGS]; /* register file. */
+  uint32_t CPSR; /* current program status register */
+} CPU_State;
+
+CPU_State STATE_CURRENT, STATE_NEXT;
+int RUN_BIT;
+\end{verbatim}
+Furthermore, the simulator models the simulated system's memory. You
+need to use the following two functions, which we provide, to access
+the simulated memory:
+\begin{verbatim}
+uint32_t mem_read_32(uint32_t address);
+void     mem_write_32(uint32_t address, uint32_t value);
+\end{verbatim}
+Note that in the ARM architecture, memory is
+byte-addressable. Furthermore, we will
+implement a little-endian architecture. This means that machine words
+($32$ bits) are stored with the least-significant byte at the lowest
+address, and the most- significant byte at the highest address. To
+implement loads and stores of $8$-bit values, you will need
+to use these $32$-bit memory access primitives (hint: be sure to modify
+only the appropriate part of a $32$-bit word!).
+
+In particular, you should call \verb+mem_read_32+ and
+\verb+mem_write_32+ with only
+$32$-bit-aligned addresses (i.e., the bottom two bits of the address
+should be zero).
+The simulator skeleton that we provide includes a function
+named \verb+process_instruction()+ in the file \verb+sim.c+. This
+function is called
+by the shell to simulate one machine instruction. 
+%You have to write
+%the code for the function \verb+process_instruction()+ to simulate the
+%execution of
+%instructions. 
+You can also write additional functions to make the
+simulation modular (Keep in mind that you will probably be using the
+code that you write in later labs in order to validate your work). 
+We suggest
+spending time to make your code easy to read and understand, for your
+own benefit.
+
+\subsection{What do you need to do?}
+\label{instructions.sec}
+
+Your job is to implement the process instruction() function in
+sim.c. The process instruction() function should be able to simulate
+the instruction-level execution of the following ARM instructions:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} 
+\hline
+ADC  & ADD  & AND  & ASR  & B    & BIC  \\ \hline
+BL   & CMN  & CMP  & EOR  & LDR  & LDRB \\ \hline
+LSL  & LSR  & MOV  & MVN  & ORR  & ROR  \\ \hline
+SBC  & STR  & STRB & SUB  & TEQ  & TST  \\ \hline
+SWI  &      &      &      &      &      \\ \hline
+\end{tabular}
+\end{center}
+For implementing these instructions, your tasks will be the
+following. First, implement each of these instructions as specified
+within the ARM Architecture Reference Manual accurately and
+completely. 
+Each instruction should be compatible with conditional
+execution as described by the ARM manual. However, you only need to
+implement a subset of conditions: EQ, NE, GE, GT, LT, LE, and AL.
+
+In addition, for the Data Processing Instructions (again defined in
+the reference manual), you must implement the S suffix for the
+instructions. The S suffix (ADDS vs. ADD) allows the instruction to
+set the CPSR's condition flag bits upon the execution of the
+instruction. Although the CPSR has more functionality than just the
+condition flags, you will only need to implement this functionality of
+the CPSR. You must also implement both the immediate and register
+operations for each Data Processing instruction. Finally, you should
+implement the barrel shifting and register rotating functionality
+defined in the reference manual as well.
+
+It is important to note that for the SWI instruction, you only need to
+implement the
+following behavior: if the bottom byte of the instruction's value is
+0x0A (decimal 10) when SWI is executed, then the go command should
+stop its simulation loop and return to the simulator shell's
+prompt. If the bottom byte is any other value, the instruction should
+have no effect. No registers are modified in either case, except that
+R15 (PC) is incremented to the next instruction as usual. The process
+instruction() function that you write should cause the main simulation
+loop to terminate by setting the global variable RUN BIT to 0. Also of
+note, you should not worry about implementing any mode changes or
+register switches on a SWI. Thus, you must only worry about one set of
+registers.  
+
+\textbf{NOTE:} ARM assumes that the PC value is actually equal to 
+PC+8 when the
+instruction at PC is being executed. This is because of ARM's pipeline
+which keeps three instructions in flight at once. However, we do not
+ask you to keep the incremented PC value. This means that whenever you
+use an operation that requires the PC value (B, BL), you must use PC+8
+as the base offset.
+
+The accuracy of your simulator is your main priority. Specifically,
+make sure the architectural state is correctly updated after the
+execution of each instruction. We will test your simulator with many
+input programs (some provided with the handout, some not) in order to
+ensure that each instruction is simulated correctly.
+
+In order to test that your simulator is working correctly, you should
+run the input programs we provide you with and also write one or more
+programs using all of the required ARM instructions that are listed in
+the table above, and execute them one instruction at a time 
+(run~$1$). You can use the rdump or mdump
+command to verify that the state of the
+machine is updated correctly after the execution of each instruction.
+
+While the table appears to have many instructions, there are actually
+only a few unique instruction behaviors with a number of minor
+variations. You should tackle the instructions in groups: Data
+Processing, Memory Instructions, Branches, and so on. The ARM Architecture
+Reference Manual contains the official definition for each instruction
+in this table (except for SWI, for which we provide a restricted
+definition above). Please implement \underline{only} the $32$-bit
+behavior of the instructions.
+
+Finally, note that your simulator does not have to handle instructions
+that we do not include in the table above, or any other invalid
+instructions. We will only test your simulator with valid code that
+uses the instructions listed above.  However, as noted below, adding
+more instructions will give you some bonus points.  
+
+\subsection{Some Guidance}
+
+In order to give you some guidance and help you get started, since for
+many this will be something different, much of the simulator is given
+to you.  Also, dealing with a larger
+program might be difficult, so we tried to avoid frustration with
+writing code from scratch.   Most of the main functionality within the
+simulator works well and should be functional (i.e., \verb+sim.c+ and
+\verb+shell.c+).  However, if you notice within \verb+sim.c+ I put
+an example of the instruction call for you.  For example, here is the
+call for
+\verb+ADD+:
+\begin{verbatim}
+  if(!strcmp(d_opcode,"0100")) {
+    printf("--- This is an ADD instruction. \n");
+    ADD(Rd, Rn, Operand2, I, S, CC);
+    return 0;
+  }
+\end{verbatim}
+These calls will be processed from \verb+isa.h+ and you can replicate
+the piece of code to simulate the other instructions.  
+I also gave you one free instruction that I implemented (i.e.,
+\verb+ADD+) within the code.  
+
+The ARM instruction set allows the condition field to be used with
+conditionally executing instructions.  Typically, all instructions are
+conditionally executed according to the state of the CPSR condition
+codes and the instruction's condition field. This field (bits 31:28)
+determines the circumstances under which an instruction is to be
+executed. If the state of the C, N, Z and V flags fulfils the
+conditions encoded by the field, the instruction is executed,
+otherwise it is ignored.  
+To make things easiier, I am not asking you
+to implement these sort of instructions (e.g., addeq), but you do need
+to implement direct comparisons (i.e., cmp r3, r2, r1).  However, this
+would be a good thing to implement (i.e., addeq) for extra credit.
+
+%It is also advisable to use other resources to help you.  
+%The ARMsim
+%simulator from University of Victoria should also help you with some
+%of the simulations in terms of understand what is going on.  
+%Please use other resources to help with the lab, including the
+%green card and your textbook~\cite{Patterson:2016:COD:3027670}.  The
+%ARMsim simulator should be installed on the PCs in
+%the lab and can easily be installed to your laptop/desktop via the
+%link on D2L. 
+
+\subsection{Lab Files}
+
+On D2L Brightspace, you will find a source code
+distribution with three subdirectories arm2hex/, src/ and inputs/. In
+src/, we are
+providing you with the simulator skeleton as described above. You can
+compile the simulator with the provided Makefile. In inputs/, we have
+written some input files for you.  However, you should write more
+input files in
+order to be confident that your simulator is correct and that you
+simulate all the instructions you are required to implement.
+The README file in the arm2hex as well as information later described
+in this document
+describe how to assemble an ARM program with this script.  
+
+\subsection{Compiling Code}
+
+As stated previous, several examples are given in the \verb+input\+
+directory of the repository.  Both assembly and hexadecimal versions
+are given.  To compile the program into hex, you want to type the
+following on the ECE server provided you copied \verb+arm2hex+ into
+the directory you are compiling everything:
+\begin{verbatim}
+./arm2hex arm-none-eabi-as file.s file.x
+\end{verbatim}
+
+GNU tools are important to the use of computers and have been
+instrumental in great advances in microarchitecture.  As discussed in
+class, we will also use GNU tools for our work in this class.  All of
+the ARM tools will have a program prefix of \verb+arm-none-eabi-+.
+That is, if you want to the GNU binutils program \verb+gcc+, you
+would type \verb+arm-none-eabi-gcc+.  If you remember that
+compilers can compile things locally and/or with static or dynamic
+libraries,
+therefore, having environmental variables set up 
+is extremely important.  To do this, you want to set up your
+\verb+PATH+ and \verb+LD_LIBRARY_PATH+ variables.  The desktops in
+ENDV 360 should be set up for you at the command prompt, however, you
+can easily learn how to do this for any operating system through an
+Internet search.  
+Many of these tools are also available for different Operating Systems 
+at the following URL:
+\url{https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads}.
+However, you have to set up the \verb+PATH+ and \verb+LD_LIBRARY_PATH+
+yourself.  But, we encourage you to use these tools on your laptop and
+desktop to make things easier for you to complete this lab.
+
+\subsection{Resources}
+
+If you have not done so already, we recommend that you 
+become familiar with the ARM ISA and how the GNU compiler functions.
+The ARM instruction set architecture is defined
+in the referenced manual that we have provided on the course
+website. 
+However, the best reference is the list of ARM instructions in
+Appendix B in your ECEN 3233 textbook~\cite{Harris:2015:DDC:2815529}.
+This Appendix is great, because it lists all the instructions in a
+concise manner and also provides a pseudo-language to understand each
+instruction's operation called Register Transfer Language (RTL).
+We may post
+additional resources (clarifications, etc.) as required on the course
+website. Finally, please do not hesitate to ask the TAs for help if you
+become stuck
+or if something is unclear! Take advantage of piazza,
+office hours, and lab sections.  
+
+\section{Handin}
+
+You should electronically hand in your code (all files in the src/
+directory) into D2L Brightspace through its dropbox.
+Please contact the TAs for more help.  Your code should be
+readable and well-documented. In addition, please turn in additional
+test cases that you used in a inputs/ subdirectory. If you feel the
+need to describe any additional aspects of your design in detail,
+please include these in a separate README. 
+Make sure that you test your simulator
+extensively with a suite of test cases so that you are confident that
+you have implemented all instructions correctly. This is for your
+benefit in later labs!  
+
+If you get stuck understanding the code or figuring out what is wrong,
+it might help to either use a debugger or print out some variables.  C
+has an excellent debugger called \verb+gdb+ and although it is a
+little hard to first get started with, it is extremely powerful.
+There is a tutorial posted on D2L that might help.  The other option
+is print out certain points of the code to the screen with a
+\verb+printf()+ statement.  This is not a great technique for
+debugging, but sometimes it can solve problems quickly.
+
+It is highly
+recommended you try to tackle things early and get most of the work
+done during the first week in lab.  It is also important to split the
+work among your team to help get larger things done.  
+%You are welcome
+%to use ways to communicate with your partner, such as GitHub.  If you
+%need help with
+%how to do something with \verb+git+, please let us know.  
+As I will
+say for this and remaining labs that much of the work in these labs is
+involved.  Therefore, do not procrastinate and get to it.  This lab
+also has many practical and real world implications and can help you
+understand how
+to use C and programming languages.  
+
+In order to grade the lab, we will use some unknown 
+assembly code that
+you will not see.  To get the maximum grade for this lab, your
+simulator must be able to simulate all the instructions asked in
+Section~\ref{instructions.sec}.  Your job is to really try to make
+sure your simulator covers all possible instructions that this unknown
+code may utilize.  
+
+\subsection{Extra Credit}
+
+There are many opportunities for improving the simulator.  Adding
+extra features or more instruction support.  These extra items can
+earn you extra points that may help you later in the semester.
+Remember, if you try any extra credit or add any extra functionality
+that it should be documented in your lab report as well as upload to
+GitLab.   As with any extra credit, this should only be attempted
+provided you have extra time with this course as well as your other
+courses.  
+
+\bibliographystyle{ieeetr}
+\bibliography{ref}
+\end{document}
