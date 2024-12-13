@@ -1,4 +1,4 @@
-These files are used for Laboratory 2 within ECEN 4243 : Computer
+These files are used for Laboratory 3 within ECEN 4243 : Computer
 Architecture.  The HDL files need a Mentor Graphics (MGC) ModelSim.
 Feel free to use whatever system you want to use as the program is
 either downloadable from GitHub or within the laboratory. 
