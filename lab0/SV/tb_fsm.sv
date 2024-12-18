@@ -2,7 +2,7 @@ module stimulus ();
 
    logic  clock;
    logic  In;
-   logic  reset_b;
+   logic  reset;
    
    logic  Out;
    
@@ -10,7 +10,7 @@ module stimulus ();
    integer desc3;
    
    // Instantiate DUT
-   FSM dut (Out, reset_b, clock, In);
+   FSM dut (clock, reset, In, Out);
 
    // Setup the clock to toggle every 1 time units 
    initial 
@@ -36,12 +36,13 @@ module stimulus ();
    
    initial 
      begin      
-	#0  reset_b = 1'b0;
-	#12 reset_b = 1'b1;	
-	#0  In = 1'b0;
+	#0  reset = 1'b0;
+	#12 reset = 1'b1;	
+q	#0  In = 1'b0;
 	#20 In = 1'b1;
 	#20 In = 1'b0;
      end
 
-endmodule // FSM_tb
+endmodule // stimulus
+
 
