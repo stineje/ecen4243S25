@@ -1,0 +1,25 @@
+Computer Architecture Spring 2025
+
+Lab 0
+Assigned: 1/13
+Due: 1/27
+
+Lab 1
+Assigned: 1/27
+Due: 2/10
+
+Lab 2
+Assigned: 2/10
+Due: 3/3
+
+Lab 3
+Assigned 3/3
+Due: 3/24
+
+Lab 4
+Assigned 3/24
+Due: 4/7
+
+Project
+Assigned: 4/7
+Due: 5/2
