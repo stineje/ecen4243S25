@@ -1,0 +1,76 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.4_3 2024.02, Feb 17 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/jstine/ecen4243S25/SV
+T_opt
+!s110 1736662128
+VJ2Gk3o]`hR;<b4YJCe6L30
+04 8 4 work stimulus fast 0
+=1-000ae431a4f1-67835c6f-d3e44-ca5c
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.4_3;77
+vsample
+Z3 2sample.sv|tb_sample.sv
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1736662127
+!i10b 1
+!s100 3A6fC;P>SaS7O]O?dPl7@2
+I=jZPkfe582U9Wfkeb`]OK0
+S1
+R1
+Z6 w1736661758
+8sample.sv
+Fsample.sv
+!i122 0
+L0 1 5
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2023.4_3;77
+r1
+!s85 0
+31
+Z9 !s108 1736662127.000000
+Z10 !s107 tb_sample.sv|sample.sv|
+Z11 !s90 sample.sv|tb_sample.sv|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vstimulus
+R3
+R4
+R5
+!i10b 1
+!s100 GeFO9Mhc]6864KegGTM8C1
+Ia9c7XAk;i0P;lTJl578>70
+S1
+R1
+R6
+8tb_sample.sv
+Ftb_sample.sv
+!i122 0
+L0 8 68
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R2
