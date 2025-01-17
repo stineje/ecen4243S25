@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module stimulus ();
 
    logic   clock;
@@ -36,11 +37,9 @@ module stimulus ();
    
    initial 
      begin      
-	#0  reset = 1'b0;
-	#12 reset = 1'b1;	
-	#0  In = 1'b0;
-	#20 In = 1'b1;
+	#0  reset = 1'b0;	
 	#20 In = 1'b0;
+	#0  In = 1'b1; // look at these testing vectors and figure out why I am not going to the next state.
      end
 
 endmodule // stimulus

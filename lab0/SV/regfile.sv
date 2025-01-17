@@ -1,6 +1,6 @@
 module regfile (input logic         clk, 
 		input logic 	    we3, 
-		input logic [4:0]   ra1, ra2, wa3, 
+		input logic [4:0]   ra1, ra2, wa3, // ra1 and ra2 read ports; wa3 write port
 		input logic [31:0]  wd3, 
 		output logic [31:0] rd1, rd2);
    

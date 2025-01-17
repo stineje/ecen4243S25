@@ -28,7 +28,6 @@ vlib work
 
 # compile source files
 vlog fsm.sv tb_fsm.sv
-
 # start and run simulation
 vsim -voptargs=+acc work.stimulus 
 
@@ -67,6 +66,6 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation
-run 120ns
+run 500ns
 
 
