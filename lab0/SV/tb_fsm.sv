@@ -17,7 +17,7 @@ module stimulus ();
    initial 
      begin	
 	clock = 1'b1;
-	forever #5 clock = ~clock;
+	forever #5 clock = ~clock; // to toggle the clock every 5 time units. This creates a clock with a 10 time-unit period.
      end
 
    initial
@@ -37,9 +37,24 @@ module stimulus ();
    
    initial 
      begin      
-	#0  reset = 1'b0;	
-	#20 In = 1'b0;
-	#0  In = 1'b1; // look at these testing vectors and figure out why I am not going to the next state.
+	     #0 In = 1'b1;
+          #0 reset = 1'b0;
+          #5 reset = 1'b1;  // Assert reset at time 5
+          #10 reset = 1'b0;  // De-assert reset after 15 time units (FSM starts from S0)
+
+          // Tests design with input sequence of 01_0011_0111 
+          #0 In = 1'b0;  // Apply input 0 (should move FSM from S0 to S1)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S1 to S2)
+          #10 In = 1'b0; // Apply input 0 (should move FSM from S2 to S1)
+          #10 In = 1'b0; // Apply input 0 (should move FSM from S1 to S1)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S1 to S2)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S2 to S0)
+          #10 In = 1'b0; // Apply input 0 (should move FSM from S0 to S1)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S1 to S2)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S2 to S0)
+          #10 In = 1'b1; // Apply input 1 (should move FSM from S0 to S0)
+
+
      end
 
 endmodule // stimulus

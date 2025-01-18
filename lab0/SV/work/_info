@@ -9,12 +9,12 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Erica/Documents/GitHub/4243/lab0/SV
+Z0 dC:/Users/daniel/ecen4243S5/lab0/SV
 T_opt
-!s110 1737157142
-Vo5EeMgMXD:7eR=mRmDFFN2
+!s110 1737240098
+VVUD:D;eOVZJMTH<>KR[7=0
 04 8 4 work stimulus fast 0
-=1-a4fc77150961-678aea15-3c9-2188
+=1-484d7eca8aaf-678c2e22-44-1370
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
@@ -22,13 +22,13 @@ n@_opt
 OL;O;2021.3;73
 vfsm
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1737157141
+Z3 !s110 1737240097
 !i10b 1
 !s100 AMkfnMLdlaARo3:?e1KOd0
 IIjGWizE6]gO<9N0;YN@i;2
 S1
 R0
-w1737154440
+w1737232509
 8fsm.sv
 Ffsm.sv
 !i122 0
@@ -38,7 +38,7 @@ Z5 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z6 !s108 1737157141.000000
+Z6 !s108 1737240097.000000
 Z7 !s107 tb_fsm.sv|fsm.sv|
 Z8 !s90 -reportprogress|300|fsm.sv|tb_fsm.sv|
 !i113 0
@@ -48,15 +48,15 @@ vstimulus
 R2
 R3
 !i10b 1
-!s100 Kbkzl6B_YZf4Wh[9:KC3l3
-IjGh3Gf?fUj9^K5[aQJHmQ0
+!s100 N8]c2_olzP=Z1g<Q28NcG1
+IczcPWPId83?HDJ0EH;lR=0
 S1
 R0
-w1737157083
+w1737240076
 8tb_fsm.sv
 Ftb_fsm.sv
 !i122 0
-L0 2 46
+L0 2 59
 R4
 R5
 r1

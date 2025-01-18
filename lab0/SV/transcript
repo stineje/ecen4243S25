@@ -13,17 +13,17 @@
 # //
 # do fsm.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 17:39:01 on Jan 17,2025
+# Start time: 16:41:37 on Jan 18,2025
 # vlog -reportprogress 300 fsm.sv tb_fsm.sv 
 # -- Compiling module fsm
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 17:39:01 on Jan 17,2025, Elapsed time: 0:00:00
+# End time: 16:41:37 on Jan 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 17:39:01 on Jan 17,2025
+# Start time: 16:41:37 on Jan 18,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "fsm(fast)".
 # Loading sv_std.std
@@ -33,12 +33,8 @@
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Erica  Hostname: DESKTOP-1L8B4D6  ProcessID: 15220
-#           Attempting to use alternate WLF file "./wlftyqecrf".
+#           Attempting to use alternate WLF file "./wlftey27my".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftyqecrf
-# ** Note: $finish    : tb_fsm.sv(28)
-#    Time: 500 ns  Iteration: 0  Instance: /stimulus
-# 1
-# Break in Module stimulus at tb_fsm.sv line 28
-# End time: 17:39:44 on Jan 17,2025, Elapsed time: 0:00:43
+#           Using alternate file: ./wlftey27my
+# End time: 16:45:04 on Jan 18,2025, Elapsed time: 0:03:27
 # Errors: 0, Warnings: 2

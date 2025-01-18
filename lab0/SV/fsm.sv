@@ -8,15 +8,15 @@ module fsm (input logic  clk,
    
    // state register
    always_ff @(posedge clk, posedge reset) // sensitivity list it will trigger this register at the positive edge of the clock
-     if (reset) state <= S0;
-     else state <= nextstate;
+     if (reset) state <= S0; // If reset = 1, the FSM jumps to state S0 (initial state)
+     else state <= nextstate; // Otherwise, the current state gets updated to nextstate at the next clock edge.
    
    // next state logic
    always_comb
      case (state)
       S0: begin
-        if (a) nextstate <= S0;
-        else nextstate <= S1;
+        if (a) nextstate <= S0; // If a = 1, stay in S0
+        else nextstate <= S1; // If a = 0, transition to S1
         y <= 1'b0; // output logic
         end
 
@@ -38,9 +38,5 @@ module fsm (input logic  clk,
         end
      endcase // case (state)
 
-//  S1: if (a) nextstate = S2;
-//  else nextstate = S1;
-//  S2: if (a) nextstate = S0;
-//  else nextstate = S1;
-      
+
 endmodule // patternMoore
