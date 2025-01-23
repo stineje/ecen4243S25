@@ -9,12 +9,12 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/daniel/ecen4243S5/lab0/SV
+Z0 dC:/Users/daniel/GitHub/ecen4243S5/lab0/SV
 T_opt
-!s110 1737240098
-VVUD:D;eOVZJMTH<>KR[7=0
+!s110 1737584399
+V<Dl[o;?7]5^P1K=heFmNT1
 04 8 4 work stimulus fast 0
-=1-484d7eca8aaf-678c2e22-44-1370
+=1-484d7eca8aaf-67916f0e-2ce-375c
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
@@ -22,23 +22,23 @@ n@_opt
 OL;O;2021.3;73
 vfsm
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1737240097
+Z3 !s110 1737584397
 !i10b 1
-!s100 AMkfnMLdlaARo3:?e1KOd0
-IIjGWizE6]gO<9N0;YN@i;2
+!s100 >kNLiImQU4VGBCmm^JOlg3
+IFA6>MEJfY7K;TE3iP?9>B2
 S1
 R0
-w1737232509
+w1737240331
 8fsm.sv
 Ffsm.sv
 !i122 0
-L0 1 46
+L0 1 42
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z6 !s108 1737240097.000000
+Z6 !s108 1737584397.000000
 Z7 !s107 tb_fsm.sv|fsm.sv|
 Z8 !s90 -reportprogress|300|fsm.sv|tb_fsm.sv|
 !i113 0
@@ -52,7 +52,7 @@ R3
 IczcPWPId83?HDJ0EH;lR=0
 S1
 R0
-w1737240076
+w1737241070
 8tb_fsm.sv
 Ftb_fsm.sv
 !i122 0
