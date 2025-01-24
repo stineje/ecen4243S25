@@ -1,23 +1,7 @@
-# do sample.do
-# QuestaSim-64 vlog 2023.4_3 Compiler 2024.02 Feb 17 2024
-# Start time: 00:08:47 on Jan 12,2025
-# vlog sample.sv tb_sample.sv 
-# -- Compiling module sample
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 00:08:47 on Jan 12,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 00:08:47 on Jan 12,2025
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Sim-64
-# //  Version 2023.4_3 linux_x86_64 Feb 17 2024
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
 # //
-# //  Copyright 1991-2024 Mentor Graphics Corporation
+# //  Copyright 1991-2021 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
 # //  QuestaSim and its associated documentation contain trade
@@ -28,19 +12,123 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+# do rf1.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:33:52 on Jan 23,2025
+# vlog -reportprogress 300 rf1.sv rf1_tb.sv 
+# -- Compiling module regfile
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:33:52 on Jan 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 18:33:52 on Jan 23,2025
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.sample(fast)
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-#         64 tests completed with          0 errors
-# ** Note: $finish    : tb_sample.sv(72)
-#    Time: 645 ns  Iteration: 2  Instance: /stimulus
-# End time: 00:08:48 on Jan 12,2025, Elapsed time: 0:00:01
+# Loading work.tb(fast)
+# Loading work.regfile(fast)
+# .main_pane.list.interior.cs.body
+# .main_pane.wave.interior.cs.body.pw.wf
+do rf1.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@mimi.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:34:15 on Jan 23,2025
+# vlog -reportprogress 300 rf1.sv rf1_tb.sv 
+# -- Compiling module regfile
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:34:15 on Jan 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:34:16 on Jan 23,2025, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 18:34:16 on Jan 23,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.regfile(fast)
+# .main_pane.list.interior.cs.body
+# .main_pane.wave.interior.cs.body.pw.wf
+do rf1.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@mimi.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:34:31 on Jan 23,2025
+# vlog -reportprogress 300 rf1.sv rf1_tb.sv 
+# -- Compiling module regfile
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:34:31 on Jan 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:34:32 on Jan 23,2025, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 18:34:32 on Jan 23,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.regfile(fast)
+# .main_pane.list.interior.cs.body
+# .main_pane.wave.interior.cs.body.pw.wf
+run 200ns
+run 200ns
+do rf1.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@mimi.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:35:55 on Jan 23,2025
+# vlog -reportprogress 300 rf1.sv rf1_tb.sv 
+# -- Compiling module regfile
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:35:55 on Jan 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:35:55 on Jan 23,2025, Elapsed time: 0:01:23
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 18:35:55 on Jan 23,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.regfile(fast)
+# .main_pane.list.interior.cs.body
+# .main_pane.wave.interior.cs.body.pw.wf
+do rf1.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is jstine@mimi.ecen.okstate.edu.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:40:58 on Jan 23,2025
+# vlog -reportprogress 300 rf1.sv rf1_tb.sv 
+# -- Compiling module regfile
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 18:40:58 on Jan 23,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:40:59 on Jan 23,2025, Elapsed time: 0:05:04
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb 
+# Start time: 18:40:59 on Jan 23,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Loading work.regfile(fast)
+# .main_pane.list.interior.cs.body
+# .main_pane.wave.interior.cs.body.pw.wf
+exit
+# End time: 18:43:19 on Jan 23,2025, Elapsed time: 0:02:20
+# Errors: 0, Warnings: 0

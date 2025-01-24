@@ -13,6 +13,6 @@ module regfile(input  logic        clk,
     if (we4) rf[wa4] <= wd4;
   end   
 
-  assign rd1 = (ra1 == 5’b00000) ? 32’b0 : rf[ra1];  
-  assign rd2 = (ra2 == 5’b00000) ? 32’b0 : rf[ra2];
+  assign rd1 = (ra1 == 5'b00000) ? 32'b0 : rf[ra1];  
+  assign rd2 = (ra2 == 5'b00000) ? 32'b0 : rf[ra2];
 endmodule
