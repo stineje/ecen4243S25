@@ -11,30 +11,29 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do fsm.do
+# do regfile.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 16:19:57 on Jan 22,2025
-# vlog -reportprogress 300 fsm.sv tb_fsm.sv 
-# -- Compiling module fsm
+# Start time: 13:21:02 on Jan 24,2025
+# vlog -reportprogress 300 regfile.sv tb_regfile.sv 
+# -- Compiling module regfile
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 16:19:57 on Jan 22,2025, Elapsed time: 0:00:00
+# End time: 13:21:02 on Jan 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 16:19:57 on Jan 22,2025
+# Start time: 13:21:02 on Jan 24,2025
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
-# Loading work.fsm(fast)
+# Loading work.regfile(fast)
 # .main_pane.list.interior.cs.body
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Erica  Hostname: DESKTOP-1L8B4D6  ProcessID: 15220
-#           Attempting to use alternate WLF file "./wlftsqwsqb".
+#           Attempting to use alternate WLF file "./wlft9xtfse".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftsqwsqb
-# End time: 19:08:58 on Jan 22,2025, Elapsed time: 2:49:01
+#           Using alternate file: ./wlft9xtfse
+# End time: 13:33:37 on Jan 24,2025, Elapsed time: 0:12:35
 # Errors: 0, Warnings: 2
