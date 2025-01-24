@@ -10,6 +10,7 @@ module regfile (input logic         clk,
    
    always_ff @(posedge clk) // This block runs on the rising edge of clk, meaning it updates the registers synchronously.
    if (we3) rf[wa3] <= wd3; // If write enable we3 is high, the register at address wa3 is updated with wd3. If we3 is low, no write occurs.
+   
    assign rd1 = (ra1 == 5'b00000) ? 32'b0 : rf[ra1]; // If ra1 == 0, return 32'b0 (Register 0 always reads as zero). Otherwise, return the value stored in rf[ra1].
    assign rd2 = (ra2 == 5'b00000) ? 32'b0 : rf[ra2]; // If ra2 == 0, return 32'b0 (Register 0 always reads as zero). Otherwise, return the value stored in rf[ra2].
    
