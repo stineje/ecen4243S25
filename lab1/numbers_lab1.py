@@ -47,21 +47,21 @@ plt.figure(figsize=(12, 6))
 
 # Sin table plot
 plt.subplot(3, 1, 1)
-plt.stem(range(len(sin_table_fp)), sin_table_fp, basefmt=" ", use_line_collection=True)
+plt.stem(range(len(sin_table_fp)), sin_table_fp, basefmt=" ")
 plt.title("Sin Table (Floating Point)")
 plt.xlabel("Index")
 plt.ylabel("Value")
 
 # Lowpass coefficients plot
 plt.subplot(3, 1, 2)
-plt.stem(range(len(lowpass_fp)), lowpass_fp, basefmt=" ", use_line_collection=True)
+plt.stem(range(len(lowpass_fp)), lowpass_fp, basefmt=" ")
 plt.title("Lowpass Coefficients (Floating Point)")
 plt.xlabel("Index")
 plt.ylabel("Value")
 
 # Expected values plot
 plt.subplot(3, 1, 3)
-plt.stem(range(len(expected_fp)), expected_fp, basefmt=" ", use_line_collection=True)
+plt.stem(range(len(expected_fp)), expected_fp, basefmt=" ")
 plt.title("Expected Values (Floating Point)")
 plt.xlabel("Index")
 plt.ylabel("Value")
