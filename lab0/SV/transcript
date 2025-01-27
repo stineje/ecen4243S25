@@ -13,17 +13,17 @@
 # //
 # do regfile.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 15:16:26 on Jan 24,2025
+# Start time: 12:32:09 on Jan 27,2025
 # vlog -reportprogress 300 regfile.sv tb_regfile.sv 
 # -- Compiling module regfile
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 15:16:27 on Jan 24,2025, Elapsed time: 0:00:01
+# End time: 12:32:09 on Jan 27,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 15:16:27 on Jan 24,2025
+# Start time: 12:32:10 on Jan 27,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.stimulus(fast)
@@ -32,8 +32,9 @@
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: Erica  Hostname: DESKTOP-1L8B4D6  ProcessID: 15220
-#           Attempting to use alternate WLF file "./wlftc6qtfx".
+#           Attempting to use alternate WLF file "./wlftysfbey".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftc6qtfx
-# End time: 10:22:57 on Jan 27,2025, Elapsed time: 67:06:30
+#           Using alternate file: ./wlftysfbey
+# Causality operation skipped due to absence of debug database file
+# End time: 12:44:42 on Jan 27,2025, Elapsed time: 0:12:32
 # Errors: 0, Warnings: 2

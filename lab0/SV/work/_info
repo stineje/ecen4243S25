@@ -11,10 +11,10 @@ z2
 cModel Technology
 Z0 dC:/Users/Erica/Documents/GitHub/4243/lab0/SV
 T_opt
-!s110 1737753388
-V=Um[P3>Bn=?>bgWd5^dbZ3
+!s110 1738002731
+VRP[6?X<lB:G6C1;CcUN<k3
 04 8 4 work stimulus fast 0
-=1-a4fc77150961-6794032b-30f-438c
+=1-a4fc77150961-6797d12a-257-1860
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
@@ -22,7 +22,7 @@ n@_opt
 OL;O;2021.3;73
 vregfile
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1737753387
+Z3 !s110 1738002729
 !i10b 1
 !s100 SZ0P;b4_LMZBeYRgN^KRG2
 ITZ_SFMI4;<0?3YhHYPn3[2
@@ -38,7 +38,7 @@ Z5 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z6 !s108 1737753386.000000
+Z6 !s108 1738002729.000000
 Z7 !s107 tb_regfile.sv|regfile.sv|
 Z8 !s90 -reportprogress|300|regfile.sv|tb_regfile.sv|
 !i113 0
