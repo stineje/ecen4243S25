@@ -11,10 +11,10 @@ z2
 cModel Technology
 Z0 dC:/Users/Erica/Documents/GitHub/4243/lab0/SV
 T_opt
-!s110 1737746463
-V`3MS]:zm?ai]aZiY;LLmZ3
+!s110 1737753388
+V=Um[P3>Bn=?>bgWd5^dbZ3
 04 8 4 work stimulus fast 0
-=1-a4fc77150961-6793e81f-f1-6324
+=1-a4fc77150961-6794032b-30f-438c
 !s124 OEM100
 o-quiet -auto_acc_if_foreign -work work +acc
 Z1 tCvgOpt 0
@@ -22,13 +22,13 @@ n@_opt
 OL;O;2021.3;73
 vregfile
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1737746462
+Z3 !s110 1737753387
 !i10b 1
-!s100 XmJh=OHIHcJQQidCOK@0<3
-ITA=[6mN7ZJm80Yk2;AOYU0
+!s100 SZ0P;b4_LMZBeYRgN^KRG2
+ITZ_SFMI4;<0?3YhHYPn3[2
 S1
 R0
-w1737746181
+w1737746828
 8regfile.sv
 Fregfile.sv
 !i122 0
@@ -38,7 +38,7 @@ Z5 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z6 !s108 1737746462.000000
+Z6 !s108 1737753386.000000
 Z7 !s107 tb_regfile.sv|regfile.sv|
 Z8 !s90 -reportprogress|300|regfile.sv|tb_regfile.sv|
 !i113 0
@@ -48,15 +48,15 @@ vstimulus
 R2
 R3
 !i10b 1
-!s100 9A32A_D;;c=S7?M5oZCVk2
-IO^_X^?8ml<`gL4fkVANK12
+!s100 Ed`1N5mYg4h9dbo0`[>2b0
+IK4V>UHc@EEN3@lj<Z7F=a2
 S1
 R0
-w1737746426
+w1737753255
 8tb_regfile.sv
 Ftb_regfile.sv
 !i122 0
-L0 3 34
+L0 3 58
 R4
 R5
 r1
