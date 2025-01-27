@@ -3,13 +3,16 @@
 
 // Add two Q1.31 fixed point numbers
 int add_q31(int a, int b) {
-    // your code here
+  return a+b;
 }
 
 // Multiplly two Q1.31 fixed point numbers
 int mul_q31(int a, int b) {
-    // your code here; consider computing a 64-bit Q2.62 res and 32-bit Q1.31 result
+  long res = (long)a * (long)b;
+    int result = res >> 31; // shift right to get the 32-bit result; 
+        //this is equivalent to shifting left by 1 and discarding the bottom 32 bits
     //printf("mul_q31: a = %x, b = %x, res = %lx, result = %x\n", a, b, res, result);
+    return result; 
 }
 
 // low pass filter x with coefficients c, result in y
@@ -17,7 +20,12 @@ int mul_q31(int a, int b) {
 // y[i] = c[0]*x[i] + c[1]*x[i+1] + ... + c[m-1]*x[i+m-1]
 // inputs in Q1.31 format
 void fir(int x[], int c[], int y[], int n, int m) {
-	// your code here, use add_q31 and mul_q31
+    int i, j;
+    for (j=0; j<n-m+1; j++) {
+        y[j] = 0;
+        for (i=0; i<m; i++) 
+            y[j] = add_q31(y[j], mul_q31(c[i], x[j-i+(m-1)]));
+    }
 }
 
 int main(void) {
