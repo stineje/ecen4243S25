@@ -58,7 +58,7 @@ int main(void) {
       printf("lowpass[%d] = %1.15lg\n", i, lowpass[i]/pow(2.0, 31));
     }
 
-    for (i=0; i < 4; i++) {
+    for (i=0; i < 17; i++) {
       printf("expected[%d] = %1.15lg\n", i, expected[i]/pow(2.0, 31));
     }
     
