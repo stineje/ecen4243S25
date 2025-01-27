@@ -1,5 +1,5 @@
 # fir.S 
-# assembly language solution
+# assembly language of Finite Impulse Response (FIR)
 
 // a0: base address of x
 // a1: base address of c
