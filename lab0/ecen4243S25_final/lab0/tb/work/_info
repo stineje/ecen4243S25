@@ -1,0 +1,70 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/daniel/GitHub/ecen4243S5/lab0/ecen4243S25_final/lab0/tb
+T_opt
+Z1 !s110 1738033130
+VKaFhC2b`fn[>g2NQW[Zk;1
+04 12 4 work test_regfile fast 0
+=1-484d7eca8aaf-679847ea-24d-5edc
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+vregfile
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
+!i10b 1
+!s100 SZ0P;b4_LMZBeYRgN^KRG2
+IT^NQa<dVWzbd7eIUF0f<^0
+S1
+R0
+w1737939814
+8../src/regfile.sv
+F../src/regfile.sv
+!i122 0
+L0 3 16
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.3;73
+r1
+!s85 0
+31
+Z6 !s108 1738033130.000000
+Z7 !s107 tb_regfile.sv|../src/regfile.sv|
+Z8 !s90 -reportprogress|300|../src/regfile.sv|tb_regfile.sv|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vtest_regfile
+R3
+R1
+!i10b 1
+!s100 QUnd5beE]Jhg@UhEO>bzS1
+IEd@en@4^fl5`SajmGz96E0
+S1
+R0
+w1738032526
+8tb_regfile.sv
+Ftb_regfile.sv
+!i122 0
+L0 3 54
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R2
