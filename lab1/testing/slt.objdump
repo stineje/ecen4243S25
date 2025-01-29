@@ -5,17 +5,17 @@ slt.elf:     file format elf32-littleriscv
 Disassembly of section .riscv.attributes:
 
 00000000 <.riscv.attributes>:
-   0:	1941                	.2byte	0x1941
-   2:	0000                	.2byte	0x0
-   4:	7200                	.2byte	0x7200
-   6:	7369                	.2byte	0x7369
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
    8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
-  10:	7205                	.2byte	0x7205
-  12:	3376                	.2byte	0x3376
-  14:	6932                	.2byte	0x6932
-  16:	7032                	.2byte	0x7032
-  18:	0030                	.2byte	0x30
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
 
 Disassembly of section .text:
 
@@ -87,7 +87,7 @@ Disassembly of section .text:
 800000c4 <test09>:
 800000c4:	00900593          	li	a1,9
 800000c8:	800000b7          	lui	ra,0x80000
-800000cc:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+800000cc:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 800000d0:	00000113          	li	sp,0
 800000d4:	0020af33          	slt	t5,ra,sp
 800000d8:	00000e93          	li	t4,0
@@ -96,7 +96,7 @@ Disassembly of section .text:
 800000e0 <test10>:
 800000e0:	00a00593          	li	a1,10
 800000e4:	800000b7          	lui	ra,0x80000
-800000e8:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+800000e8:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 800000ec:	00008137          	lui	sp,0x8
 800000f0:	fff10113          	addi	sp,sp,-1 # 7fff <__start-0x7fff8001>
 800000f4:	0020af33          	slt	t5,ra,sp
@@ -115,7 +115,7 @@ Disassembly of section .text:
 8000011c <test12>:
 8000011c:	00c00593          	li	a1,12
 80000120:	800000b7          	lui	ra,0x80000
-80000124:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+80000124:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 80000128:	ffff8137          	lui	sp,0xffff8
 8000012c:	0020af33          	slt	t5,ra,sp
 80000130:	00000e93          	li	t4,0

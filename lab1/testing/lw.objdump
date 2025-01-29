@@ -5,34 +5,34 @@ lw.elf:     file format elf32-littleriscv
 Disassembly of section .data:
 
 80001000 <tdat>:
-80001000:	00ff                	.2byte	0xff
-80001002:	00ff                	.2byte	0xff
+80001000:	00ff 00ff   	.insn	10, 0x0ff0ff00ff0000ff00ff
+80001008:	 
 
 80001004 <tdat2>:
-80001004:	ff00                	.2byte	0xff00
-80001006:	ff00                	.2byte	0xff00
+80001004:	ff00                	.insn	2, 0xff00
+80001006:	ff00                	.insn	2, 0xff00
 
 80001008 <tdat3>:
-80001008:	0ff0                	.2byte	0xff0
-8000100a:	0ff0                	.2byte	0xff0
+80001008:	0ff0                	.insn	2, 0x0ff0
+8000100a:	0ff0                	.insn	2, 0x0ff0
 
 8000100c <tdat4>:
-8000100c:	f00ff00f          	.4byte	0xf00ff00f
+8000100c:	f00ff00f          	.insn	4, 0xf00ff00f
 
 Disassembly of section .riscv.attributes:
 
 00000000 <.riscv.attributes>:
-   0:	1941                	.2byte	0x1941
-   2:	0000                	.2byte	0x0
-   4:	7200                	.2byte	0x7200
-   6:	7369                	.2byte	0x7369
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
    8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
-  10:	7205                	.2byte	0x7205
-  12:	3376                	.2byte	0x3376
-  14:	6932                	.2byte	0x6932
-  16:	7032                	.2byte	0x7032
-  18:	0030                	.2byte	0x30
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
 
 Disassembly of section .text:
 

@@ -5,17 +5,17 @@ bltu.elf:     file format elf32-littleriscv
 Disassembly of section .riscv.attributes:
 
 00000000 <.riscv.attributes>:
-   0:	1941                	.2byte	0x1941
-   2:	0000                	.2byte	0x0
-   4:	7200                	.2byte	0x7200
-   6:	7369                	.2byte	0x7369
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
    8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
-  10:	7205                	.2byte	0x7205
-  12:	3376                	.2byte	0x3376
-  14:	6932                	.2byte	0x6932
-  16:	7032                	.2byte	0x7032
-  18:	0030                	.2byte	0x30
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
 
 Disassembly of section .text:
 
@@ -104,7 +104,7 @@ Disassembly of section .text:
 800000b4:	00700593          	li	a1,7
 800000b8:	800000b7          	lui	ra,0x80000
 800000bc:	80000137          	lui	sp,0x80000
-800000c0:	fff10113          	addi	sp,sp,-1 # 7fffffff <_end+0xffffefff>
+800000c0:	fff10113          	addi	sp,sp,-1 # 7fffffff <__start-0x1>
 800000c4:	0020e463          	bltu	ra,sp,800000cc <label1_test07>
 800000c8:	00b01463          	bne	zero,a1,800000d0 <label2_test07>
 

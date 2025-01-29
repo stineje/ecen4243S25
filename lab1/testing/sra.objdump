@@ -5,17 +5,17 @@ sra.elf:     file format elf32-littleriscv
 Disassembly of section .riscv.attributes:
 
 00000000 <.riscv.attributes>:
-   0:	1941                	.2byte	0x1941
-   2:	0000                	.2byte	0x0
-   4:	7200                	.2byte	0x7200
-   6:	7369                	.2byte	0x7369
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
    8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
-  10:	7205                	.2byte	0x7205
-  12:	3376                	.2byte	0x3376
-  14:	6932                	.2byte	0x6932
-  16:	7032                	.2byte	0x7032
-  18:	0030                	.2byte	0x30
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
 
 Disassembly of section .text:
 
@@ -54,7 +54,7 @@ Disassembly of section .text:
 80000060 <test05>:
 80000060:	00500593          	li	a1,5
 80000064:	800000b7          	lui	ra,0x80000
-80000068:	00108093          	addi	ra,ra,1 # 80000001 <_end+0xfffff001>
+80000068:	00108093          	addi	ra,ra,1 # 80000001 <__start+0x1>
 8000006c:	01f00113          	li	sp,31
 80000070:	4020df33          	sra	t5,ra,sp
 80000074:	fff00e93          	li	t4,-1
@@ -63,17 +63,17 @@ Disassembly of section .text:
 8000007c <test06>:
 8000007c:	00600593          	li	a1,6
 80000080:	800000b7          	lui	ra,0x80000
-80000084:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+80000084:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 80000088:	00000113          	li	sp,0
 8000008c:	4020df33          	sra	t5,ra,sp
 80000090:	80000eb7          	lui	t4,0x80000
-80000094:	fffe8e93          	addi	t4,t4,-1 # 7fffffff <_end+0xffffefff>
+80000094:	fffe8e93          	addi	t4,t4,-1 # 7fffffff <__start-0x1>
 80000098:	53df1c63          	bne	t5,t4,800005d0 <fail>
 
 8000009c <test07>:
 8000009c:	00700593          	li	a1,7
 800000a0:	800000b7          	lui	ra,0x80000
-800000a4:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+800000a4:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 800000a8:	00100113          	li	sp,1
 800000ac:	4020df33          	sra	t5,ra,sp
 800000b0:	40000eb7          	lui	t4,0x40000
@@ -83,7 +83,7 @@ Disassembly of section .text:
 800000bc <test08>:
 800000bc:	00800593          	li	a1,8
 800000c0:	800000b7          	lui	ra,0x80000
-800000c4:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+800000c4:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 800000c8:	00700113          	li	sp,7
 800000cc:	4020df33          	sra	t5,ra,sp
 800000d0:	01000eb7          	lui	t4,0x1000
@@ -93,7 +93,7 @@ Disassembly of section .text:
 800000dc <test09>:
 800000dc:	00900593          	li	a1,9
 800000e0:	800000b7          	lui	ra,0x80000
-800000e4:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+800000e4:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 800000e8:	00e00113          	li	sp,14
 800000ec:	4020df33          	sra	t5,ra,sp
 800000f0:	00020eb7          	lui	t4,0x20
@@ -103,7 +103,7 @@ Disassembly of section .text:
 800000fc <test10>:
 800000fc:	00a00593          	li	a1,10
 80000100:	800000b7          	lui	ra,0x80000
-80000104:	fff08093          	addi	ra,ra,-1 # 7fffffff <_end+0xffffefff>
+80000104:	fff08093          	addi	ra,ra,-1 # 7fffffff <__start-0x1>
 80000108:	01f00113          	li	sp,31
 8000010c:	4020df33          	sra	t5,ra,sp
 80000110:	00000e93          	li	t4,0
