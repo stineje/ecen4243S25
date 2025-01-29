@@ -1,9 +1,15 @@
 #include <stdio.h>  // supports printf
 #include "util.h"   // supports verify
 
+// Add for passing to assembly (will discuss in class)
+// Passing values from C to assembly in RISC-V using extern follows the
+// standard RISC-V calling convention, where function arguments are passed
+// in registers a0–a7 and return values are stored in a0.
+// extern void fir();
+
 // Add two Q1.31 fixed point numbers
 int add_q31(int a, int b) {
-
+  return a+b;
 }
 
 // Multiplly two Q1.31 fixed point numbers
