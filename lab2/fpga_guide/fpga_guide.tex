@@ -3,6 +3,8 @@
 
 \usepackage{bigfoot}
 \usepackage{secdot}
+\usepackage{soul}
+\usepackage{xcolor}
 \usepackage{epsfig}
 \usepackage[T1]{fontenc}
 \usepackage{epstopdf}
@@ -32,7 +34,7 @@
 % ----- Identifying Information -----------------------------------------------
 \newcommand{\myassignment}{Using Vivado and the DSDB FPGA}
 \newcommand{\myinstructor}{Instructor: Alex Underwood/James E. Stine, Jr.}
-\newcommand{\mytas}{TAs: Ross Thompson \\ Ryan Swann \\ Brett Mathis}
+\newcommand{\mytas}{TAs: Jacob Pease/Thomas Kidd}
 % -----------------------------------------------------------------------------
 
 \begin{document}
@@ -135,7 +137,7 @@ project in the repository.  There is also a \verb|setup.tcl| script in the \verb
 that we will use to quickly set up the
 project so you can see your RISC-V single cycle processor in action.  The default
 program that the project is set to load into your processor is the 
-\verb|memfile.dat| program, but you can change that later~\footnote{I
+\verb|memfile.dat| program, but you need to change that later~\footnote{I
 am calling the output of our compiling process that generates the
 \verb!.memfile! the \verb!memfile.dat!.  They are all ASCII files and
 can called whatever you want.  Apologies in advance for any ambiguity.}.
@@ -143,7 +145,8 @@ can called whatever you want.  Apologies in advance for any ambiguity.}.
 \begin{enumerate}
 \item Download the repository from GitHub and your Vivado project
   should be inside the \verb|lab2/lab2| subdirectory.  Place the
-  \verb|setup.tcl| file on the desktop.  Place the Lab 2 project folder wherever
+  \verb|setup.tcl| file from the \verb!scripts! subdirectory of your lab2 repository
+  on the desktop.  Place the Lab 2 project folder wherever
 is convenient for you.
 
 \item Place your \verb|riscv_single.sv| file on the desktop.
@@ -157,7 +160,8 @@ script will look for files on the desktop.}
   The Vivado project should be available in your lab2 repository directory.
   Navigate to the Lab 2 project folder
   you extracted from you Canvas zip file and select the Lab 2 project file inside
-that folder.
+that folder.  You may need to click \textbf{yes} to allow the project
+to be updated your version of Vivado too.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{open_project}
@@ -193,7 +197,10 @@ folder.  Your goal here is to navigate to the desktop where we put the
 
 \verb|source setup.tcl|
 
-\verb|source| is the command used in Tcl to run a script stored in a file. This
+\verb|source| is the command used in Tcl to run a script stored in a file.
+\hl{Note: you only need to do this once.  If you start over
+  or find a bug, you will need to
+  restart this process at Step~$1$.}  This
 script will do the following things:
 \begin{itemize}
 \item Search your desktop for the \verb|top_module.sv| file and copy that
@@ -451,7 +458,7 @@ like that of the DSDB.
 By default, the project from Canvas will load the \verb|memfile.dat| program.
 Once you've successfully run that program on your own RISC-V core on the FPGA, you
 should try running some other programs and see what results you get and how they
-compare.  The project comes with \verb|memfile.dat| and \verb|fib.s| 
+compare.  The project comes with \verb|memfile.dat| and \verb|test_hw.s| 
 pre-added, making it fairly easy to swap between the two programs.  If you want
 to run your own programs, you can do that as well but the section after this one
 will cover how to add those files to the project so Vivado knows where to look
@@ -510,12 +517,19 @@ action using the debug information.
   \caption{Open Hardware Target}
   \label{fig:copysources}
 \end{figure}
-You can run your own programs on your RISC-V core as well.  To do this, you will
+You can run your own programs on your RISC-V core, as well.  To do this, you will
 need to import the \verb|.dat| file for the program into your Vivado project,
 then follow the steps in the previous section on Changing the Program the RISC-V
 Core will run to change which program will be loaded into the instruction
 memory.  Right now, the instruction memory is hard-coded into the FPGA
 within the Block RAM.
+
+Make sure you test your hardware with \verb!test_hw.s! in the
+\verb!risvtest! subdirectory of the repository.  You should be able to
+compare the state of the hardware compared to what you get with
+\verb!spike!.  To test with spike, you can type:
+\verb!spike --isa=rv32i -d test_hw.elf!.  To get full credit for this
+lab, the state of your hardware should match.
 
 \begin{enumerate}
 \item Click Add Sources under the Project Manager heading on the left panel

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  31 JAN 2025 12:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  31 JAN 2025 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -155,6 +155,63 @@ Package: perpage 2014/10/25 2.0 Reset/sort counters per page
 (/usr/local/texlive/2024/texmf-dist/tex/latex/secdot/secdot.sty
 Package: secdot 2000/06/20 v1.0 section numbers with dots
 )
+(/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks29
+\SOUL@lasttoken=\toks30
+\SOUL@syllable=\toks31
+\SOUL@cmds=\toks32
+\SOUL@buffer=\toks33
+\SOUL@token=\toks34
+\SOUL@syllgoal=\dimen153
+\SOUL@syllwidth=\dimen154
+\SOUL@charkern=\dimen155
+\SOUL@hyphkern=\dimen156
+\SOUL@dimen=\dimen157
+\SOUL@dimeni=\dimen158
+\SOUL@minus=\count284
+\SOUL@comma=\count285
+\SOUL@apo=\count286
+\SOUL@grave=\count287
+\SOUL@spaceskip=\skip57
+\SOUL@ttwidth=\dimen159
+\SOUL@uldp=\dimen160
+\SOUL@ulht=\dimen161
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)))
+(/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 
@@ -163,7 +220,7 @@ Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks29
+\KV@toks@=\toks35
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
@@ -175,15 +232,12 @@ Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
 )
-\epsfxsize=\dimen155
-\epsfysize=\dimen156
+\Gin@req@height=\dimen162
+\Gin@req@width=\dimen163
+)
+\epsfxsize=\dimen164
+\epsfysize=\dimen165
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
@@ -191,9 +245,6 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
 
-(/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
 
@@ -210,10 +261,6 @@ Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
 (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
@@ -242,70 +289,70 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count284
-\rotFPtop=\skip57
-\rotFPbot=\skip58
+\c@r@tfl@t=\count288
+\rotFPtop=\skip58
+\rotFPbot=\skip59
 \rot@float@box=\box56
-\rot@mess@toks=\toks30
+\rot@mess@toks=\toks36
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen157
-\captionmargin=\dimen158
-\caption@leftmargin=\dimen159
-\caption@rightmargin=\dimen160
-\caption@width=\dimen161
-\caption@indent=\dimen162
-\caption@parindent=\dimen163
-\caption@hangindent=\dimen164
+\caption@tempdima=\dimen166
+\captionmargin=\dimen167
+\caption@leftmargin=\dimen168
+\caption@rightmargin=\dimen169
+\caption@width=\dimen170
+\caption@indent=\dimen171
+\caption@parindent=\dimen172
+\caption@hangindent=\dimen173
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count285
-\c@continuedfloat=\count286
+\c@caption@flags=\count289
+\c@continuedfloat=\count290
 Package caption Info: rotating package is loaded.
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count287
+\c@subfigure=\count291
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count288
+\c@subtable=\count292
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip59
-\multirow@cntb=\count289
-\multirow@dima=\skip60
-\bigstrutjot=\dimen165
+\multirow@colwidth=\skip60
+\multirow@cntb=\count293
+\multirow@dima=\skip61
+\bigstrutjot=\dimen174
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen166
+\col@sep=\dimen175
 \ar@mcellbox=\box57
-\extrarowheight=\dimen167
-\NC@list=\toks31
-\extratabsurround=\skip61
-\backup@length=\skip62
+\extrarowheight=\dimen176
+\NC@list=\toks37
+\extratabsurround=\skip62
+\backup@length=\skip63
 \ar@cellbox=\box58
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2024/04/23 v4.2 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip63
-\f@nch@O@elh=\skip64
-\f@nch@O@erh=\skip65
-\f@nch@O@olh=\skip66
-\f@nch@O@orh=\skip67
-\f@nch@O@elf=\skip68
-\f@nch@O@erf=\skip69
-\f@nch@O@olf=\skip70
-\f@nch@O@orf=\skip71
+\f@nch@headwidth=\skip64
+\f@nch@O@elh=\skip65
+\f@nch@O@erh=\skip66
+\f@nch@O@olh=\skip67
+\f@nch@O@orh=\skip68
+\f@nch@O@elf=\skip69
+\f@nch@O@erf=\skip70
+\f@nch@O@olf=\skip71
+\f@nch@O@orf=\skip72
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2024/04/27 v2.1a lastpage: 2.09 or 2e? (HMM)
@@ -316,50 +363,31 @@ MM)
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
 Package: lastpagemodern 2024-04-27 v2.1a Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count290
+\c@lastpagecount=\count294
 ) 
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-)
 (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
-\c@tracingmulticols=\count291
+\c@tracingmulticols=\count295
 \mult@box=\box59
-\multicol@leftmargin=\dimen168
-\c@unbalance=\count292
-\c@collectmore=\count293
-\doublecol@number=\count294
-\multicoltolerance=\count295
-\multicolpretolerance=\count296
-\full@width=\dimen169
-\page@free=\dimen170
-\premulticols=\dimen171
-\postmulticols=\dimen172
-\multicolsep=\skip72
-\multicolbaselineskip=\skip73
+\multicol@leftmargin=\dimen177
+\c@unbalance=\count296
+\c@collectmore=\count297
+\doublecol@number=\count298
+\multicoltolerance=\count299
+\multicolpretolerance=\count300
+\full@width=\dimen178
+\page@free=\dimen179
+\premulticols=\dimen180
+\postmulticols=\dimen181
+\multicolsep=\skip73
+\multicolbaselineskip=\skip74
 \partial@page=\box60
 \last@line=\box61
 \mc@boxedresult=\box62
-\maxbalancingoverflow=\dimen173
+\maxbalancingoverflow=\dimen182
 \mult@rightbox=\box63
 \mult@grightbox=\box64
 \mult@firstbox=\box65
@@ -400,15 +428,15 @@ Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
 \@tempa=\box100
 \@tempa=\box101
 \@tempa=\box102
-\c@minrows=\count297
-\c@columnbadness=\count298
-\c@finalcolumnbadness=\count299
-\last@try=\dimen174
-\multicolovershoot=\dimen175
-\multicolundershoot=\dimen176
+\c@minrows=\count301
+\c@columnbadness=\count302
+\c@finalcolumnbadness=\count303
+\last@try=\dimen183
+\multicolovershoot=\dimen184
+\multicolundershoot=\dimen185
 \mult@nat@firstbox=\box103
 \colbreak@box=\box104
-\mc@col@check@num=\count300
+\mc@col@check@num=\count304
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -416,57 +444,57 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count301
-\Gm@cntv=\count302
-\c@Gm@tempcnt=\count303
-\Gm@bindingoffset=\dimen177
-\Gm@wd@mp=\dimen178
-\Gm@odd@mp=\dimen179
-\Gm@even@mp=\dimen180
-\Gm@layoutwidth=\dimen181
-\Gm@layoutheight=\dimen182
-\Gm@layouthoffset=\dimen183
-\Gm@layoutvoffset=\dimen184
-\Gm@dimlist=\toks32
+\Gm@cnth=\count305
+\Gm@cntv=\count306
+\c@Gm@tempcnt=\count307
+\Gm@bindingoffset=\dimen186
+\Gm@wd@mp=\dimen187
+\Gm@odd@mp=\dimen188
+\Gm@even@mp=\dimen189
+\Gm@layoutwidth=\dimen190
+\Gm@layoutheight=\dimen191
+\Gm@layouthoffset=\dimen192
+\Gm@layoutvoffset=\dimen193
+\Gm@dimlist=\toks38
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-04-11 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count304
+\l__color_backend_stack_int=\count308
 \l__pdf_internal_box=\box105
 )
 (./fpga_guide.aux)
 \openout1 = `fpga_guide.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 \footinsdefault=\insert251
 \FN@cache251=\box106
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count305
-\scratchdimen=\dimen185
+\scratchcounter=\count309
+\scratchdimen=\dimen194
 \scratchbox=\box107
-\nofMPsegments=\count306
-\nofMParguments=\count307
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count308
-\MPscratchDim=\dimen186
-\MPnumerator=\count309
-\makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks34
+\nofMPsegments=\count310
+\nofMParguments=\count311
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count312
+\MPscratchDim=\dimen195
+\MPnumerator=\count313
+\makeMPintoPDFobject=\count314
+\everyMPtoPDFconversion=\toks40
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -505,19 +533,19 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
-1.
+3.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -526,34 +554,37 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 153.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 156.
 <open_project.png, id=15, 631.35875pt x 771.88374pt>
 File: open_project.png Graphic file (type png)
 <use open_project.png>
-Package pdftex.def Info: open_project.png  used on input line 163.
+Package pdftex.def Info: open_project.png  used on input line 167.
 (pdftex.def)             Requested size: 187.89914pt x 229.71776pt.
 <tcl_console.png, id=17, 1856.9375pt x 299.1175pt>
 File: tcl_console.png Graphic file (type png)
 <use tcl_console.png>
-Package pdftex.def Info: tcl_console.png  used on input line 173.
+Package pdftex.def Info: tcl_console.png  used on input line 177.
 (pdftex.def)             Requested size: 469.75502pt x 75.66919pt.
- [2 <./open_project.png>]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./open_project.png>]
 <sources2.png, id=25, 642.4pt x 437.635pt>
 File: sources2.png Graphic file (type png)
 <use sources2.png>
-Package pdftex.def Info: sources2.png  used on input line 244.
+Package pdftex.def Info: sources2.png  used on input line 251.
 (pdftex.def)             Requested size: 328.82707pt x 224.01894pt.
-
-[3 <./tcl_console.png>]
+ [3 <./tcl_console.png>]
 <refresh_modules2.png, id=31, 926.46124pt x 503.8825pt>
 File: refresh_modules2.png Graphic file (type png)
 <use refresh_modules2.png>
-Package pdftex.def Info: refresh_modules2.png  used on input line 266.
+Package pdftex.def Info: refresh_modules2.png  used on input line 273.
 (pdftex.def)             Requested size: 422.77664pt x 229.9435pt.
 <generate_bitstream.png, id=32, 286.06876pt x 443.6575pt>
 File: generate_bitstream.png Graphic file (type png)
 <use generate_bitstream.png>
-Package pdftex.def Info: generate_bitstream.png  used on input line 272.
+Package pdftex.def Info: generate_bitstream.png  used on input line 279.
 (pdftex.def)             Requested size: 140.92793pt x 218.56522pt.
 
 
@@ -565,7 +596,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <bitstream_complete.png, id=33, 424.58624pt x 343.2825pt>
 File: bitstream_complete.png Graphic file (type png)
 <use bitstream_complete.png>
-Package pdftex.def Info: bitstream_complete.png  used on input line 285.
+Package pdftex.def Info: bitstream_complete.png  used on input line 292.
 (pdftex.def)             Requested size: 187.89914pt x 151.91951pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -574,12 +605,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <open_target.png, id=44, 934.49126pt x 275.0275pt>
 File: open_target.png Graphic file (type png)
 <use open_target.png>
-Package pdftex.def Info: open_target.png  used on input line 329.
+Package pdftex.def Info: open_target.png  used on input line 336.
 (pdftex.def)             Requested size: 375.80544pt x 110.60075pt.
 <program_device.png, id=45, 510.40688pt x 204.765pt>
 File: program_device.png Graphic file (type png)
 <use program_device.png>
-Package pdftex.def Info: program_device.png  used on input line 340.
+Package pdftex.def Info: program_device.png  used on input line 347.
 (pdftex.def)             Requested size: 375.80544pt x 150.77383pt.
 
 
@@ -588,7 +619,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <select_bitstream.png, id=46, 459.96844pt x 243.91125pt>
 File: select_bitstream.png Graphic file (type png)
 <use select_bitstream.png>
-Package pdftex.def Info: select_bitstream.png  used on input line 361.
+Package pdftex.def Info: select_bitstream.png  used on input line 368.
 (pdftex.def)             Requested size: 375.80544pt x 199.29393pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -596,7 +627,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <ila_waveform.png, id=47, 991.45406pt x 496.10344pt>
 File: ila_waveform.png Graphic file (type png)
 <use ila_waveform.png>
-Package pdftex.def Info: ila_waveform.png  used on input line 372.
+Package pdftex.def Info: ila_waveform.png  used on input line 379.
 (pdftex.def)             Requested size: 422.77664pt x 211.54895pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -606,7 +637,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <add_sources.png, id=63, 860.21375pt x 587.19376pt>
 File: add_sources.png Graphic file (type png)
 <use add_sources.png>
-Package pdftex.def Info: add_sources.png  used on input line 503.
+Package pdftex.def Info: add_sources.png  used on input line 510.
 (pdftex.def)             Requested size: 375.80544pt x 256.52928pt.
 
 
@@ -615,12 +646,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <copy_sources.png, id=64, 866.23625pt x 592.2125pt>
 File: copy_sources.png Graphic file (type png)
 <use copy_sources.png>
-Package pdftex.def Info: copy_sources.png  used on input line 509.
+Package pdftex.def Info: copy_sources.png  used on input line 516.
 (pdftex.def)             Requested size: 375.80544pt x 256.92358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./fpga_guide.bbl [9]) [10 <./add_sources.png> <./copy_sources.png>]
+[9] (./fpga_guide.bbl [10 <./add_sources.png> <./copy_sources.png>]) [11]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./fpga_guide.aux)
@@ -630,13 +661,13 @@ L3 programming layer <2024-04-11>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7371 strings out of 474050
- 120131 string characters out of 5742263
- 1945751 words of memory out of 5000000
- 29651 multiletter control sequences out of 15000+600000
+ 7632 strings out of 474050
+ 124326 string characters out of 5742263
+ 1946751 words of memory out of 5000000
+ 29900 multiletter control sequences out of 15000+600000
  572546 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,14n,79p,247b,427s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,14n,79p,247b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></us
@@ -649,10 +680,10 @@ xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texl
 ive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on fpga_guide.pdf (10 pages, 560441 bytes).
+Output written on fpga_guide.pdf (11 pages, 563045 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
