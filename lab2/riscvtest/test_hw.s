@@ -1,4 +1,4 @@
-# RISC-V RV32I Full Instruction Test (Fixed JALR)
+# RISC-V RV32I Full Instruction Test (Lab 2 ECEN 4243)
 .section .text
 .globl _start
 
