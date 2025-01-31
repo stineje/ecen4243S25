@@ -1,0 +1,96 @@
+
+test_hw.elf:     file format elf32-littleriscv
+
+Contents of section .data:
+ 80001000 00000000                             ....            
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 9300a000 13014001 b3812000 33021140  ......@... .3..@
+ 80000010 b7020010 33f32000 b3e32000 33c42000  ....3. ... .3. .
+ 80000020 b3942000 33551100 b3551140 33a62000  .. .3U...U.@3. .
+ 80000030 b3b62000 13875000 93f73000 13e82000  .. ...P...0... .
+ 80000040 93c81000 13992000 93d92000 13da2040  ...... ... ... @
+ 80000050 971a0000 938a0afb 23a01a00 03ab0a00  ........#.......
+ 80000060 63862002 639a2000 63c82000 63d02002  c. .c. .c. .c. .
+ 80000070 63e42000 63fc2000 6f0fc000 13000000  c. .c. .o.......
+ 80000080 6f000001 130f4f00 67000f00 13000000  o.....O.g.......
+ 80000090 9308a000 73000000                    ....s...        
+
+Disassembly of section .data:
+
+80001000 <test_data>:
+test_data():
+80001000:	0000                	.insn	2, 0x
+	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <_start>:
+_start():
+80000000:	00a00093          	li	ra,10
+80000004:	01400113          	li	sp,20
+80000008:	002081b3          	add	gp,ra,sp
+8000000c:	40110233          	sub	tp,sp,ra
+80000010:	100002b7          	lui	t0,0x10000
+80000014:	0020f333          	and	t1,ra,sp
+80000018:	0020e3b3          	or	t2,ra,sp
+8000001c:	0020c433          	xor	s0,ra,sp
+80000020:	002094b3          	sll	s1,ra,sp
+80000024:	00115533          	srl	a0,sp,ra
+80000028:	401155b3          	sra	a1,sp,ra
+8000002c:	0020a633          	slt	a2,ra,sp
+80000030:	0020b6b3          	sltu	a3,ra,sp
+80000034:	00508713          	addi	a4,ra,5
+80000038:	0030f793          	andi	a5,ra,3
+8000003c:	0020e813          	ori	a6,ra,2
+80000040:	0010c893          	xori	a7,ra,1
+80000044:	00209913          	slli	s2,ra,0x2
+80000048:	0020d993          	srli	s3,ra,0x2
+8000004c:	4020da13          	srai	s4,ra,0x2
+80000050:	00001a97          	auipc	s5,0x1
+80000054:	fb0a8a93          	addi	s5,s5,-80 # 80001000 <test_data>
+80000058:	001aa023          	sw	ra,0(s5)
+8000005c:	000aab03          	lw	s6,0(s5)
+80000060:	02208663          	beq	ra,sp,8000008c <skip>
+80000064:	00209a63          	bne	ra,sp,80000078 <label>
+80000068:	0020c863          	blt	ra,sp,80000078 <label>
+8000006c:	0220d063          	bge	ra,sp,8000008c <skip>
+80000070:	0020e463          	bltu	ra,sp,80000078 <label>
+80000074:	0020fc63          	bgeu	ra,sp,8000008c <skip>
+
+80000078 <label>:
+label():
+80000078:	00c00f6f          	jal	t5,80000084 <subroutine>
+8000007c:	00000013          	nop
+80000080:	0100006f          	j	80000090 <exit>
+
+80000084 <subroutine>:
+subroutine():
+80000084:	004f0f13          	addi	t5,t5,4
+80000088:	000f0067          	jr	t5
+
+8000008c <skip>:
+skip():
+8000008c:	00000013          	nop
+
+80000090 <exit>:
+exit():
+80000090:	00a00893          	li	a7,10
+80000094:	00000073          	ecall
