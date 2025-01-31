@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  31 JAN 2025 12:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.15)  31 JAN 2025 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -526,34 +526,34 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 152.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 153.
 <open_project.png, id=15, 631.35875pt x 771.88374pt>
 File: open_project.png Graphic file (type png)
 <use open_project.png>
-Package pdftex.def Info: open_project.png  used on input line 162.
+Package pdftex.def Info: open_project.png  used on input line 163.
 (pdftex.def)             Requested size: 187.89914pt x 229.71776pt.
 <tcl_console.png, id=17, 1856.9375pt x 299.1175pt>
 File: tcl_console.png Graphic file (type png)
 <use tcl_console.png>
-Package pdftex.def Info: tcl_console.png  used on input line 172.
+Package pdftex.def Info: tcl_console.png  used on input line 173.
 (pdftex.def)             Requested size: 469.75502pt x 75.66919pt.
  [2 <./open_project.png>]
 <sources2.png, id=25, 642.4pt x 437.635pt>
 File: sources2.png Graphic file (type png)
 <use sources2.png>
-Package pdftex.def Info: sources2.png  used on input line 243.
+Package pdftex.def Info: sources2.png  used on input line 244.
 (pdftex.def)             Requested size: 328.82707pt x 224.01894pt.
 
 [3 <./tcl_console.png>]
 <refresh_modules2.png, id=31, 926.46124pt x 503.8825pt>
 File: refresh_modules2.png Graphic file (type png)
 <use refresh_modules2.png>
-Package pdftex.def Info: refresh_modules2.png  used on input line 265.
+Package pdftex.def Info: refresh_modules2.png  used on input line 266.
 (pdftex.def)             Requested size: 422.77664pt x 229.9435pt.
 <generate_bitstream.png, id=32, 286.06876pt x 443.6575pt>
 File: generate_bitstream.png Graphic file (type png)
 <use generate_bitstream.png>
-Package pdftex.def Info: generate_bitstream.png  used on input line 271.
+Package pdftex.def Info: generate_bitstream.png  used on input line 272.
 (pdftex.def)             Requested size: 140.92793pt x 218.56522pt.
 
 
@@ -565,7 +565,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <bitstream_complete.png, id=33, 424.58624pt x 343.2825pt>
 File: bitstream_complete.png Graphic file (type png)
 <use bitstream_complete.png>
-Package pdftex.def Info: bitstream_complete.png  used on input line 284.
+Package pdftex.def Info: bitstream_complete.png  used on input line 285.
 (pdftex.def)             Requested size: 187.89914pt x 151.91951pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -574,12 +574,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <open_target.png, id=44, 934.49126pt x 275.0275pt>
 File: open_target.png Graphic file (type png)
 <use open_target.png>
-Package pdftex.def Info: open_target.png  used on input line 328.
+Package pdftex.def Info: open_target.png  used on input line 329.
 (pdftex.def)             Requested size: 375.80544pt x 110.60075pt.
 <program_device.png, id=45, 510.40688pt x 204.765pt>
 File: program_device.png Graphic file (type png)
 <use program_device.png>
-Package pdftex.def Info: program_device.png  used on input line 339.
+Package pdftex.def Info: program_device.png  used on input line 340.
 (pdftex.def)             Requested size: 375.80544pt x 150.77383pt.
 
 
@@ -588,7 +588,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <select_bitstream.png, id=46, 459.96844pt x 243.91125pt>
 File: select_bitstream.png Graphic file (type png)
 <use select_bitstream.png>
-Package pdftex.def Info: select_bitstream.png  used on input line 360.
+Package pdftex.def Info: select_bitstream.png  used on input line 361.
 (pdftex.def)             Requested size: 375.80544pt x 199.29393pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -596,7 +596,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <ila_waveform.png, id=47, 991.45406pt x 496.10344pt>
 File: ila_waveform.png Graphic file (type png)
 <use ila_waveform.png>
-Package pdftex.def Info: ila_waveform.png  used on input line 371.
+Package pdftex.def Info: ila_waveform.png  used on input line 372.
 (pdftex.def)             Requested size: 422.77664pt x 211.54895pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -606,7 +606,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <add_sources.png, id=63, 860.21375pt x 587.19376pt>
 File: add_sources.png Graphic file (type png)
 <use add_sources.png>
-Package pdftex.def Info: add_sources.png  used on input line 502.
+Package pdftex.def Info: add_sources.png  used on input line 503.
 (pdftex.def)             Requested size: 375.80544pt x 256.52928pt.
 
 
@@ -615,7 +615,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <copy_sources.png, id=64, 866.23625pt x 592.2125pt>
 File: copy_sources.png Graphic file (type png)
 <use copy_sources.png>
-Package pdftex.def Info: copy_sources.png  used on input line 508.
+Package pdftex.def Info: copy_sources.png  used on input line 509.
 (pdftex.def)             Requested size: 375.80544pt x 256.92358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -649,7 +649,7 @@ xlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texl
 ive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
 e/2024/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/
 2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on fpga_guide.pdf (10 pages, 560403 bytes).
+Output written on fpga_guide.pdf (10 pages, 560441 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
