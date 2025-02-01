@@ -46,16 +46,16 @@
   \end{flushright}
 \end{center}
 
-This document will explain how to start using Xilinx Vivado to get Lab 0
+This document will explain how to start using Xilinx Vivado to get Lab~$2$
 working on the National Instrument (NI) Digital System Development
 Board's (DSDB's) FPGA~\cite{dsdb1}.  The steps listed here will also work for
 future labs with some small caveats related to connection of devices
-on the DSBB in which implementation on the FPGA will also be required.
+on the DSDB in which implementation on the FPGA will also be required.
 
 \section{DSDB FPGA : Zynq XC7Z020-1CLG484C}
 
 The DSDB has a plethora of devices on it including the main chip we
-will use this semester, the Xilinx Zynq FPGA.  The Xilinx Zynq
+will use this semester, the AMD (formerly Xilinx) Zynq FPGA.  The AMD Zynq
 XC7Z020-1CLG484C is extremely powerful sporting  $650$ MHz
 dual-core Cortex-A9 processors,  DDR3 memory controller with $8$ DMA
 channels,  high-bandwidth peripheral controllers: 1G Ethernet, SDIO,
@@ -74,7 +74,7 @@ Kintex\textsuperscript{\textregistered}-$7$ FPGA fabric.
 The PL is predominantly composed of general purpose FPGA logic fabric,
 which is composed of slices and Configurable Logic Blocks (CLBs), as
 well as Input/Output Blocks (IOBs) for interfacing 
-(i.e., these are all Xilinx-specific terms).   As explained in class,
+(i.e., these are all AMD-specific terms).   As explained in class,
 the CLBs are small, regular groupings of logic
 elements that are laid out in a two-dimensional array on the PL, and
 connected to
@@ -88,7 +88,7 @@ devices on the FPGAs are typically called System on Chip or SoC devices.
 \section{FPGA Implementation}
 
 To start using the Zynq, you will need to use the Vivado EDA toolset
-from Xilinx.  Again, just reiterating that you should have your design
+from AMD.  Again, just reiterating that you should have your design
 working completley in ModelSim simulation before you even attempt an
 implementaiton.  You are asking for failure if you decide to proceed
 without a good working simulation.
@@ -121,7 +121,7 @@ many system building blocks are exactly that — ready pieces of
 Intellectual Property (IP) that can be integrated
 into a project. Unlike older design methods, which typically cater to building systems
 entirely from the ground up, Vivado focuses instead on exploiting the pre-verified IP
-available in the Vivado libraries (i.e. cores developed by Xilinx), third party IP developers,
+available in the Vivado libraries (i.e. cores developed by AMD), third party IP developers,
 or designs by the designer. To a large extent, the focus
 of the task has shifted upwards to system integration, rather than low-level hardware
 design and the features of the Vivado Design Suite reflect this. Having said that, there is
