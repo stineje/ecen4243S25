@@ -87,48 +87,49 @@ devices on the FPGAs are typically called System on Chip or SoC devices.
 
 \section{FPGA Implementation}
 
-To start using the Zynq, you will need to use the Vivado EDA toolset
-from AMD.  Again, just reiterating that you should have your design
-working completley in ModelSim simulation before you even attempt an
-implementaiton.  You are asking for failure if you decide to proceed
-without a good working simulation.
+To begin working with the Zynq platform, you will need to use the
+Vivado Electronic Design Automation (EDA) toolset from AMD. Before
+attempting implementation, it is absolutely essential that your design
+functions correctly in Questa/ModelSim simulation. Proceeding without
+a fully validated simulation greatly increases the likelihood of
+failure.
 
-\textbf{Again, please do not begin working through these steps until
-  your ModelSim  
-  simulations are fully passing to the best of your knowledge.
-  Also, make sure you understand the process of verification using a
-  testbench with SystemVerilog as it is crucial to getting your FPGA
-  implementation working.  Fundamental issues
-  with your design will be harder to diagnose and fix if you try to do so in
-  Vivado and on the FPGA compared to using ModelSim and running
-  simulations.}
+Do not move forward with the implementation steps until your ModelSim
+simulations are fully passing to the best of your
+knowledge. Additionally, a strong grasp of verification using a
+SystemVerilog testbench is critical for ensuring a functional FPGA
+implementation. Debugging fundamental design flaws in Vivado and on
+the FPGA is significantly more challenging compared to detecting and
+resolving them within ModelSim simulations.
 
-Vivado is an extremely powerful EDA tool that can be run in ENDV 360
-laboratories.  You can also download and install it on your machines
-at home, but it probably does not benefit you much unless you want to
-learn more about it.  The Student Edition of ModelSim is the only EDA
-tool you will need on your laptop.
+Vivado is a powerful EDA tool available in the ENDV 350
+laboratories. While it can be installed on personal machines, doing so
+may not be necessary unless you wish to explore its capabilities
+further.
 
 \subsection{Vivado System Design}
 
-One of the major factors in modern systems design is the potential for design reuse and
-rapid development. Time to market is critical in many application areas, and design tools
-that accelerate the development process, crucially without compromising the robustness of
-the verification stage or quality of results, bring clear advantages.
+Modern system design emphasizes design reuse and rapid development, as
+reducing time to market is crucial in many applications. Tools that
+accelerate the development process—without compromising verification
+integrity or design quality—offer clear advantages.
 
-The Vivado design flow is based on these principles, and is built on the premise that
-many system building blocks are exactly that — ready pieces of
-Intellectual Property (IP) that can be integrated
-into a project. Unlike older design methods, which typically cater to building systems
-entirely from the ground up, Vivado focuses instead on exploiting the pre-verified IP
-available in the Vivado libraries (i.e. cores developed by AMD), third party IP developers,
-or designs by the designer. To a large extent, the focus
-of the task has shifted upwards to system integration, rather than low-level hardware
-design and the features of the Vivado Design Suite reflect this. Having said that, there is
-also the possibility of adding your own logic, which is what we we
-will be doing with our Zynq FPGA.  However, we will be using as much
-IP in the Vivado system to make sure things work correctly and
-interface to your DSDB.
+The Vivado design flow is built around these principles, leveraging
+pre-verified Intellectual Property (IP) blocks for efficient system
+integration. Unlike traditional design methodologies that require
+building systems from the ground up, Vivado prioritizes IP reuse from
+its built-in libraries, third-party vendors, and user-defined
+components. This approach shifts the primary focus toward system
+integration rather than low-level hardware design, streamlining
+development without sacrificing flexibility.
+
+That said, custom logic can still be integrated into the design, which
+is precisely what we will be doing with our Zynq FPGA. However, we
+will also leverage Vivado's IP catalog to ensure correct functionality
+and seamless integration with the DSDB (Digital System Development
+Board). This hybrid approach allows for both efficiency and
+customization, ensuring a robust and functional design.
+
 
 \section{Setting Up the Vivado Project for the First Time}
 
@@ -149,11 +150,13 @@ can called whatever you want.  Apologies in advance for any ambiguity.}.
   on the desktop.  Place the Lab 2 project folder wherever
 is convenient for you.
 
-\item Place your \verb|riscv_single.sv| file on the desktop.
+\item Place your \verb|riscv_single.sv| file on the desktop that you
+  wish to implement on the FPGA.  
 
 \textbf{It is important that both the \texttt{setup.tcl} and
 \texttt{riscv\_single.sv} files are on the desktop, as the \texttt{setup.tcl}
-script will look for files on the desktop.}
+script will look for files on the desktop.}  That is, they exist in a
+different location (i.e., the Desktop) than your \verb!lab2! Vivado project.
 
 \item Open the Vivado project by first opening Vivado and then clicking Open
   Project under Quick Start (i.e., Figure~\ref{fig:openproject}).
@@ -161,7 +164,8 @@ script will look for files on the desktop.}
   Navigate to the Lab 2 project folder
   you extracted from you Canvas zip file and select the Lab 2 project file inside
 that folder.  You may need to click \textbf{yes} to allow the project
-to be updated your version of Vivado too.
+to be updated your version of Vivado too.  AMD's Vivado utilizes a lot
+of memory space, so it may take some time to open.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{open_project}
@@ -225,7 +229,7 @@ All of these steps are automatic when you run the script and will chain into
 each other so long as no errors occur during any steps.  \textbf{Again, this is
 why you do not want to start using the FPGA until your simulation works - errors
 here take longer to find and are often more complicated to solve than if you had
-found them in your simulations in ModelSim.}  These steps might take some time to
+found them in your simulations in Questa/ModelSim.}  These steps might take some time to
 run (approximately 5 minutes) - you can view their progress in the Design Runs
 tab on Figure~\ref{fig:tclconsole}
 
