@@ -5,7 +5,7 @@ $(TARGET).objdump: $(TARGET)
 	spike $(TARGET)
     
 $(TARGET): $(TARGET).c Makefile
-	riscv64-unknown-elf-gcc -o $(TARGET) -gdwarf-2 \
+	riscv64-unknown-elf-gcc -o $(TARGET) -gdwarf-2 -O2\
 	  -march=rv64gc -mabi=lp64d -mcmodel=medany \
 	  -nostdlib -static -lm -fno-tree-loop-distribute-patterns \
 	  -Tcommon/test.ld -Icommon \
@@ -13,3 +13,5 @@ $(TARGET): $(TARGET).c Makefile
 
 clean:
 	rm -f $(TARGET) $(TARGET).objdump
+	rm -f *~
+

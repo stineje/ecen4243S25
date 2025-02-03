@@ -1,12 +1,12 @@
 
-bne-test.elf:     file format elf32-littleriscv
+lui.elf:     file format elf32-littleriscv
 
 Contents of section .riscv.attributes:
  0000 41190000 00726973 63760001 0f000000  A....riscv......
  0010 05727633 32693270 3100               .rv32i2p1.      
 Contents of section .text:
- 80000000 93051000 93000000 13011000 63942000  ............c. .
- 80000010 1303a002 73000000                    ....s...        
+ 80000000 b7523412 93828267 9308d005 13050000  .R4....g........
+ 80000010 73000000                             s...            
 
 Disassembly of section .riscv.attributes:
 
@@ -15,7 +15,7 @@ Disassembly of section .riscv.attributes:
    2:	0000                	.insn	2, 0x
    4:	7200                	.insn	2, 0x7200
    6:	7369                	.insn	2, 0x7369
-   8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
   10:	7205                	.insn	2, 0x7205
   12:	3376                	.insn	2, 0x3376
@@ -25,17 +25,10 @@ Disassembly of section .riscv.attributes:
 
 Disassembly of section .text:
 
-80000000 <__start>:
-test01():
-80000000:	00100593          	li	a1,1
-80000004:	00000093          	li	ra,0
-80000008:	00100113          	li	sp,1
-8000000c:	00209463          	bne	ra,sp,80000014 <label2_test01>
-
-80000010 <label1_test01>:
-label1_test01():
-80000010:	02a00313          	li	t1,42
-
-80000014 <label2_test01>:
-label2_test01():
-80000014:	00000073          	ecall
+80000000 <_start>:
+_start():
+80000000:	123452b7          	lui	t0,0x12345
+80000004:	67828293          	addi	t0,t0,1656 # 12345678 <_start-0x6dcba988>
+80000008:	05d00893          	li	a7,93
+8000000c:	00000513          	li	a0,0
+80000010:	00000073          	ecall
