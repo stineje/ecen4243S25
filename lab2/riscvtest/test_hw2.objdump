@@ -1,0 +1,134 @@
+
+test_hw2.elf:     file format elf32-littleriscv
+
+Contents of section .data:
+ 80001000 44332211                             D3".            
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 b7503412 93808067 37e1bc9a 130101ef  .P4....g7.......
+ 80000010 b7010100 9381f1ff 13020000 9302f000  ................
+ 80000020 33833000 b3831140 37543412 97140000  3.0....@7T4.....
+ 80000030 13855000 93a5803e 13a680c1 9326f1ff  ..P....>.....&..
+ 80000040 13b7f07f 9337017d 33a83000 b3281100  .....7.}3.0..(..
+ 80000050 33b92000 b3b95100 33fa3000 b3ea3000  3. ...Q.3.0...0.
+ 80000060 33cb3000 93fbf000 13ecf000 93ccf000  3.0.............
+ 80000070 339d4000 b3dd4100 335e4140 939e1000  3.@...A.3^A@....
+ 80000080 13df1100 935f1140 171e0000 130e8ef7  ....._.@........
+ 80000090 832e0e00 2322de01 030f0e00 834f0e00  ....#".......O..
+ 800000a0 a300ee01 83122e00 03532e00 23135e00  .........S..#.^.
+ 800000b0 63801002 63902002 63401102 63d02002  c...c. .c@..c. .
+ 800000c0 63605202 63f04202 ef034000 67844300  c`R.c.B...@.g.C.
+ 800000d0 6f008001 6f004001 6f000001 6f00c000  o...o.@.o...o...
+ 800000e0 6f008000 6f004000 6f000000           o...o.@.o...    
+
+Disassembly of section .data:
+
+80001000 <data>:
+data():
+80001000:	3344                	.insn	2, 0x3344
+80001002:	1122                	.insn	2, 0x1122
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <_start>:
+_start():
+80000000:	123450b7          	lui	ra,0x12345
+80000004:	67808093          	addi	ra,ra,1656 # 12345678 <_start-0x6dcba988>
+80000008:	9abce137          	lui	sp,0x9abce
+8000000c:	ef010113          	addi	sp,sp,-272 # 9abcdef0 <_end+0x1abcbef0>
+80000010:	000101b7          	lui	gp,0x10
+80000014:	fff18193          	addi	gp,gp,-1 # ffff <_start-0x7fff0001>
+80000018:	00000213          	li	tp,0
+8000001c:	00f00293          	li	t0,15
+80000020:	00308333          	add	t1,ra,gp
+80000024:	401183b3          	sub	t2,gp,ra
+80000028:	12345437          	lui	s0,0x12345
+8000002c:	00001497          	auipc	s1,0x1
+80000030:	00508513          	addi	a0,ra,5
+80000034:	3e80a593          	slti	a1,ra,1000
+80000038:	c180a613          	slti	a2,ra,-1000
+8000003c:	fff12693          	slti	a3,sp,-1
+80000040:	7ff0b713          	sltiu	a4,ra,2047
+80000044:	7d013793          	sltiu	a5,sp,2000
+80000048:	0030a833          	slt	a6,ra,gp
+8000004c:	001128b3          	slt	a7,sp,ra
+80000050:	0020b933          	sltu	s2,ra,sp
+80000054:	0051b9b3          	sltu	s3,gp,t0
+80000058:	0030fa33          	and	s4,ra,gp
+8000005c:	0030eab3          	or	s5,ra,gp
+80000060:	0030cb33          	xor	s6,ra,gp
+80000064:	00f0fb93          	andi	s7,ra,15
+80000068:	00f0ec13          	ori	s8,ra,15
+8000006c:	00f0cc93          	xori	s9,ra,15
+80000070:	00409d33          	sll	s10,ra,tp
+80000074:	0041ddb3          	srl	s11,gp,tp
+80000078:	40415e33          	sra	t3,sp,tp
+8000007c:	00109e93          	slli	t4,ra,0x1
+80000080:	0011df13          	srli	t5,gp,0x1
+80000084:	40115f93          	srai	t6,sp,0x1
+80000088:	00001e17          	auipc	t3,0x1
+8000008c:	f78e0e13          	addi	t3,t3,-136 # 80001000 <data>
+80000090:	000e2e83          	lw	t4,0(t3)
+80000094:	01de2223          	sw	t4,4(t3)
+80000098:	000e0f03          	lb	t5,0(t3)
+8000009c:	000e4f83          	lbu	t6,0(t3)
+800000a0:	01ee00a3          	sb	t5,1(t3)
+800000a4:	002e1283          	lh	t0,2(t3)
+800000a8:	002e5303          	lhu	t1,2(t3)
+800000ac:	005e1323          	sh	t0,6(t3)
+800000b0:	02108063          	beq	ra,ra,800000d0 <label1>
+800000b4:	02209063          	bne	ra,sp,800000d4 <label2>
+800000b8:	02114063          	blt	sp,ra,800000d8 <label3>
+800000bc:	0220d063          	bge	ra,sp,800000dc <label4>
+800000c0:	02526063          	bltu	tp,t0,800000e0 <label5>
+800000c4:	0242f063          	bgeu	t0,tp,800000e4 <label6>
+800000c8:	004003ef          	jal	t2,800000cc <jump_target>
+
+800000cc <jump_target>:
+jump_target():
+800000cc:	00438467          	jalr	s0,4(t2)
+
+800000d0 <label1>:
+label1():
+800000d0:	0180006f          	j	800000e8 <end>
+
+800000d4 <label2>:
+label2():
+800000d4:	0140006f          	j	800000e8 <end>
+
+800000d8 <label3>:
+label3():
+800000d8:	0100006f          	j	800000e8 <end>
+
+800000dc <label4>:
+label4():
+800000dc:	00c0006f          	j	800000e8 <end>
+
+800000e0 <label5>:
+label5():
+800000e0:	0080006f          	j	800000e8 <end>
+
+800000e4 <label6>:
+label6():
+800000e4:	0040006f          	j	800000e8 <end>
+
+800000e8 <end>:
+end():
+800000e8:	0000006f          	j	800000e8 <end>

@@ -2,12 +2,12 @@ CC      = riscv64-unknown-elf-gcc
 CFLAGS  = -march=rv32i -mabi=ilp32 -mcmodel=medany -nostartfiles -Tlink.ld 
 OBJDUMP = riscv64-unknown-elf-objdump
 ELF2HEX = riscv64-unknown-elf-elf2hex
-SRCS    = $(wildcard *.s)
-PROGS 	= $(patsubst %.s,%,$(SRCS))
+SRCS    = $(wildcard *.S)
+PROGS 	= $(patsubst %.S,%,$(SRCS))
 
 all:		$(PROGS)
 
-%:		%.s	
+%:		%.S	
 		$(CC) $(CFLAGS) -o $@.elf $<
 		$(OBJDUMP) -Dls $@.elf > $@.objdump
 		$(ELF2HEX) --bit-width 32 --input $@.elf --output $@.memfile

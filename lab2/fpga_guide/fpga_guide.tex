@@ -3,6 +3,8 @@
 
 \usepackage{bigfoot}
 \usepackage{secdot}
+\usepackage{soul}
+\usepackage{xcolor}
 \usepackage{epsfig}
 \usepackage[T1]{fontenc}
 \usepackage{epstopdf}
@@ -26,13 +28,13 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\thepage/\pageref{LastPage}}
-\lhead{OSU ECEN 4243 - Computer Architecture - Spring 2023}
+\lhead{OSU ECEN 4243 - Computer Architecture - Spring 2025}
 \rfoot{\LaTeX}
 
 % ----- Identifying Information -----------------------------------------------
 \newcommand{\myassignment}{Using Vivado and the DSDB FPGA}
 \newcommand{\myinstructor}{Instructor: Alex Underwood/James E. Stine, Jr.}
-\newcommand{\mytas}{TAs: Ross Thompson \\ Ryan Swann \\ Brett Mathis}
+\newcommand{\mytas}{TAs: Jacob Pease/Thomas Kidd}
 % -----------------------------------------------------------------------------
 
 \begin{document}
@@ -44,16 +46,16 @@
   \end{flushright}
 \end{center}
 
-This document will explain how to start using Xilinx Vivado to get Lab 0
+This document will explain how to start using Xilinx Vivado to get Lab~$2$
 working on the National Instrument (NI) Digital System Development
 Board's (DSDB's) FPGA~\cite{dsdb1}.  The steps listed here will also work for
 future labs with some small caveats related to connection of devices
-on the DSBB in which implementation on the FPGA will also be required.
+on the DSDB in which implementation on the FPGA will also be required.
 
 \section{DSDB FPGA : Zynq XC7Z020-1CLG484C}
 
 The DSDB has a plethora of devices on it including the main chip we
-will use this semester, the Xilinx Zynq FPGA.  The Xilinx Zynq
+will use this semester, the AMD (formerly Xilinx) Zynq FPGA.  The AMD Zynq
 XC7Z020-1CLG484C is extremely powerful sporting  $650$ MHz
 dual-core Cortex-A9 processors,  DDR3 memory controller with $8$ DMA
 channels,  high-bandwidth peripheral controllers: 1G Ethernet, SDIO,
@@ -72,7 +74,7 @@ Kintex\textsuperscript{\textregistered}-$7$ FPGA fabric.
 The PL is predominantly composed of general purpose FPGA logic fabric,
 which is composed of slices and Configurable Logic Blocks (CLBs), as
 well as Input/Output Blocks (IOBs) for interfacing 
-(i.e., these are all Xilinx-specific terms).   As explained in class,
+(i.e., these are all AMD-specific terms).   As explained in class,
 the CLBs are small, regular groupings of logic
 elements that are laid out in a two-dimensional array on the PL, and
 connected to
@@ -85,56 +87,58 @@ devices on the FPGAs are typically called System on Chip or SoC devices.
 
 \section{FPGA Implementation}
 
-To start using the Zynq, you will need to use the Vivado EDA toolset
-from Xilinx.  Again, just reiterating that you should have your design
-working completley in ModelSim simulation before you even attempt an
-implementaiton.  You are asking for failure if you decide to proceed
-without a good working simulation.
+To begin working with the Zynq platform, you will need to use the
+Vivado Electronic Design Automation (EDA) toolset from AMD. Before
+attempting implementation, it is absolutely essential that your design
+functions correctly in Questa/ModelSim simulation. Proceeding without
+a fully validated simulation greatly increases the likelihood of
+failure.
 
-\textbf{Again, please do not begin working through these steps until
-  your ModelSim  
-  simulations are fully passing to the best of your knowledge.
-  Also, make sure you understand the process of verification using a
-  testbench with SystemVerilog as it is crucial to getting your FPGA
-  implementation working.  Fundamental issues
-  with your design will be harder to diagnose and fix if you try to do so in
-  Vivado and on the FPGA compared to using ModelSim and running
-  simulations.}
+Do not move forward with the implementation steps until your ModelSim
+simulations are fully passing to the best of your
+knowledge. Additionally, a strong grasp of verification using a
+SystemVerilog testbench is critical for ensuring a functional FPGA
+implementation. Debugging fundamental design flaws in Vivado and on
+the FPGA is significantly more challenging compared to detecting and
+resolving them within ModelSim simulations.
 
-Vivado is an extremely powerful EDA tool that can be run in ENDV 360
-laboratories.  You can also download and install it on your machines
-at home, but it probably does not benefit you much unless you want to
-learn more about it.  The Student Edition of ModelSim is the only EDA
-tool you will need on your laptop.
+Vivado is a powerful EDA tool available in the ENDV 350
+laboratories. While it can be installed on personal machines, doing so
+may not be necessary unless you wish to explore its capabilities
+further.
 
 \subsection{Vivado System Design}
 
-One of the major factors in modern systems design is the potential for design reuse and
-rapid development. Time to market is critical in many application areas, and design tools
-that accelerate the development process, crucially without compromising the robustness of
-the verification stage or quality of results, bring clear advantages.
+Modern system design emphasizes design reuse and rapid development, as
+reducing time to market is crucial in many applications. Tools that
+accelerate the development process—without compromising verification
+integrity or design quality—offer clear advantages.
 
-The Vivado design flow is based on these principles, and is built on the premise that
-many system building blocks are exactly that — ready pieces of
-Intellectual Property (IP) that can be integrated
-into a project. Unlike older design methods, which typically cater to building systems
-entirely from the ground up, Vivado focuses instead on exploiting the pre-verified IP
-available in the Vivado libraries (i.e. cores developed by Xilinx), third party IP developers,
-or designs by the designer. To a large extent, the focus
-of the task has shifted upwards to system integration, rather than low-level hardware
-design and the features of the Vivado Design Suite reflect this. Having said that, there is
-also the possibility of adding your own logic, which is what we we
-will be doing with our Zynq FPGA.  However, we will be using as much
-IP in the Vivado system to make sure things work correctly and
-interface to your DSDB.
+The Vivado design flow is built around these principles, leveraging
+pre-verified Intellectual Property (IP) blocks for efficient system
+integration. Unlike traditional design methodologies that require
+building systems from the ground up, Vivado prioritizes IP reuse from
+its built-in libraries, third-party vendors, and user-defined
+components. This approach shifts the primary focus toward system
+integration rather than low-level hardware design, streamlining
+development without sacrificing flexibility.
+
+That said, custom logic can still be integrated into the design, which
+is precisely what we will be doing with our Zynq FPGA. However, we
+will also leverage Vivado's IP catalog to ensure correct functionality
+and seamless integration with the DSDB (Digital System Development
+Board). This hybrid approach allows for both efficiency and
+customization, ensuring a robust and functional design.
+
 
 \section{Setting Up the Vivado Project for the First Time}
 
-There is a `Getting Started' zip file on Canvas that contains a pre-made Vivado
-project and a \verb|setup.tcl| script that we will use to quickly set up the
-project so you can see your ARM single cycle processor in action.  The default
+There is a \verb!lab2! project that contains a pre-made Vivado
+project in the repository.  There is also a \verb|setup.tcl| script in the \verb!scripts! directory
+that we will use to quickly set up the
+project so you can see your RISC-V single cycle processor in action.  The default
 program that the project is set to load into your processor is the 
-\verb|memfile.dat| program, but you can change that later~\footnote{I
+\verb|memfile.dat| program, but you need to change that later~\footnote{I
 am calling the output of our compiling process that generates the
 \verb!.memfile! the \verb!memfile.dat!.  They are all ASCII files and
 can called whatever you want.  Apologies in advance for any ambiguity.}.
@@ -142,21 +146,26 @@ can called whatever you want.  Apologies in advance for any ambiguity.}.
 \begin{enumerate}
 \item Download the repository from GitHub and your Vivado project
   should be inside the \verb|lab2/lab2| subdirectory.  Place the
-  \verb|setup.tcl| file on the desktop.  Place the Lab 2 project folder wherever
+  \verb|setup.tcl| file from the \verb!scripts! subdirectory of your lab2 repository
+  on the desktop.  Place the Lab 2 project folder wherever
 is convenient for you.
 
-\item Place your \verb|riscv_single.sv| file on the desktop.
+\item Place your \verb|riscv_single.sv| file on the desktop that you
+  wish to implement on the FPGA.  
 
 \textbf{It is important that both the \texttt{setup.tcl} and
 \texttt{riscv\_single.sv} files are on the desktop, as the \texttt{setup.tcl}
-script will look for files on the desktop.}
+script will look for files on the desktop.}  That is, they exist in a
+different location (i.e., the Desktop) than your \verb!lab2! Vivado project.
 
 \item Open the Vivado project by first opening Vivado and then clicking Open
   Project under Quick Start (i.e., Figure~\ref{fig:openproject}).
   The Vivado project should be available in your lab2 repository directory.
   Navigate to the Lab 2 project folder
   you extracted from you Canvas zip file and select the Lab 2 project file inside
-that folder.
+that folder.  You may need to click \textbf{yes} to allow the project
+to be updated your version of Vivado too.  AMD's Vivado utilizes a lot
+of memory space, so it may take some time to open.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.4\linewidth]{open_project}
@@ -192,7 +201,10 @@ folder.  Your goal here is to navigate to the desktop where we put the
 
 \verb|source setup.tcl|
 
-\verb|source| is the command used in Tcl to run a script stored in a file. This
+\verb|source| is the command used in Tcl to run a script stored in a file.
+\hl{Note: you only need to do this once.  If you start over
+  or find a bug, you will need to
+  restart this process at Step~$1$.}  This
 script will do the following things:
 \begin{itemize}
 \item Search your desktop for the \verb|top_module.sv| file and copy that
@@ -217,7 +229,7 @@ All of these steps are automatic when you run the script and will chain into
 each other so long as no errors occur during any steps.  \textbf{Again, this is
 why you do not want to start using the FPGA until your simulation works - errors
 here take longer to find and are often more complicated to solve than if you had
-found them in your simulations in ModelSim.}  These steps might take some time to
+found them in your simulations in Questa/ModelSim.}  These steps might take some time to
 run (approximately 5 minutes) - you can view their progress in the Design Runs
 tab on Figure~\ref{fig:tclconsole}
 
@@ -450,7 +462,7 @@ like that of the DSDB.
 By default, the project from Canvas will load the \verb|memfile.dat| program.
 Once you've successfully run that program on your own RISC-V core on the FPGA, you
 should try running some other programs and see what results you get and how they
-compare.  The project comes with \verb|memfile.dat| and \verb|fib.s| 
+compare.  The project comes with \verb|memfile.dat| and \verb|test_hw.s| 
 pre-added, making it fairly easy to swap between the two programs.  If you want
 to run your own programs, you can do that as well but the section after this one
 will cover how to add those files to the project so Vivado knows where to look
@@ -509,12 +521,19 @@ action using the debug information.
   \caption{Open Hardware Target}
   \label{fig:copysources}
 \end{figure}
-You can run your own programs on your RISC-V core as well.  To do this, you will
+You can run your own programs on your RISC-V core, as well.  To do this, you will
 need to import the \verb|.dat| file for the program into your Vivado project,
 then follow the steps in the previous section on Changing the Program the RISC-V
 Core will run to change which program will be loaded into the instruction
 memory.  Right now, the instruction memory is hard-coded into the FPGA
 within the Block RAM.
+
+Make sure you test your hardware with \verb!test_hw.s! in the
+\verb!risvtest! subdirectory of the repository.  You should be able to
+compare the state of the hardware compared to what you get with
+\verb!spike!.  To test with spike, you can type:
+\verb!spike --isa=rv32i -d test_hw.elf!.  To get full credit for this
+lab, the state of your hardware should match.
 
 \begin{enumerate}
 \item Click Add Sources under the Project Manager heading on the left panel

@@ -1,0 +1,110 @@
+
+test_hw.elf:     file format elf32-littleriscv
+
+Contents of section .data:
+ 80001000 00000000                             ....            
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 b7503412 93808067 37e1bc9a 130101ef  .P4....g7.......
+ 80000010 b3812000 33021140 b7020010 17030000  .. .3..@........
+ 80000020 b3f32000 33e42000 b3c42000 13953000  .. .3. ... ...0.
+ 80000030 93554100 13564140 b3a62000 33371100  .UA..VA@.. .37..
+ 80000040 93f7f000 13e8000f 93c8a00a 13992000  .............. .
+ 80000050 93d91000 13da1040 971a0000 938a8afa  .......@........
+ 80000060 23a01a00 03ab0a00 23821a00 838b4a00  #.......#.....J.
+ 80000070 03cc4a00 23931a00 839c6a00 638c2002  ..J.#.....j.c. .
+ 80000080 639a2000 63c82000 63d62002 63e42000  c. .c. .c. .c. .
+ 80000090 63f22002 6f0fc000 13000000 6f00c001  c. .o.......o...
+ 800000a0 170e0000 130e0e01 e70e0e00 130f4f00  ..............O.
+ 800000b0 67000f00 13000000 6f000000           g.......o...    
+
+Disassembly of section .data:
+
+80001000 <test_data>:
+test_data():
+80001000:	0000                	.insn	2, 0x
+	...
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <_start>:
+_start():
+80000000:	123450b7          	lui	ra,0x12345
+80000004:	67808093          	addi	ra,ra,1656 # 12345678 <_start-0x6dcba988>
+80000008:	9abce137          	lui	sp,0x9abce
+8000000c:	ef010113          	addi	sp,sp,-272 # 9abcdef0 <_end+0x1abcbef0>
+80000010:	002081b3          	add	gp,ra,sp
+80000014:	40110233          	sub	tp,sp,ra
+80000018:	100002b7          	lui	t0,0x10000
+8000001c:	00000317          	auipc	t1,0x0
+80000020:	0020f3b3          	and	t2,ra,sp
+80000024:	0020e433          	or	s0,ra,sp
+80000028:	0020c4b3          	xor	s1,ra,sp
+8000002c:	00309513          	slli	a0,ra,0x3
+80000030:	00415593          	srli	a1,sp,0x4
+80000034:	40415613          	srai	a2,sp,0x4
+80000038:	0020a6b3          	slt	a3,ra,sp
+8000003c:	00113733          	sltu	a4,sp,ra
+80000040:	00f0f793          	andi	a5,ra,15
+80000044:	0f00e813          	ori	a6,ra,240
+80000048:	0aa0c893          	xori	a7,ra,170
+8000004c:	00209913          	slli	s2,ra,0x2
+80000050:	0010d993          	srli	s3,ra,0x1
+80000054:	4010da13          	srai	s4,ra,0x1
+80000058:	00001a97          	auipc	s5,0x1
+8000005c:	fa8a8a93          	addi	s5,s5,-88 # 80001000 <test_data>
+80000060:	001aa023          	sw	ra,0(s5)
+80000064:	000aab03          	lw	s6,0(s5)
+80000068:	001a8223          	sb	ra,4(s5)
+8000006c:	004a8b83          	lb	s7,4(s5)
+80000070:	004acc03          	lbu	s8,4(s5)
+80000074:	001a9323          	sh	ra,6(s5)
+80000078:	006a9c83          	lh	s9,6(s5)
+8000007c:	02208c63          	beq	ra,sp,800000b4 <skip>
+80000080:	00209a63          	bne	ra,sp,80000094 <label>
+80000084:	0020c863          	blt	ra,sp,80000094 <label>
+80000088:	0220d663          	bge	ra,sp,800000b4 <skip>
+8000008c:	0020e463          	bltu	ra,sp,80000094 <label>
+80000090:	0220f263          	bgeu	ra,sp,800000b4 <skip>
+
+80000094 <label>:
+label():
+80000094:	00c00f6f          	jal	t5,800000a0 <subroutine>
+80000098:	00000013          	nop
+8000009c:	01c0006f          	j	800000b8 <exit>
+
+800000a0 <subroutine>:
+subroutine():
+800000a0:	00000e17          	auipc	t3,0x0
+800000a4:	010e0e13          	addi	t3,t3,16 # 800000b0 <return_point>
+800000a8:	000e0ee7          	jalr	t4,t3
+800000ac:	004f0f13          	addi	t5,t5,4
+
+800000b0 <return_point>:
+return_point():
+800000b0:	000f0067          	jr	t5
+
+800000b4 <skip>:
+skip():
+800000b4:	00000013          	nop
+
+800000b8 <exit>:
+exit():
+800000b8:	0000006f          	j	800000b8 <exit>
