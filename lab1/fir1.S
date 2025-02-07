@@ -7,7 +7,7 @@
 // a3: n
 // a4: m
 
-// t0: &y[n-m] to check termination of j loop
+// t0: &y[n-m+1] to check termination of j loop
 // t1: &c[m] to check termination of i loop
 // t2: &x[j+m-1]
 // t3: sum
