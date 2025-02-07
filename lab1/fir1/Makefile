@@ -9,7 +9,7 @@ $(TARGET): $(TARGET).c Makefile
 	  -march=rv64gc -mabi=lp64d -mcmodel=medany \
 	  -nostdlib -static -lm -fno-tree-loop-distribute-patterns \
 	  -Tcommon/test.ld -Icommon/ \
-	  $(TARGET).c $(TAREGET).S common/crt.S common/syscalls.c
+	  $(TARGET).c common/crt.S common/syscalls.c
 
 clean:
 	rm -f $(TARGET) $(TARGET).objdump
