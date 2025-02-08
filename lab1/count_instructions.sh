@@ -2,6 +2,9 @@
 
 # Usage: ./count_instructions.sh file.S
 
+# James Stine james.stine@okstate.edu 8 Feb 2025
+# Counts number of instructions in RISC-V assembly file
+
 if [ -z "$1" ]; then
     echo "Usage: $0 <riscv_assembly_file>"
     exit 1
