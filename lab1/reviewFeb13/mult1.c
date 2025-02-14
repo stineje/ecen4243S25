@@ -9,7 +9,6 @@ int mul_q31(int a, int b) {
 
 void mult(int t1[], int temp[], int n) {
   int i;
-  // 4F1BBCDD is the Golden Ratio (\sqrt(5)-1)/2)
   for (i=0; i<n; i++) 
     temp[i] = t1[i] << 7;
 
