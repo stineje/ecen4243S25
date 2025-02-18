@@ -1,0 +1,36 @@
+
+xor-test.elf:     file format elf32-littleriscv
+
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 b7a2a5a5 9382525a 37635a5a 1303a3a5  ......RZ7cZZ....
+ 80000010 b3c36200 130ef0ff b38ec341           ..b........A    
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <__start>:
+__start():
+80000000:	a5a5a2b7          	lui	t0,0xa5a5a
+80000004:	5a528293          	addi	t0,t0,1445 # a5a5a5a5 <_end+0x25a595a5>
+80000008:	5a5a6337          	lui	t1,0x5a5a6
+8000000c:	a5a30313          	addi	t1,t1,-1446 # 5a5a5a5a <__start-0x25a5a5a6>
+80000010:	0062c3b3          	xor	t2,t0,t1
+80000014:	fff00e13          	li	t3,-1
+80000018:	41c38eb3          	sub	t4,t2,t3
