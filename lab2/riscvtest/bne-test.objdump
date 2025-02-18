@@ -6,7 +6,7 @@ Contents of section .riscv.attributes:
  0010 05727633 32693270 3100               .rv32i2p1.      
 Contents of section .text:
  80000000 93051000 93000000 13011000 63942000  ............c. .
- 80000010 1303a002 73000000                    ....s...        
+ 80000010 1303a002 13030000                    ........        
 
 Disassembly of section .riscv.attributes:
 
@@ -38,4 +38,4 @@ label1_test01():
 
 80000014 <label2_test01>:
 label2_test01():
-80000014:	00000073          	ecall
+80000014:	00000313          	li	t1,0
