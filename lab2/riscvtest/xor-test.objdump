@@ -5,8 +5,8 @@ Contents of section .riscv.attributes:
  0000 41190000 00726973 63760001 0f000000  A....riscv......
  0010 05727633 32693270 3100               .rv32i2p1.      
 Contents of section .text:
- 80000000 b7a2a5a5 9382525a 37635a5a 1303a3a5  ......RZ7cZZ....
- 80000010 b3c36200 130ef0ff b38ec341           ..b........A    
+ 80000000 9302f0ff 13030000 b3c36200 130ef0ff  ..........b.....
+ 80000010 b38ec341                             ...A            
 
 Disassembly of section .riscv.attributes:
 
@@ -27,10 +27,8 @@ Disassembly of section .text:
 
 80000000 <__start>:
 __start():
-80000000:	a5a5a2b7          	lui	t0,0xa5a5a
-80000004:	5a528293          	addi	t0,t0,1445 # a5a5a5a5 <_end+0x25a595a5>
-80000008:	5a5a6337          	lui	t1,0x5a5a6
-8000000c:	a5a30313          	addi	t1,t1,-1446 # 5a5a5a5a <__start-0x25a5a5a6>
-80000010:	0062c3b3          	xor	t2,t0,t1
-80000014:	fff00e13          	li	t3,-1
-80000018:	41c38eb3          	sub	t4,t2,t3
+80000000:	fff00293          	li	t0,-1
+80000004:	00000313          	li	t1,0
+80000008:	0062c3b3          	xor	t2,t0,t1
+8000000c:	fff00e13          	li	t3,-1
+80000010:	41c38eb3          	sub	t4,t2,t3
