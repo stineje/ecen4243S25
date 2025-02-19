@@ -1,12 +1,12 @@
 
-lui.elf:     file format elf32-littleriscv
+xori-test.elf:     file format elf32-littleriscv
 
 Contents of section .riscv.attributes:
  0000 41190000 00726973 63760001 0f000000  A....riscv......
  0010 05727633 32693270 3100               .rv32i2p1.      
 Contents of section .text:
- 80000000 b7523412 93828267 9308d005 13050000  .R4....g........
- 80000010 73000000                             s...            
+ 80000000 9302f0ff 13037000 b3826200 33836240  ......p...b.3.b@
+ 80000010 93c3f200 13cef300 33055e40           ........3.^@    
 
 Disassembly of section .riscv.attributes:
 
@@ -15,7 +15,7 @@ Disassembly of section .riscv.attributes:
    2:	0000                	.insn	2, 0x
    4:	7200                	.insn	2, 0x7200
    6:	7369                	.insn	2, 0x7369
-   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
+   8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
    c:	0000000f          	fence	unknown,unknown
   10:	7205                	.insn	2, 0x7205
   12:	3376                	.insn	2, 0x3376
@@ -25,10 +25,12 @@ Disassembly of section .riscv.attributes:
 
 Disassembly of section .text:
 
-80000000 <_start>:
-_start():
-80000000:	123452b7          	lui	t0,0x12345
-80000004:	67828293          	addi	t0,t0,1656 # 12345678 <_start-0x6dcba988>
-80000008:	05d00893          	li	a7,93
-8000000c:	00000513          	li	a0,0
-80000010:	00000073          	ecall
+80000000 <__start>:
+__start():
+80000000:	fff00293          	li	t0,-1
+80000004:	00700313          	li	t1,7
+80000008:	006282b3          	add	t0,t0,t1
+8000000c:	40628333          	sub	t1,t0,t1
+80000010:	00f2c393          	xori	t2,t0,15
+80000014:	00f3ce13          	xori	t3,t2,15
+80000018:	405e0533          	sub	a0,t3,t0

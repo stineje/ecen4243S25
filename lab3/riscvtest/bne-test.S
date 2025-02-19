@@ -16,5 +16,7 @@ test01:
 label1_test01:
   li t1, 0x0000002a
 label2_test01:
-  ecall
+  li t1, 0x0
+
+	
 
