@@ -9,7 +9,7 @@
 
 // Add two Q1.31 fixed point numbers
 int add_q31(int a, int b) {
-return a + b;
+  return a+b;
 }
 
 // Multiplly two Q1.31 fixed point numbers
@@ -17,7 +17,7 @@ int mul_q31(int a, int b) {
   long res = (long)a * (long)b;
     int result = res >> 31; // shift right to get the 32-bit result; 
         //this is equivalent to shifting left by 1 and discarding the bottom 32 bits
-    //printf("mul_q31: a = %x, b = %x, res = %lx, result = %x\n", a, b, res, result);
+    // printf("mul_q31: a = %x, b = %x, res = %lx, result = %x\n", a, b, res, result);
     return result; 
 }
 
@@ -32,7 +32,7 @@ void fir(int x[], int c[], int y[], int n, int m) {
         for (i=0; i<m; i++) 
             y[j] = add_q31(y[j], mul_q31(c[i], x[j-i+(m-1)]));
     }
-}
+} 
 
 int main(void) {
     int32_t sin_table[20] = { // in Q1.31 format
