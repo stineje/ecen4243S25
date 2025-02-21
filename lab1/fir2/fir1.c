@@ -1,8 +1,18 @@
 #include <stdio.h>  // supports printf
 #include "util.h"   // supports verify
 
+<<<<<<< Updated upstream
 extern void fir();
 
+=======
+// Add for passing to assembly (will discuss in class)
+// Passing values from C to assembly in RISC-V using extern follows the
+// standard RISC-V calling convention, where function arguments are passed
+// in registers a0–a7 and return values are stored in a0.
+extern void fir();
+
+
+>>>>>>> Stashed changes
 
 int main(void) {
     int32_t sin_table[20] = { // in Q1.31 format
