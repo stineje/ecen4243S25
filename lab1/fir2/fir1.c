@@ -1,10 +1,8 @@
 #include <stdio.h>  // supports printf
-#include "util.h"   // supports verify
-
-<<<<<<< Updated upstream
+#include "util.h"   // supports verify  Updated upstream
 extern void fir();
 
-=======
+
 // Add for passing to assembly (will discuss in class)
 // Passing values from C to assembly in RISC-V using extern follows the
 // standard RISC-V calling convention, where function arguments are passed
@@ -12,7 +10,7 @@ extern void fir();
 extern void fir();
 
 
->>>>>>> Stashed changes
+ Stashed changes
 
 int main(void) {
     int32_t sin_table[20] = { // in Q1.31 format
