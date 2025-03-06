@@ -14,12 +14,7 @@ Due: 3/10
 
 Lab 3
 Assigned 3/10
-Due: 3/31
-
-// May table 
-//Lab 4
-//Assigned 3/24
-//Due: 4/7
+Due: 4/7
 
 Project
 Assigned: 4/7
