@@ -8,7 +8,7 @@ to see the DDCA textbook by S. L. Harris and D. Harris.
 
 You can compile the test program in the riscvtest directory by typing
 make.  If you run the riscvtest.memfile simulation through the
-riscvsingle.do DO file and if successful, it should write the value 25
+riscv_single.do DO file and if successful, it should write the value 25
 to address 100 and print "Simulation Succeeded" to your transcript window
 
 
