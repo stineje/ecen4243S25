@@ -1,21 +1,21 @@
-// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
-// of Xilinx, Inc. and is protected under U.S. and
-// international copyright and other intellectual property
-// laws.
+// of AMD and is protected under U.S. and international copyright
+// and other intellectual property laws.
 // 
 // DISCLAIMER
 // This disclaimer is not a license and does not grant any
 // rights to the materials distributed herewith. Except as
 // otherwise provided in a valid license issued to you by
-// Xilinx, and to the maximum extent permitted by applicable
+// AMD, and to the maximum extent permitted by applicable
 // law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 // AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 // BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 // INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-// (2) Xilinx shall not be liable (whether in contract or tort,
+// (2) AMD shall not be liable (whether in contract or tort,
 // including negligence, or under any other theory of
 // liability) for any loss or damage of any kind or nature
 // related to, arising under or in connection with these
@@ -24,11 +24,11 @@
 // (including loss of data, profits, goodwill, or any type of
 // loss or damage suffered as a result of any action brought
 // by a third party) even if such damage or loss was
-// reasonably foreseeable or Xilinx had been advised of the
+// reasonably foreseeable or AMD had been advised of the
 // possibility of the same.
 // 
 // CRITICAL APPLICATIONS
-// Xilinx products are not designed or intended to be fail-
+// AMD products are not designed or intended to be fail-
 // safe, or for use in any application requiring fail-safe
 // performance, such as life-support or safety devices or
 // systems, Class III medical devices, nuclear facilities,
@@ -37,7 +37,7 @@
 // injury, or severe property or environmental damage
 // (individually and collectively, "Critical
 // Applications"). Customer assumes the sole risk and
-// liability of any use of Xilinx products in Critical
+// liability of any use of AMD products in Critical
 // Applications, subject only to applicable laws and
 // regulations governing limitations on product liability.
 // 
@@ -53,7 +53,6 @@
 //
 //   Vivado Simulator (XSim)
 //   Cadence Xcelium Simulator
-//   Aldec Riviera-PRO Simulator
 //
 //------------------------------------------------------------------------------------
 `timescale 1ps/1ps
@@ -156,92 +155,6 @@ endmodule
 module design_1_axi_smc_0 (aclk,aresetn,S00_AXI_awid,S00_AXI_awaddr,S00_AXI_awlen,S00_AXI_awsize,S00_AXI_awburst,S00_AXI_awlock,S00_AXI_awcache,S00_AXI_awprot,S00_AXI_awqos,S00_AXI_awuser,S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wdata,S00_AXI_wstrb,S00_AXI_wlast,S00_AXI_wuser,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid,S00_AXI_bresp,S00_AXI_buser,S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_aruser,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_ruser,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awuser,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_buser,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_aruser,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
 (* integer foreign = "SystemC";
 *);
-  input bit aclk;
-  input bit aresetn;
-  input bit [0 : 0] S00_AXI_awid;
-  input bit [31 : 0] S00_AXI_awaddr;
-  input bit [7 : 0] S00_AXI_awlen;
-  input bit [2 : 0] S00_AXI_awsize;
-  input bit [1 : 0] S00_AXI_awburst;
-  input bit [0 : 0] S00_AXI_awlock;
-  input bit [3 : 0] S00_AXI_awcache;
-  input bit [2 : 0] S00_AXI_awprot;
-  input bit [3 : 0] S00_AXI_awqos;
-  input bit [0 : 0] S00_AXI_awuser;
-  input bit S00_AXI_awvalid;
-  output wire S00_AXI_awready;
-  input bit [31 : 0] S00_AXI_wdata;
-  input bit [3 : 0] S00_AXI_wstrb;
-  input bit S00_AXI_wlast;
-  input bit [31 : 0] S00_AXI_wuser;
-  input bit S00_AXI_wvalid;
-  output wire S00_AXI_wready;
-  output wire [0 : 0] S00_AXI_bid;
-  output wire [1 : 0] S00_AXI_bresp;
-  output wire [0 : 0] S00_AXI_buser;
-  output wire S00_AXI_bvalid;
-  input bit S00_AXI_bready;
-  input bit [0 : 0] S00_AXI_arid;
-  input bit [31 : 0] S00_AXI_araddr;
-  input bit [7 : 0] S00_AXI_arlen;
-  input bit [2 : 0] S00_AXI_arsize;
-  input bit [1 : 0] S00_AXI_arburst;
-  input bit [0 : 0] S00_AXI_arlock;
-  input bit [3 : 0] S00_AXI_arcache;
-  input bit [2 : 0] S00_AXI_arprot;
-  input bit [3 : 0] S00_AXI_arqos;
-  input bit [0 : 0] S00_AXI_aruser;
-  input bit S00_AXI_arvalid;
-  output wire S00_AXI_arready;
-  output wire [0 : 0] S00_AXI_rid;
-  output wire [31 : 0] S00_AXI_rdata;
-  output wire [1 : 0] S00_AXI_rresp;
-  output wire S00_AXI_rlast;
-  output wire [31 : 0] S00_AXI_ruser;
-  output wire S00_AXI_rvalid;
-  input bit S00_AXI_rready;
-  output wire [31 : 0] M00_AXI_awaddr;
-  output wire [3 : 0] M00_AXI_awlen;
-  output wire [2 : 0] M00_AXI_awsize;
-  output wire [1 : 0] M00_AXI_awburst;
-  output wire [1 : 0] M00_AXI_awlock;
-  output wire [3 : 0] M00_AXI_awcache;
-  output wire [2 : 0] M00_AXI_awprot;
-  output wire [3 : 0] M00_AXI_awqos;
-  output wire [0 : 0] M00_AXI_awuser;
-  output wire M00_AXI_awvalid;
-  input bit M00_AXI_awready;
-  output wire [63 : 0] M00_AXI_wdata;
-  output wire [7 : 0] M00_AXI_wstrb;
-  output wire M00_AXI_wlast;
-  output wire M00_AXI_wvalid;
-  input bit M00_AXI_wready;
-  input bit [1 : 0] M00_AXI_bresp;
-  input bit [0 : 0] M00_AXI_buser;
-  input bit M00_AXI_bvalid;
-  output wire M00_AXI_bready;
-  output wire [31 : 0] M00_AXI_araddr;
-  output wire [3 : 0] M00_AXI_arlen;
-  output wire [2 : 0] M00_AXI_arsize;
-  output wire [1 : 0] M00_AXI_arburst;
-  output wire [1 : 0] M00_AXI_arlock;
-  output wire [3 : 0] M00_AXI_arcache;
-  output wire [2 : 0] M00_AXI_arprot;
-  output wire [3 : 0] M00_AXI_arqos;
-  output wire [0 : 0] M00_AXI_aruser;
-  output wire M00_AXI_arvalid;
-  input bit M00_AXI_arready;
-  input bit [63 : 0] M00_AXI_rdata;
-  input bit [1 : 0] M00_AXI_rresp;
-  input bit M00_AXI_rlast;
-  input bit M00_AXI_rvalid;
-  output wire M00_AXI_rready;
-endmodule
-`endif
-
-`ifdef RIVIERA
-(* SC_MODULE_EXPORT *)
-module design_1_axi_smc_0 (aclk,aresetn,S00_AXI_awid,S00_AXI_awaddr,S00_AXI_awlen,S00_AXI_awsize,S00_AXI_awburst,S00_AXI_awlock,S00_AXI_awcache,S00_AXI_awprot,S00_AXI_awqos,S00_AXI_awuser,S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wdata,S00_AXI_wstrb,S00_AXI_wlast,S00_AXI_wuser,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid,S00_AXI_bresp,S00_AXI_buser,S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid,S00_AXI_araddr,S00_AXI_arlen,S00_AXI_arsize,S00_AXI_arburst,S00_AXI_arlock,S00_AXI_arcache,S00_AXI_arprot,S00_AXI_arqos,S00_AXI_aruser,S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid,S00_AXI_rdata,S00_AXI_rresp,S00_AXI_rlast,S00_AXI_ruser,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr,M00_AXI_awlen,M00_AXI_awsize,M00_AXI_awburst,M00_AXI_awlock,M00_AXI_awcache,M00_AXI_awprot,M00_AXI_awqos,M00_AXI_awuser,M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata,M00_AXI_wstrb,M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp,M00_AXI_buser,M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr,M00_AXI_arlen,M00_AXI_arsize,M00_AXI_arburst,M00_AXI_arlock,M00_AXI_arcache,M00_AXI_arprot,M00_AXI_arqos,M00_AXI_aruser,M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata,M00_AXI_rresp,M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready)
   input bit aclk;
   input bit aresetn;
   input bit [0 : 0] S00_AXI_awid;

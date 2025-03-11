@@ -1,21 +1,21 @@
-// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
-// of Xilinx, Inc. and is protected under U.S. and
-// international copyright and other intellectual property
-// laws.
+// of AMD and is protected under U.S. and international copyright
+// and other intellectual property laws.
 // 
 // DISCLAIMER
 // This disclaimer is not a license and does not grant any
 // rights to the materials distributed herewith. Except as
 // otherwise provided in a valid license issued to you by
-// Xilinx, and to the maximum extent permitted by applicable
+// AMD, and to the maximum extent permitted by applicable
 // law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
-// WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
 // AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
 // BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
 // INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
-// (2) Xilinx shall not be liable (whether in contract or tort,
+// (2) AMD shall not be liable (whether in contract or tort,
 // including negligence, or under any other theory of
 // liability) for any loss or damage of any kind or nature
 // related to, arising under or in connection with these
@@ -24,11 +24,11 @@
 // (including loss of data, profits, goodwill, or any type of
 // loss or damage suffered as a result of any action brought
 // by a third party) even if such damage or loss was
-// reasonably foreseeable or Xilinx had been advised of the
+// reasonably foreseeable or AMD had been advised of the
 // possibility of the same.
 // 
 // CRITICAL APPLICATIONS
-// Xilinx products are not designed or intended to be fail-
+// AMD products are not designed or intended to be fail-
 // safe, or for use in any application requiring fail-safe
 // performance, such as life-support or safety devices or
 // systems, Class III medical devices, nuclear facilities,
@@ -37,7 +37,7 @@
 // injury, or severe property or environmental damage
 // (individually and collectively, "Critical
 // Applications"). Customer assumes the sole risk and
-// liability of any use of Xilinx products in Critical
+// liability of any use of AMD products in Critical
 // Applications, subject only to applicable laws and
 // regulations governing limitations on product liability.
 // 
@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_node:1.0
-// IP Revision: 12
+// IP Revision: 15
 
-(* X_CORE_INFO = "sc_node_v1_0_12_top,Vivado 2020.2" *)
-(* CHECK_LICENSE_TYPE = "bd_afc3_swn_0,sc_node_v1_0_12_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_afc3_swn_0,sc_node_v1_0_12_top,{x_ipProduct=Vivado 2020.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_node,x_ipVersion=1.0,x_ipCoreRevision=12,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_FIFO_IP=0,C_DISABLE_IP=0,C_FIFO_SIZE=5,C_FIFO_TYPE=0,C_FIFO_OUTPUT_REG=1,C_ENABLE_PIPELINING=0x01,C_SYNCHRONIZATION_STAGES=3,C_NUM_SI=1,C_NUM_MI=1,C_CHANNEL=1,C_PAYLD_WIDTH=88,C_S_NUM_BYTES_ARRAY=0x00000004,C_M_NUM_BYTES_ARRAY=0x00000008,C_PRIORITY_ARB_ARRAY=0b0,C_USER_BITS_PER_BYTE=0,C_AR\
+(* X_CORE_INFO = "sc_node_v1_0_15_top,Vivado 2023.2" *)
+(* CHECK_LICENSE_TYPE = "bd_afc3_swn_0,sc_node_v1_0_15_top,{}" *)
+(* CORE_GENERATION_INFO = "bd_afc3_swn_0,sc_node_v1_0_15_top,{x_ipProduct=Vivado 2023.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_node,x_ipVersion=1.0,x_ipCoreRevision=15,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_FIFO_IP=0,C_DISABLE_IP=0,C_FIFO_SIZE=5,C_FIFO_TYPE=0,C_FIFO_OUTPUT_REG=1,C_ENABLE_PIPELINING=0x01,C_SYNCHRONIZATION_STAGES=3,C_NUM_SI=1,C_NUM_MI=1,C_CHANNEL=1,C_PAYLD_WIDTH=88,C_S_NUM_BYTES_ARRAY=0x00000004,C_M_NUM_BYTES_ARRAY=0x00000008,C_PRIORITY_ARB_ARRAY=0b0,C_USER_BITS_PER_BYTE=0,C_AR\
 BITER_MODE=1,C_SC_ROUTE_WIDTH=1,C_ID_WIDTH=1,C_ADDR_WIDTH=32,C_USER_WIDTH=512,C_MAX_PAYLD_BYTES=8,C_S_PIPELINE=0,C_M_PIPELINE=0,C_M_SEND_PIPELINE=0,C_S_LATENCY=0,C_NUM_OUTSTANDING=2,C_ACLK_RELATIONSHIP=1,C_ACLKEN_CONVERSION=0}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_afc3_swn_0 (
@@ -105,7 +105,7 @@ output wire [0 : 0] m_sc_info;
 (* X_INTERFACE_INFO = "xilinx.com:interface:sc:1.0 M_SC PAYLD" *)
 output wire [87 : 0] m_sc_payld;
 
-  sc_node_v1_0_12_top #(
+  sc_node_v1_0_15_top #(
     .C_FAMILY("zynq"),
     .C_FIFO_IP(0),
     .C_DISABLE_IP(0),

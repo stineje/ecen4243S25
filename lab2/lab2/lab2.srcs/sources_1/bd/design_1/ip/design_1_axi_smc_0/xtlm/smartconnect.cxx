@@ -1,49 +1,48 @@
-/*  (c) Copyright 1995 - 2018 Xilinx, Inc. All rights reserved.
-
- This file contains confidential and proprietary information
- of Xilinx, Inc. and is protected under U.S. and
- international copyright and other intellectual property
- laws.
-
- DISCLAIMER
- This disclaimer is not a license and does not grant any
- rights to the materials distributed herewith. Except as
- otherwise provided in a valid license issued to you by
- Xilinx, and to the maximum extent permitted by applicable
- law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
- WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
- AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
- BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
- INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
- (2) Xilinx shall not be liable (whether in contract or tort,
- including negligence, or under any other theory of
- liability) for any loss or damage of any kind or nature
- related to, arising under or in connection with these
- materials, including for any direct, or any indirect,
- special, incidental, or consequential loss or damage
- (including loss of data, profits, goodwill, or any type of
- loss or damage suffered as a result of any action brought
- by a third party) even if such damage or loss was
- reasonably foreseeable or Xilinx had been advised of the
- possibility of the same.
-
- CRITICAL APPLICATIONS
- Xilinx products are not designed or intended to be fail-
- safe, or for use in any application requiring fail-safe
- performance, such as life-support or safety devices or
- systems, Class III medical devices, nuclear facilities,
- applications related to the deployment of airbags, or any
- other applications that could lead to death, personal
- injury, or severe property or environmental damage
- (individually and collectively, "Critical
- Applications"). Customer assumes the sole risk and
- liability of any use of Xilinx products in Critical
- Applications, subject only to applicable laws and
- regulations governing limitations on product liability.
-
- THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
- PART OF THIS FILE AT ALL TIMES.                       */
-
+// (c) Copyright 1995-2021, 2023 Advanced Micro Devices, Inc. All rights reserved.
+//
+// This file contains confidential and proprietary information
+// of AMD and is protected under U.S. and international copyright
+// and other intellectual property laws.
+//
+// DISCLAIMER
+// This disclaimer is not a license and does not grant any
+// rights to the materials distributed herewith. Except as
+// otherwise provided in a valid license issued to you by
+// AMD, and to the maximum extent permitted by applicable
+// law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
+// AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+// BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+// INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+// (2) AMD shall not be liable (whether in contract or tort,
+// including negligence, or under any other theory of
+// liability) for any loss or damage of any kind or nature
+// related to, arising under or in connection with these
+// materials, including for any direct, or any indirect,
+// special, incidental, or consequential loss or damage
+// (including loss of data, profits, goodwill, or any type of
+// loss or damage suffered as a result of any action brought
+// by a third party) even if such damage or loss was
+// reasonably foreseeable or AMD had been advised of the
+// possibility of the same.
+//
+// CRITICAL APPLICATIONS
+// AMD products are not designed or intended to be fail-
+// safe, or for use in any application requiring fail-safe
+// performance, such as life-support or safety devices or
+// systems, Class III medical devices, nuclear facilities,
+// applications related to the deployment of airbags, or any
+// other applications that could lead to death, personal
+// injury, or severe property or environmental damage
+// (individually and collectively, "Critical
+// Applications"). Customer assumes the sole risk and
+// liability of any use of AMD products in Critical
+// Applications, subject only to applicable laws and
+// regulations governing limitations on product liability.
+//
+// THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+// PART OF THIS FILE AT ALL TIMES.
+////////////////////////////////////////////////////////////
 
 #include "smartconnect.h"
 #include <fstream>
@@ -146,6 +145,55 @@ aclk12("aclk12"), aclk13("alck13"), aclk14("aclk14"), aclk15("aclk15") {
   __socket_inst(num_si, target, S13, 13)
   __socket_inst(num_si, target, S14, 14)
   __socket_inst(num_si, target, S15, 15)
+  __socket_inst(num_si, target, S16, 16)
+  __socket_inst(num_si, target, S17, 17)
+  __socket_inst(num_si, target, S18, 18)
+  __socket_inst(num_si, target, S19, 19)
+  __socket_inst(num_si, target, S20, 20)
+  __socket_inst(num_si, target, S21, 21)
+  __socket_inst(num_si, target, S22, 22)
+  __socket_inst(num_si, target, S23, 23)
+  __socket_inst(num_si, target, S24, 24)
+  __socket_inst(num_si, target, S25, 25)
+  __socket_inst(num_si, target, S26, 26)
+  __socket_inst(num_si, target, S27, 27)
+  __socket_inst(num_si, target, S28, 28)
+  __socket_inst(num_si, target, S29, 29)
+  __socket_inst(num_si, target, S30, 30)
+  __socket_inst(num_si, target, S31, 31)
+  __socket_inst(num_si, target, S32, 32)
+  __socket_inst(num_si, target, S33, 33)
+  __socket_inst(num_si, target, S34, 34)
+  __socket_inst(num_si, target, S35, 35)
+  __socket_inst(num_si, target, S36, 36)
+  __socket_inst(num_si, target, S37, 37)
+  __socket_inst(num_si, target, S38, 38)
+  __socket_inst(num_si, target, S39, 39)
+  __socket_inst(num_si, target, S40, 40)
+  __socket_inst(num_si, target, S41, 41)
+  __socket_inst(num_si, target, S42, 42)
+  __socket_inst(num_si, target, S43, 43)
+  __socket_inst(num_si, target, S44, 44)
+  __socket_inst(num_si, target, S45, 45)
+  __socket_inst(num_si, target, S46, 46)
+  __socket_inst(num_si, target, S47, 47)
+  __socket_inst(num_si, target, S48, 48)
+  __socket_inst(num_si, target, S49, 49)
+  __socket_inst(num_si, target, S50, 50)
+  __socket_inst(num_si, target, S51, 51)
+  __socket_inst(num_si, target, S52, 52)
+  __socket_inst(num_si, target, S53, 53)
+  __socket_inst(num_si, target, S54, 54)
+  __socket_inst(num_si, target, S55, 55)
+  __socket_inst(num_si, target, S56, 56)
+  __socket_inst(num_si, target, S57, 57)
+  __socket_inst(num_si, target, S58, 58)
+  __socket_inst(num_si, target, S59, 59)
+  __socket_inst(num_si, target, S60, 60)
+  __socket_inst(num_si, target, S61, 61)
+  __socket_inst(num_si, target, S62, 62)
+  __socket_inst(num_si, target, S63, 63)
+
 
   __socket_inst(num_mi, initiator, M00,  0)
   __socket_inst(num_mi, initiator, M01,  1)
@@ -163,6 +211,54 @@ aclk12("aclk12"), aclk13("alck13"), aclk14("aclk14"), aclk15("aclk15") {
   __socket_inst(num_mi, initiator, M13, 13)
   __socket_inst(num_mi, initiator, M14, 14)
   __socket_inst(num_mi, initiator, M15, 15)
+  __socket_inst(num_mi, initiator, M16, 16)
+  __socket_inst(num_mi, initiator, M17, 17)
+  __socket_inst(num_mi, initiator, M18, 18)
+  __socket_inst(num_mi, initiator, M19, 19)
+  __socket_inst(num_mi, initiator, M20, 20)
+  __socket_inst(num_mi, initiator, M21, 21)
+  __socket_inst(num_mi, initiator, M22, 22)
+  __socket_inst(num_mi, initiator, M23, 23)
+  __socket_inst(num_mi, initiator, M24, 24)
+  __socket_inst(num_mi, initiator, M25, 25)
+  __socket_inst(num_mi, initiator, M26, 26)
+  __socket_inst(num_mi, initiator, M27, 27)
+  __socket_inst(num_mi, initiator, M28, 28)
+  __socket_inst(num_mi, initiator, M29, 29)
+  __socket_inst(num_mi, initiator, M30, 30)
+  __socket_inst(num_mi, initiator, M31, 31)
+  __socket_inst(num_mi, initiator, M32, 32)
+  __socket_inst(num_mi, initiator, M33, 33)
+  __socket_inst(num_mi, initiator, M34, 34)
+  __socket_inst(num_mi, initiator, M35, 35)
+  __socket_inst(num_mi, initiator, M36, 36)
+  __socket_inst(num_mi, initiator, M37, 37)
+  __socket_inst(num_mi, initiator, M38, 38)
+  __socket_inst(num_mi, initiator, M39, 39)
+  __socket_inst(num_mi, initiator, M40, 40)
+  __socket_inst(num_mi, initiator, M41, 41)
+  __socket_inst(num_mi, initiator, M42, 42)
+  __socket_inst(num_mi, initiator, M43, 43)
+  __socket_inst(num_mi, initiator, M44, 44)
+  __socket_inst(num_mi, initiator, M45, 45)
+  __socket_inst(num_mi, initiator, M46, 46)
+  __socket_inst(num_mi, initiator, M47, 47)
+  __socket_inst(num_mi, initiator, M48, 48)
+  __socket_inst(num_mi, initiator, M49, 49)
+  __socket_inst(num_mi, initiator, M50, 50)
+  __socket_inst(num_mi, initiator, M51, 51)
+  __socket_inst(num_mi, initiator, M52, 52)
+  __socket_inst(num_mi, initiator, M53, 53)
+  __socket_inst(num_mi, initiator, M54, 54)
+  __socket_inst(num_mi, initiator, M55, 55)
+  __socket_inst(num_mi, initiator, M56, 56)
+  __socket_inst(num_mi, initiator, M57, 57)
+  __socket_inst(num_mi, initiator, M58, 58)
+  __socket_inst(num_mi, initiator, M59, 59)
+  __socket_inst(num_mi, initiator, M60, 60)
+  __socket_inst(num_mi, initiator, M61, 61)
+  __socket_inst(num_mi, initiator, M62, 62)
+  __socket_inst(num_mi, initiator, M63, 63)
 
   core_model = new smartconnect_xtlm("smartconnect_xtlm", properties, smartconnect_config,m_report_handler);
 

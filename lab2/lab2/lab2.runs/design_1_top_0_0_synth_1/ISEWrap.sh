@@ -3,8 +3,14 @@
 #
 #  Vivado(TM)
 #  ISEWrap.sh: Vivado Runs Script for UNIX
-#  Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved. 
+#  Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. 
+#  Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved. 
 #
+
+cmd_exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
 
 HD_LOG=$1
 shift
@@ -32,12 +38,24 @@ $ISE_STEP "$@" >> $HD_LOG 2>&1 &
 
 # BEGIN file creation
 ISE_PID=$!
-if [ X != X$HOSTNAME ]
+
+HostNameFile=/proc/sys/kernel/hostname
+if cmd_exists hostname
+then
+ISE_HOST=$(hostname)
+elif cmd_exists uname
+then
+ISE_HOST=$(uname -n)
+elif [ -f "$HostNameFile" ] && [ -r $HostNameFile ] && [ -s $HostNameFile ] 
+then
+ISE_HOST=$(cat $HostNameFile)
+elif [ X != X$HOSTNAME ]
 then
 ISE_HOST=$HOSTNAME #bash
 else
 ISE_HOST=$HOST     #csh
 fi
+
 ISE_USER=$USER
 
 ISE_HOSTCORE=$(awk '/^processor/{print $3}' /proc/cpuinfo | wc -l)

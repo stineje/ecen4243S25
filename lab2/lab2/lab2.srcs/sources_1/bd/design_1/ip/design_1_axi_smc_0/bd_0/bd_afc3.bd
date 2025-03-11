@@ -1,14 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x631423BA05417507",
+      "boundary_crc": "0x631423BA9F467618",
       "design_src": "SBD",
       "device": "xc7z020clg484-1",
       "name": "bd_afc3",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "scoped": "true",
       "synth_flow_mode": "None",
-      "tool_version": "2020.2",
+      "tool_version": "2023.2",
       "validated": "true"
     },
     "design_tree": {
@@ -37,13 +37,8 @@
     "interface_ports": {
       "S00_AXI": {
         "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-        "address_space_ref": "S00_AXI",
-        "base_address": {
-          "minimum": "0x00000000",
-          "maximum": "0xFFFFFFFF",
-          "width": "32"
-        },
         "parameters": {
           "ADDR_WIDTH": {
             "value": "32",
@@ -137,7 +132,7 @@
           },
           "PHASE": {
             "value": "0.000",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "PROTOCOL": {
             "value": "AXI4",
@@ -167,12 +162,18 @@
             "value": "32",
             "value_src": "auto_prop"
           }
+        },
+        "address_space_ref": "S00_AXI",
+        "base_address": {
+          "minimum": "0x00000000",
+          "maximum": "0xFFFFFFFF",
+          "width": "32"
         }
       },
       "M00_AXI": {
         "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-        "memory_map_ref": "M00_AXI",
         "parameters": {
           "ADDR_WIDTH": {
             "value": "32",
@@ -253,19 +254,17 @@
             "value": "2"
           },
           "NUM_READ_THREADS": {
-            "value": "1",
-            "value_src": "default"
+            "value": "1"
           },
           "NUM_WRITE_OUTSTANDING": {
             "value": "2"
           },
           "NUM_WRITE_THREADS": {
-            "value": "1",
-            "value_src": "default"
+            "value": "1"
           },
           "PHASE": {
             "value": "0.000",
-            "value_src": "default"
+            "value_src": "default_prop"
           },
           "PROTOCOL": {
             "value": "AXI3",
@@ -292,7 +291,8 @@
             "value": "0",
             "value_src": "default"
           }
-        }
+        },
+        "memory_map_ref": "M00_AXI"
       }
     },
     "ports": {
@@ -325,7 +325,7 @@
           },
           "PHASE": {
             "value": "0.000",
-            "value_src": "default"
+            "value_src": "default_prop"
           }
         }
       },
@@ -392,10 +392,12 @@
         "components": {
           "one": {
             "vlnv": "xilinx.com:ip:xlconstant:1.1",
+            "ip_revision": "8",
             "xci_name": "bd_afc3_one_0"
           },
           "psr_aclk": {
             "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+            "ip_revision": "14",
             "xci_name": "bd_afc3_psr_aclk_0",
             "parameters": {
               "C_AUX_RESET_HIGH": {
@@ -408,12 +410,6 @@
           }
         },
         "nets": {
-          "clk_map_aresetn_net": {
-            "ports": [
-              "aresetn",
-              "psr_aclk/aux_reset_in"
-            ]
-          },
           "clk_map_aclk_net": {
             "ports": [
               "aclk",
@@ -423,18 +419,24 @@
               "psr_aclk/slowest_sync_clk"
             ]
           },
-          "psr_aclk_interconnect_aresetn": {
+          "clk_map_aresetn_net": {
             "ports": [
-              "psr_aclk/interconnect_aresetn",
-              "S00_ARESETN",
-              "M00_ARESETN",
-              "swbd_aresetn"
+              "aresetn",
+              "psr_aclk/aux_reset_in"
             ]
           },
           "one_dout": {
             "ports": [
               "one/dout",
               "psr_aclk/ext_reset_in"
+            ]
+          },
+          "psr_aclk_interconnect_aresetn": {
+            "ports": [
+              "psr_aclk/interconnect_aresetn",
+              "S00_ARESETN",
+              "M00_ARESETN",
+              "swbd_aresetn"
             ]
           }
         }
@@ -443,10 +445,12 @@
         "interface_ports": {
           "s_axi": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "m_axi": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
         },
@@ -463,6 +467,7 @@
         "components": {
           "s00_mmu": {
             "vlnv": "xilinx.com:ip:sc_mmu:1.0",
+            "ip_revision": "12",
             "xci_name": "bd_afc3_s00mmu_0",
             "parameters": {
               "ADDR_WIDTH": {
@@ -549,6 +554,7 @@
             },
             "interface_ports": {
               "S_AXI": {
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_AXI"
@@ -558,6 +564,7 @@
           },
           "s00_transaction_regulator": {
             "vlnv": "xilinx.com:ip:sc_transaction_regulator:1.0",
+            "ip_revision": "10",
             "xci_name": "bd_afc3_s00tr_0",
             "parameters": {
               "ADDR_WIDTH": {
@@ -602,6 +609,7 @@
             },
             "interface_ports": {
               "S_AXI": {
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_AXI"
@@ -611,6 +619,7 @@
           },
           "s00_si_converter": {
             "vlnv": "xilinx.com:ip:sc_si_converter:1.0",
+            "ip_revision": "12",
             "xci_name": "bd_afc3_s00sic_0",
             "parameters": {
               "ADDR_WIDTH": {
@@ -694,6 +703,7 @@
             },
             "interface_ports": {
               "S_AXI": {
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_AXI"
@@ -749,6 +759,7 @@
       },
       "s00_axi2sc": {
         "vlnv": "xilinx.com:ip:sc_axi2sc:1.0",
+        "ip_revision": "9",
         "xci_name": "bd_afc3_s00a2s_0",
         "parameters": {
           "AXI_ADDR_WIDTH": {
@@ -802,6 +813,7 @@
         },
         "interface_ports": {
           "S_AXI": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
             "mode": "Slave",
             "bridges": [
               "M_SC_AR",
@@ -814,42 +826,52 @@
         "interface_ports": {
           "M_SC_AR": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "S_SC_AR": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "M_SC_R": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "S_SC_R": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "M_SC_AW": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "S_SC_AW": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "M_SC_W": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "S_SC_W": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "M_SC_B": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           },
           "S_SC_B": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:sc:1.0",
             "vlnv": "xilinx.com:interface:sc_rtl:1.0"
           }
         },
@@ -874,6 +896,7 @@
         "components": {
           "s00_ar_node": {
             "vlnv": "xilinx.com:ip:sc_node:1.0",
+            "ip_revision": "15",
             "xci_name": "bd_afc3_sarn_0",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -1014,6 +1037,7 @@
             },
             "interface_ports": {
               "S_SC": {
+                "vlnv": "xilinx.com:interface:sc_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_SC"
@@ -1023,6 +1047,7 @@
           },
           "s00_r_node": {
             "vlnv": "xilinx.com:ip:sc_node:1.0",
+            "ip_revision": "15",
             "xci_name": "bd_afc3_srn_0",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -1163,6 +1188,7 @@
             },
             "interface_ports": {
               "S_SC": {
+                "vlnv": "xilinx.com:interface:sc_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_SC"
@@ -1172,6 +1198,7 @@
           },
           "s00_aw_node": {
             "vlnv": "xilinx.com:ip:sc_node:1.0",
+            "ip_revision": "15",
             "xci_name": "bd_afc3_sawn_0",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -1312,6 +1339,7 @@
             },
             "interface_ports": {
               "S_SC": {
+                "vlnv": "xilinx.com:interface:sc_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_SC"
@@ -1321,6 +1349,7 @@
           },
           "s00_w_node": {
             "vlnv": "xilinx.com:ip:sc_node:1.0",
+            "ip_revision": "15",
             "xci_name": "bd_afc3_swn_0",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -1461,6 +1490,7 @@
             },
             "interface_ports": {
               "S_SC": {
+                "vlnv": "xilinx.com:interface:sc_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_SC"
@@ -1470,6 +1500,7 @@
           },
           "s00_b_node": {
             "vlnv": "xilinx.com:ip:sc_node:1.0",
+            "ip_revision": "15",
             "xci_name": "bd_afc3_sbn_0",
             "parameters": {
               "ACLKEN_CONVERSION": {
@@ -1610,6 +1641,7 @@
             },
             "interface_ports": {
               "S_SC": {
+                "vlnv": "xilinx.com:interface:sc_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_SC"
@@ -1619,10 +1651,16 @@
           }
         },
         "interface_nets": {
-          "s00_b_node_M_SC": {
+          "S_SC_AR_1": {
             "interface_ports": [
-              "M_SC_B",
-              "s00_b_node/M_SC"
+              "S_SC_AR",
+              "s00_ar_node/S_SC"
+            ]
+          },
+          "S_SC_AW_1": {
+            "interface_ports": [
+              "S_SC_AW",
+              "s00_aw_node/S_SC"
             ]
           },
           "S_SC_B_1": {
@@ -1631,34 +1669,10 @@
               "s00_b_node/S_SC"
             ]
           },
-          "S_SC_AR_1": {
-            "interface_ports": [
-              "S_SC_AR",
-              "s00_ar_node/S_SC"
-            ]
-          },
           "S_SC_R_1": {
             "interface_ports": [
               "S_SC_R",
               "s00_r_node/S_SC"
-            ]
-          },
-          "s00_aw_node_M_SC": {
-            "interface_ports": [
-              "M_SC_AW",
-              "s00_aw_node/M_SC"
-            ]
-          },
-          "s00_ar_node_M_SC": {
-            "interface_ports": [
-              "M_SC_AR",
-              "s00_ar_node/M_SC"
-            ]
-          },
-          "s00_r_node_M_SC": {
-            "interface_ports": [
-              "M_SC_R",
-              "s00_r_node/M_SC"
             ]
           },
           "S_SC_W_1": {
@@ -1667,10 +1681,28 @@
               "s00_w_node/S_SC"
             ]
           },
-          "S_SC_AW_1": {
+          "s00_ar_node_M_SC": {
             "interface_ports": [
-              "S_SC_AW",
-              "s00_aw_node/S_SC"
+              "M_SC_AR",
+              "s00_ar_node/M_SC"
+            ]
+          },
+          "s00_aw_node_M_SC": {
+            "interface_ports": [
+              "M_SC_AW",
+              "s00_aw_node/M_SC"
+            ]
+          },
+          "s00_b_node_M_SC": {
+            "interface_ports": [
+              "M_SC_B",
+              "s00_b_node/M_SC"
+            ]
+          },
+          "s00_r_node_M_SC": {
+            "interface_ports": [
+              "M_SC_R",
+              "s00_r_node/M_SC"
             ]
           },
           "s00_w_node_M_SC": {
@@ -1681,16 +1713,6 @@
           }
         },
         "nets": {
-          "s_sc_clk_1": {
-            "ports": [
-              "s_sc_clk",
-              "s00_ar_node/s_sc_aclk",
-              "s00_aw_node/s_sc_aclk",
-              "s00_w_node/s_sc_aclk",
-              "s00_r_node/m_sc_aclk",
-              "s00_b_node/m_sc_aclk"
-            ]
-          },
           "m_sc_clk_1": {
             "ports": [
               "m_sc_clk",
@@ -1699,16 +1721,6 @@
               "s00_w_node/m_sc_aclk",
               "s00_r_node/s_sc_aclk",
               "s00_b_node/s_sc_aclk"
-            ]
-          },
-          "s_sc_resetn_1": {
-            "ports": [
-              "s_sc_resetn",
-              "s00_ar_node/s_sc_aresetn",
-              "s00_aw_node/s_sc_aresetn",
-              "s00_w_node/s_sc_aresetn",
-              "s00_r_node/m_sc_aresetn",
-              "s00_b_node/m_sc_aresetn"
             ]
           },
           "m_sc_resetn_1": {
@@ -1720,11 +1732,32 @@
               "s00_r_node/s_sc_aresetn",
               "s00_b_node/s_sc_aresetn"
             ]
+          },
+          "s_sc_clk_1": {
+            "ports": [
+              "s_sc_clk",
+              "s00_ar_node/s_sc_aclk",
+              "s00_aw_node/s_sc_aclk",
+              "s00_w_node/s_sc_aclk",
+              "s00_r_node/m_sc_aclk",
+              "s00_b_node/m_sc_aclk"
+            ]
+          },
+          "s_sc_resetn_1": {
+            "ports": [
+              "s_sc_resetn",
+              "s00_ar_node/s_sc_aresetn",
+              "s00_aw_node/s_sc_aresetn",
+              "s00_w_node/s_sc_aresetn",
+              "s00_r_node/m_sc_aresetn",
+              "s00_b_node/m_sc_aresetn"
+            ]
           }
         }
       },
       "m00_sc2axi": {
         "vlnv": "xilinx.com:ip:sc_sc2axi:1.0",
+        "ip_revision": "9",
         "xci_name": "bd_afc3_m00s2a_0",
         "parameters": {
           "AXI_ADDR_WIDTH": {
@@ -1778,6 +1811,7 @@
         },
         "interface_ports": {
           "S_SC_AR": {
+            "vlnv": "xilinx.com:interface:sc_rtl:1.0",
             "mode": "Slave",
             "bridges": [
               "M_AXI"
@@ -1789,10 +1823,12 @@
         "interface_ports": {
           "s_axi": {
             "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "m_axi": {
             "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           }
         },
@@ -1809,6 +1845,7 @@
         "components": {
           "m00_exit": {
             "vlnv": "xilinx.com:ip:sc_exit:1.0",
+            "ip_revision": "14",
             "xci_name": "bd_afc3_m00e_0",
             "parameters": {
               "ADDR_WIDTH": {
@@ -1898,6 +1935,7 @@
             },
             "interface_ports": {
               "S_AXI": {
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
                 "mode": "Slave",
                 "bridges": [
                   "M_AXI"
@@ -1937,46 +1975,10 @@
       }
     },
     "interface_nets": {
-      "m00_sc2axi_M_AXI": {
+      "S00_AXI_1": {
         "interface_ports": [
-          "m00_sc2axi/M_AXI",
-          "m00_exit_pipeline/s_axi"
-        ]
-      },
-      "s00_nodes_M_SC_AR": {
-        "interface_ports": [
-          "s00_nodes/M_SC_AR",
-          "m00_sc2axi/S_SC_AR"
-        ]
-      },
-      "s00_nodes_M_SC_AW": {
-        "interface_ports": [
-          "s00_nodes/M_SC_AW",
-          "m00_sc2axi/S_SC_AW"
-        ]
-      },
-      "s00_nodes_M_SC_W": {
-        "interface_ports": [
-          "s00_nodes/M_SC_W",
-          "m00_sc2axi/S_SC_W"
-        ]
-      },
-      "S_SC_R_1": {
-        "interface_ports": [
-          "s00_nodes/S_SC_R",
-          "m00_sc2axi/M_SC_R"
-        ]
-      },
-      "S_SC_B_1": {
-        "interface_ports": [
-          "s00_nodes/S_SC_B",
-          "m00_sc2axi/M_SC_B"
-        ]
-      },
-      "s00_nodes_M_SC_R": {
-        "interface_ports": [
-          "s00_nodes/M_SC_R",
-          "s00_axi2sc/S_SC_R"
+          "S00_AXI",
+          "s00_entry_pipeline/s_axi"
         ]
       },
       "S_SC_AR_1": {
@@ -1991,10 +1993,16 @@
           "s00_axi2sc/M_SC_AW"
         ]
       },
-      "s00_nodes_M_SC_B": {
+      "S_SC_B_1": {
         "interface_ports": [
-          "s00_nodes/M_SC_B",
-          "s00_axi2sc/S_SC_B"
+          "s00_nodes/S_SC_B",
+          "m00_sc2axi/M_SC_B"
+        ]
+      },
+      "S_SC_R_1": {
+        "interface_ports": [
+          "s00_nodes/S_SC_R",
+          "m00_sc2axi/M_SC_R"
         ]
       },
       "S_SC_W_1": {
@@ -2003,16 +2011,16 @@
           "s00_axi2sc/M_SC_W"
         ]
       },
-      "S00_AXI_1": {
-        "interface_ports": [
-          "S00_AXI",
-          "s00_entry_pipeline/s_axi"
-        ]
-      },
       "m00_exit_pipeline_m_axi": {
         "interface_ports": [
           "M00_AXI",
           "m00_exit_pipeline/m_axi"
+        ]
+      },
+      "m00_sc2axi_M_AXI": {
+        "interface_ports": [
+          "m00_sc2axi/M_AXI",
+          "m00_exit_pipeline/s_axi"
         ]
       },
       "s00_entry_pipeline_m_axi": {
@@ -2020,9 +2028,47 @@
           "s00_entry_pipeline/m_axi",
           "s00_axi2sc/S_AXI"
         ]
+      },
+      "s00_nodes_M_SC_AR": {
+        "interface_ports": [
+          "s00_nodes/M_SC_AR",
+          "m00_sc2axi/S_SC_AR"
+        ]
+      },
+      "s00_nodes_M_SC_AW": {
+        "interface_ports": [
+          "s00_nodes/M_SC_AW",
+          "m00_sc2axi/S_SC_AW"
+        ]
+      },
+      "s00_nodes_M_SC_B": {
+        "interface_ports": [
+          "s00_nodes/M_SC_B",
+          "s00_axi2sc/S_SC_B"
+        ]
+      },
+      "s00_nodes_M_SC_R": {
+        "interface_ports": [
+          "s00_nodes/M_SC_R",
+          "s00_axi2sc/S_SC_R"
+        ]
+      },
+      "s00_nodes_M_SC_W": {
+        "interface_ports": [
+          "s00_nodes/M_SC_W",
+          "m00_sc2axi/S_SC_W"
+        ]
       }
     },
     "nets": {
+      "aclk_1": {
+        "ports": [
+          "clk_map/S00_ACLK",
+          "s00_entry_pipeline/aclk",
+          "s00_axi2sc/aclk",
+          "s00_nodes/s_sc_clk"
+        ]
+      },
       "aclk_net": {
         "ports": [
           "aclk",
@@ -2035,34 +2081,16 @@
           "clk_map/aresetn"
         ]
       },
-      "aresetn_net": {
-        "ports": [
-          "clk_map/aresetn_out"
-        ]
-      },
-      "swbd_aclk_net": {
-        "ports": [
-          "clk_map/swbd_aclk"
-        ]
-      },
-      "swbd_aresetn_net": {
-        "ports": [
-          "clk_map/swbd_aresetn"
-        ]
-      },
-      "aclk_1": {
-        "ports": [
-          "clk_map/S00_ACLK",
-          "s00_entry_pipeline/aclk",
-          "s00_axi2sc/aclk",
-          "s00_nodes/s_sc_clk"
-        ]
-      },
       "aresetn_2": {
         "ports": [
           "clk_map/S00_ARESETN",
           "s00_entry_pipeline/aresetn",
           "s00_nodes/s_sc_resetn"
+        ]
+      },
+      "aresetn_net": {
+        "ports": [
+          "clk_map/aresetn_out"
         ]
       },
       "m_sc_clk_1": {
@@ -2078,6 +2106,16 @@
           "clk_map/M00_ARESETN",
           "s00_nodes/m_sc_resetn",
           "m00_exit_pipeline/aresetn"
+        ]
+      },
+      "swbd_aclk_net": {
+        "ports": [
+          "clk_map/swbd_aclk"
+        ]
+      },
+      "swbd_aresetn_net": {
+        "ports": [
+          "clk_map/swbd_aresetn"
         ]
       }
     },

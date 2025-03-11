@@ -1,3 +1,49 @@
+// (c) Copyright 1995-2021, 2023 Advanced Micro Devices, Inc. All rights reserved.
+//
+// This file contains confidential and proprietary information
+// of AMD and is protected under U.S. and international copyright
+// and other intellectual property laws.
+//
+// DISCLAIMER
+// This disclaimer is not a license and does not grant any
+// rights to the materials distributed herewith. Except as
+// otherwise provided in a valid license issued to you by
+// AMD, and to the maximum extent permitted by applicable
+// law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+// WITH ALL FAULTS, AND AMD HEREBY DISCLAIMS ALL WARRANTIES
+// AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+// BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+// INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+// (2) AMD shall not be liable (whether in contract or tort,
+// including negligence, or under any other theory of
+// liability) for any loss or damage of any kind or nature
+// related to, arising under or in connection with these
+// materials, including for any direct, or any indirect,
+// special, incidental, or consequential loss or damage
+// (including loss of data, profits, goodwill, or any type of
+// loss or damage suffered as a result of any action brought
+// by a third party) even if such damage or loss was
+// reasonably foreseeable or AMD had been advised of the
+// possibility of the same.
+//
+// CRITICAL APPLICATIONS
+// AMD products are not designed or intended to be fail-
+// safe, or for use in any application requiring fail-safe
+// performance, such as life-support or safety devices or
+// systems, Class III medical devices, nuclear facilities,
+// applications related to the deployment of airbags, or any
+// other applications that could lead to death, personal
+// injury, or severe property or environmental damage
+// (individually and collectively, "Critical
+// Applications"). Customer assumes the sole risk and
+// liability of any use of AMD products in Critical
+// Applications, subject only to applicable laws and
+// regulations governing limitations on product liability.
+//
+// THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+// PART OF THIS FILE AT ALL TIMES.
+////////////////////////////////////////////////////////////
+
 #include "smartconnect_xtlm.h"
 #define s00_axi_WR_SLV_SKT_ID 0
 #define s00_axi_RD_SLV_SKT_ID 1
@@ -193,12 +239,24 @@ smartconnect_xtlm::smartconnect_xtlm(sc_core::sc_module_name name,
 	     	XSC_REPORT_INFO_VERB((*m_report_handler), "1", m_ss.str().c_str(),
 	     			DEBUG);
 	     }
-         saxi_rd_util.push_back(new smartconnect_xtlm_impl::target_rd_util("saxi_rd_util_" + static_cast<char>(i), xtlm::aximm::TRANSACTION, 32,i,this));
-         saxi_wr_util.push_back(new smartconnect_xtlm_impl::target_wr_util("saxi_wr_util_" + static_cast<char>(i), xtlm::aximm::TRANSACTION, 32,i,this));
+		saxi_rd_util.push_back(
+				new smartconnect_xtlm_impl::target_rd_util(
+						std::string("saxi_rd_util_" + std::to_string(i)).c_str(),
+						xtlm::aximm::TRANSACTION, 32, i, this));
+		saxi_wr_util.push_back(
+				new smartconnect_xtlm_impl::target_wr_util(
+						std::string("saxi_wr_util_" + std::to_string(i)).c_str(),
+						xtlm::aximm::TRANSACTION, 32, i, this));
 
-         //Sockets Initialization
-         saxi_wr_socket.push_back(new xtlm::xtlm_aximm_target_socket("saxi_rd_socket_" + static_cast<char>(i), 32));
-         saxi_rd_socket.push_back(new xtlm::xtlm_aximm_target_socket("saxi_wr_socket_" + static_cast<char>(i), 32));
+		//Sockets Initialization
+		saxi_wr_socket.push_back(
+				new xtlm::xtlm_aximm_target_socket(
+						std::string("saxi_rd_socket_" + std::to_string(i)).c_str(),
+						32));
+		saxi_rd_socket.push_back(
+				new xtlm::xtlm_aximm_target_socket(
+						std::string("saxi_wr_socket_" + std::to_string(i)).c_str(),
+						32));
 
 	     if (m_report_handler->get_verbosity_level()
 	     		== xsc::common_cpp::VERBOSITY::DEBUG) {
@@ -221,11 +279,23 @@ smartconnect_xtlm::smartconnect_xtlm(sc_core::sc_module_name name,
 	    	XSC_REPORT_INFO_VERB((*m_report_handler), "1", m_ss.str().c_str(),
 	    			DEBUG);
 	    }
-        maxi_rd_util.push_back(new xtlm::xtlm_aximm_initiator_rd_socket_util("maxi_rd_util_" + static_cast<char>(num_mi), xtlm::aximm::TRANSACTION, 32));
-        maxi_wr_util.push_back(new xtlm::xtlm_aximm_initiator_wr_socket_util("maxi_wr_util_" + static_cast<char>(num_mi), xtlm::aximm::TRANSACTION, 32));
+		maxi_rd_util.push_back(
+				new xtlm::xtlm_aximm_initiator_rd_socket_util(
+						std::string("maxi_rd_util_" + std::to_string(num_mi)).c_str(),
+						xtlm::aximm::TRANSACTION, 32));
+		maxi_wr_util.push_back(
+				new xtlm::xtlm_aximm_initiator_wr_socket_util(
+						std::string("maxi_wr_util_" + std::to_string(num_mi)).c_str(),
+						xtlm::aximm::TRANSACTION, 32));
 
-        maxi_rd_socket.push_back(new xtlm::xtlm_aximm_initiator_socket("maxi_rd_socket_" + static_cast<char>(num_mi), 32));
-        maxi_wr_socket.push_back(new xtlm::xtlm_aximm_initiator_socket("maxi_wr_socket_" + static_cast<char>(num_mi), 32));
+		maxi_rd_socket.push_back(
+				new xtlm::xtlm_aximm_initiator_socket(
+						std::string("maxi_rd_socket_" + std::to_string(num_mi)).c_str(),
+						32));
+		maxi_wr_socket.push_back(
+				new xtlm::xtlm_aximm_initiator_socket(
+						std::string("maxi_wr_socket_" + std::to_string(num_mi)).c_str(),
+						32));
 
 	     if (m_report_handler->get_verbosity_level()
 	     		== xsc::common_cpp::VERBOSITY::DEBUG) {
@@ -2038,6 +2108,8 @@ unsigned int smartconnect_xtlm::transport_dbg_cb(xtlm::aximm_payload& trans,int 
 	    m_ss << this->name()<<" Transaction cannot be routed "<<std::endl;
       m_ss<<payload_msg << std::endl;
 	    XSC_REPORT_ERROR((*m_report_handler), "1", m_ss.str().c_str());
+        trans.set_response_status(xtlm::XTLM_ADDRESS_ERROR_RESPONSE);
+        return 0;
     }
     /*
     bool mi_cascaded = (MI_m_properties[master_id].getInt("IS_CASCADED") == 1);

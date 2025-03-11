@@ -1,10 +1,10 @@
--- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Mon Feb 17 13:41:19 2020
--- Host        : CEAT-ENDV360-02 running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Wed Mar  1 14:48:01 2023
+-- Host        : coco running 64-bit Ubuntu 22.04.2 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               c:/Users/alexasu/Desktop/lab2/lab2.srcs/sources_1/bd/design_1/ip/design_1_AXI_Converter_0_0/design_1_AXI_Converter_0_0_sim_netlist.vhdl
+--               /home/ross/repos/ELVIS/lab2/lab2.srcs/sources_1/bd/design_1/ip/design_1_AXI_Converter_0_0/design_1_AXI_Converter_0_0_sim_netlist.vhdl
 -- Design      : design_1_AXI_Converter_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -51,8 +51,6 @@ end design_1_AXI_Converter_0_0_AXI_Converter_v1_0_M00_AXI;
 architecture STRUCTURE of design_1_AXI_Converter_0_0_AXI_Converter_v1_0_M00_AXI is
   signal ERROR_i_1_n_0 : STD_LOGIC;
   signal ERROR_i_2_n_0 : STD_LOGIC;
-  signal \FSM_sequential_mst_exec_state[0]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_mst_exec_state[1]_i_1_n_0\ : STD_LOGIC;
   signal \^m_axi_bready\ : STD_LOGIC;
   signal axi_araddr : STD_LOGIC_VECTOR ( 31 downto 19 );
   signal \axi_araddr[18]_i_1_n_0\ : STD_LOGIC;
@@ -113,6 +111,7 @@ architecture STRUCTURE of design_1_AXI_Converter_0_0_AXI_Converter_v1_0_M00_AXI 
   signal \^m00_axi_wlast\ : STD_LOGIC;
   signal \^m00_axi_wvalid\ : STD_LOGIC;
   signal mst_exec_state : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal \mst_exec_state__0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal p_6_in : STD_LOGIC;
   signal reads_done : STD_LOGIC;
   signal reads_done_i_1_n_0 : STD_LOGIC;
@@ -136,6 +135,15 @@ architecture STRUCTURE of design_1_AXI_Converter_0_0_AXI_Converter_v1_0_M00_AXI 
   attribute SOFT_HLUTNM of compare_done_i_3 : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of error_reg_i_2 : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of init_txn_ff2_i_1 : label is "soft_lutpair2";
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of \m00_axi_araddr[19]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_araddr[23]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_araddr[27]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_araddr[31]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_awaddr[19]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_awaddr[23]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_awaddr[27]_INST_0\ : label is 35;
+  attribute ADDER_THRESHOLD of \m00_axi_awaddr[31]_INST_0\ : label is 35;
 begin
   M_AXI_BREADY <= \^m_axi_bready\;
   axi_arvalid_reg_0 <= \^axi_arvalid_reg_0\;
@@ -189,7 +197,7 @@ ERROR_reg: unisim.vcomponents.FDRE
       I3 => mst_exec_state(0),
       I4 => writes_done,
       I5 => mst_exec_state(1),
-      O => \FSM_sequential_mst_exec_state[0]_i_1_n_0\
+      O => \mst_exec_state__0\(0)
     );
 \FSM_sequential_mst_exec_state[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -202,13 +210,13 @@ ERROR_reg: unisim.vcomponents.FDRE
       I3 => mst_exec_state(1),
       I4 => reads_done,
       I5 => mst_exec_state(0),
-      O => \FSM_sequential_mst_exec_state[1]_i_1_n_0\
+      O => \mst_exec_state__0\(1)
     );
 \FSM_sequential_mst_exec_state_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => m00_axi_aclk,
       CE => '1',
-      D => \FSM_sequential_mst_exec_state[0]_i_1_n_0\,
+      D => \mst_exec_state__0\(0),
       Q => mst_exec_state(0),
       R => compare_done_i_1_n_0
     );
@@ -216,7 +224,7 @@ ERROR_reg: unisim.vcomponents.FDRE
      port map (
       C => m00_axi_aclk,
       CE => '1',
-      D => \FSM_sequential_mst_exec_state[1]_i_1_n_0\,
+      D => \mst_exec_state__0\(1),
       Q => mst_exec_state(1),
       R => compare_done_i_1_n_0
     );
@@ -2030,7 +2038,7 @@ begin
   m00_axi_wuser(2) <= \<const0>\;
   m00_axi_wuser(1) <= \<const0>\;
   m00_axi_wuser(0) <= \<const0>\;
-  txn_pulse_passthrough <= 'Z';
+  txn_pulse_passthrough <= \<const0>\;
 GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\

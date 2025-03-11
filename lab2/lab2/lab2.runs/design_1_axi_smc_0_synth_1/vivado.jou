@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Mar 11 08:32:45 2025
+# Process ID: 938833
+# Current directory: /home/jstine/ecen4243S25/lab2/fpga/lab2.runs/design_1_axi_smc_0_synth_1
+# Command line: vivado -log design_1_axi_smc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_smc_0.tcl
+# Log file: /home/jstine/ecen4243S25/lab2/fpga/lab2.runs/design_1_axi_smc_0_synth_1/design_1_axi_smc_0.vds
+# Journal file: /home/jstine/ecen4243S25/lab2/fpga/lab2.runs/design_1_axi_smc_0_synth_1/vivado.jou
+# Running On: iq9, OS: Linux, CPU Frequency: 1200.019 MHz, CPU Physical cores: 10, Host memory: 24894 MB
+#-----------------------------------------------------------
+source design_1_axi_smc_0.tcl -notrace
