@@ -5,8 +5,8 @@ Contents of section .riscv.attributes:
  0000 41190000 00726973 63760001 0f000000  A....riscv......
  0010 05727633 32693270 3100               .rv32i2p1.      
 Contents of section .text:
- 80000000 97000000 93800001 67800000 37130000  ........g...7...
- 80000010 1303d3ba 37130000 13034323 13000000  ....7.....C#....
+ 80000000 97000000 93800001 67830000 93030000  ........g.......
+ 80000010 9303a002 13000000                    ........        
 
 Disassembly of section .riscv.attributes:
 
@@ -28,16 +28,14 @@ Disassembly of section .text:
 80000000 <_start>:
 _start():
 80000000:	00000097          	auipc	ra,0x0
-80000004:	01008093          	addi	ra,ra,16 # 80000010 <_start+0x10>
-80000008:	00008067          	ret
-8000000c:	00001337          	lui	t1,0x1
-80000010:	bad30313          	addi	t1,t1,-1107 # bad <_start-0x7ffff453>
+80000004:	01008093          	addi	ra,ra,16 # 80000010 <target_label>
+80000008:	00008367          	jalr	t1,ra
+8000000c:	00000393          	li	t2,0
 
-80000014 <target_label>:
+80000010 <target_label>:
 target_label():
-80000014:	00001337          	lui	t1,0x1
-80000018:	23430313          	addi	t1,t1,564 # 1234 <_start-0x7fffedcc>
+80000010:	02a00393          	li	t2,42
 
-8000001c <exit>:
+80000014 <exit>:
 exit():
-8000001c:	00000013          	nop
+80000014:	00000013          	nop
