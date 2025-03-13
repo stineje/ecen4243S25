@@ -1,0 +1,46 @@
+
+jalr-test2.elf:     file format elf32-littleriscv
+
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 97000000 93800001 97020000 93824201  ..............B.
+ 80000010 67800200 13000000 6f00c000 13031300  g.......o.......
+ 80000020 67800000 13000000                    g.......        
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <_start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <_start>:
+_start():
+80000000:	00000097          	auipc	ra,0x0
+80000004:	01008093          	addi	ra,ra,16 # 80000010 <_start+0x10>
+80000008:	00000297          	auipc	t0,0x0
+8000000c:	01428293          	addi	t0,t0,20 # 8000001c <subroutine>
+80000010:	00028067          	jr	t0
+80000014:	00000013          	nop
+80000018:	00c0006f          	j	80000024 <exit>
+
+8000001c <subroutine>:
+subroutine():
+8000001c:	00130313          	addi	t1,t1,1
+80000020:	00008067          	ret
+
+80000024 <exit>:
+exit():
+80000024:	00000013          	nop
