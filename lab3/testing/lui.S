@@ -43,8 +43,11 @@ test05:
 
 success:
   li a0, 10
-  ecall
+  sw a0, 0x64(x0)
+  j  success
 
 fail:
   li a0, 17
-  ecall
+  sw a0, 0x64(x0)
+  j fail
+    

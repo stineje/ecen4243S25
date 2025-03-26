@@ -61,7 +61,7 @@ Disassembly of section .text:
 80000018:	0000af03          	lw	t5,0(ra)
 8000001c:	00aa0eb7          	lui	t4,0xaa0
 80000020:	0aae8e93          	addi	t4,t4,170 # aa00aa <__start-0x7f55ff56>
-80000024:	47df1263          	bne	t5,t4,80000488 <fail>
+80000024:	47df1463          	bne	t5,t4,8000048c <fail>
 
 80000028 <test02>:
 80000028:	00200593          	li	a1,2
@@ -73,7 +73,7 @@ Disassembly of section .text:
 80000040:	0040af03          	lw	t5,4(ra)
 80000044:	aa00beb7          	lui	t4,0xaa00b
 80000048:	a00e8e93          	addi	t4,t4,-1536 # aa00aa00 <_end+0x2a008a00>
-8000004c:	43df1e63          	bne	t5,t4,80000488 <fail>
+8000004c:	45df1063          	bne	t5,t4,8000048c <fail>
 
 80000050 <test03>:
 80000050:	00300593          	li	a1,3
@@ -85,7 +85,7 @@ Disassembly of section .text:
 80000068:	0080af03          	lw	t5,8(ra)
 8000006c:	0aa01eb7          	lui	t4,0xaa01
 80000070:	aa0e8e93          	addi	t4,t4,-1376 # aa00aa0 <__start-0x755ff560>
-80000074:	41df1a63          	bne	t5,t4,80000488 <fail>
+80000074:	41df1c63          	bne	t5,t4,8000048c <fail>
 
 80000078 <test04>:
 80000078:	00400593          	li	a1,4
@@ -97,7 +97,7 @@ Disassembly of section .text:
 80000090:	00c0af03          	lw	t5,12(ra)
 80000094:	a00aaeb7          	lui	t4,0xa00aa
 80000098:	00ae8e93          	addi	t4,t4,10 # a00aa00a <_end+0x200a800a>
-8000009c:	3fdf1663          	bne	t5,t4,80000488 <fail>
+8000009c:	3fdf1863          	bne	t5,t4,8000048c <fail>
 
 800000a0 <test05>:
 800000a0:	00500593          	li	a1,5
@@ -109,7 +109,7 @@ Disassembly of section .text:
 800000b8:	ff40af03          	lw	t5,-12(ra)
 800000bc:	00aa0eb7          	lui	t4,0xaa0
 800000c0:	0aae8e93          	addi	t4,t4,170 # aa00aa <__start-0x7f55ff56>
-800000c4:	3ddf1263          	bne	t5,t4,80000488 <fail>
+800000c4:	3ddf1463          	bne	t5,t4,8000048c <fail>
 
 800000c8 <test06>:
 800000c8:	00600593          	li	a1,6
@@ -121,7 +121,7 @@ Disassembly of section .text:
 800000e0:	ff80af03          	lw	t5,-8(ra)
 800000e4:	aa00beb7          	lui	t4,0xaa00b
 800000e8:	a00e8e93          	addi	t4,t4,-1536 # aa00aa00 <_end+0x2a008a00>
-800000ec:	39df1e63          	bne	t5,t4,80000488 <fail>
+800000ec:	3bdf1063          	bne	t5,t4,8000048c <fail>
 
 800000f0 <test07>:
 800000f0:	00700593          	li	a1,7
@@ -133,7 +133,7 @@ Disassembly of section .text:
 80000108:	ffc0af03          	lw	t5,-4(ra)
 8000010c:	0aa01eb7          	lui	t4,0xaa01
 80000110:	aa0e8e93          	addi	t4,t4,-1376 # aa00aa0 <__start-0x755ff560>
-80000114:	37df1a63          	bne	t5,t4,80000488 <fail>
+80000114:	37df1c63          	bne	t5,t4,8000048c <fail>
 
 80000118 <test08>:
 80000118:	00800593          	li	a1,8
@@ -145,7 +145,7 @@ Disassembly of section .text:
 80000130:	0000af03          	lw	t5,0(ra)
 80000134:	a00aaeb7          	lui	t4,0xa00aa
 80000138:	00ae8e93          	addi	t4,t4,10 # a00aa00a <_end+0x200a800a>
-8000013c:	35df1663          	bne	t5,t4,80000488 <fail>
+8000013c:	35df1863          	bne	t5,t4,8000048c <fail>
 
 80000140 <test09>:
 80000140:	00900593          	li	a1,9
@@ -158,7 +158,7 @@ Disassembly of section .text:
 8000015c:	0000a283          	lw	t0,0(ra)
 80000160:	12345eb7          	lui	t4,0x12345
 80000164:	678e8e93          	addi	t4,t4,1656 # 12345678 <__start-0x6dcba988>
-80000168:	33d29063          	bne	t0,t4,80000488 <fail>
+80000168:	33d29263          	bne	t0,t4,8000048c <fail>
 
 8000016c <test10>:
 8000016c:	00a00593          	li	a1,10
@@ -173,7 +173,7 @@ Disassembly of section .text:
 80000190:	00022283          	lw	t0,0(tp) # 0 <__start-0x80000000>
 80000194:	58213eb7          	lui	t4,0x58213
 80000198:	098e8e93          	addi	t4,t4,152 # 58213098 <__start-0x27decf68>
-8000019c:	2fd29663          	bne	t0,t4,80000488 <fail>
+8000019c:	2fd29863          	bne	t0,t4,8000048c <fail>
 
 800001a0 <test11>:
 800001a0:	00b00593          	li	a1,11
@@ -188,7 +188,7 @@ Disassembly of section .text:
 800001bc:	00012f03          	lw	t5,0(sp)
 800001c0:	aabbdeb7          	lui	t4,0xaabbd
 800001c4:	cdde8e93          	addi	t4,t4,-803 # aabbccdd <_end+0x2abbacdd>
-800001c8:	2ddf1063          	bne	t5,t4,80000488 <fail>
+800001c8:	2ddf1263          	bne	t5,t4,8000048c <fail>
 800001cc:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800001d0:	00200293          	li	t0,2
 800001d4:	fc521ae3          	bne	tp,t0,800001a8 <label1_test11>
@@ -207,7 +207,7 @@ Disassembly of section .text:
 800001f8:	00412f03          	lw	t5,4(sp)
 800001fc:	daabceb7          	lui	t4,0xdaabc
 80000200:	ccde8e93          	addi	t4,t4,-819 # daabbccd <_end+0x5aab9ccd>
-80000204:	29df1263          	bne	t5,t4,80000488 <fail>
+80000204:	29df1463          	bne	t5,t4,8000048c <fail>
 80000208:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 8000020c:	00200293          	li	t0,2
 80000210:	fc5218e3          	bne	tp,t0,800001e0 <label1_test12>
@@ -227,7 +227,7 @@ Disassembly of section .text:
 80000238:	00812f03          	lw	t5,8(sp)
 8000023c:	ddaaceb7          	lui	t4,0xddaac
 80000240:	bcce8e93          	addi	t4,t4,-1076 # ddaabbcc <_end+0x5daa9bcc>
-80000244:	25df1263          	bne	t5,t4,80000488 <fail>
+80000244:	25df1463          	bne	t5,t4,8000048c <fail>
 80000248:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 8000024c:	00200293          	li	t0,2
 80000250:	fc5216e3          	bne	tp,t0,8000021c <label1_test13>
@@ -246,7 +246,7 @@ Disassembly of section .text:
 80000274:	00c12f03          	lw	t5,12(sp)
 80000278:	cddabeb7          	lui	t4,0xcddab
 8000027c:	bbce8e93          	addi	t4,t4,-1092 # cddaabbc <_end+0x4dda8bbc>
-80000280:	21df1463          	bne	t5,t4,80000488 <fail>
+80000280:	21df1663          	bne	t5,t4,8000048c <fail>
 80000284:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000288:	00200293          	li	t0,2
 8000028c:	fc5218e3          	bne	tp,t0,8000025c <label1_test14>
@@ -266,7 +266,7 @@ Disassembly of section .text:
 800002b4:	01012f03          	lw	t5,16(sp)
 800002b8:	ccddbeb7          	lui	t4,0xccddb
 800002bc:	abbe8e93          	addi	t4,t4,-1349 # ccddaabb <_end+0x4cdd8abb>
-800002c0:	1ddf1463          	bne	t5,t4,80000488 <fail>
+800002c0:	1ddf1663          	bne	t5,t4,8000048c <fail>
 800002c4:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800002c8:	00200293          	li	t0,2
 800002cc:	fc5216e3          	bne	tp,t0,80000298 <label1_test15>
@@ -286,7 +286,7 @@ Disassembly of section .text:
 800002f4:	01412f03          	lw	t5,20(sp)
 800002f8:	bccdeeb7          	lui	t4,0xbccde
 800002fc:	aabe8e93          	addi	t4,t4,-1365 # bccddaab <_end+0x3ccdbaab>
-80000300:	19df1463          	bne	t5,t4,80000488 <fail>
+80000300:	19df1663          	bne	t5,t4,8000048c <fail>
 80000304:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000308:	00200293          	li	t0,2
 8000030c:	fc5216e3          	bne	tp,t0,800002d8 <label1_test16>
@@ -304,7 +304,7 @@ Disassembly of section .text:
 8000032c:	00012f03          	lw	t5,0(sp)
 80000330:	00112eb7          	lui	t4,0x112
 80000334:	233e8e93          	addi	t4,t4,563 # 112233 <__start-0x7feeddcd>
-80000338:	15df1863          	bne	t5,t4,80000488 <fail>
+80000338:	15df1a63          	bne	t5,t4,8000048c <fail>
 8000033c:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000340:	00200293          	li	t0,2
 80000344:	fc521ae3          	bne	tp,t0,80000318 <label1_test17>
@@ -323,7 +323,7 @@ Disassembly of section .text:
 80000368:	00412f03          	lw	t5,4(sp)
 8000036c:	30011eb7          	lui	t4,0x30011
 80000370:	223e8e93          	addi	t4,t4,547 # 30011223 <__start-0x4ffeeddd>
-80000374:	11df1a63          	bne	t5,t4,80000488 <fail>
+80000374:	11df1c63          	bne	t5,t4,8000048c <fail>
 80000378:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 8000037c:	00200293          	li	t0,2
 80000380:	fc5218e3          	bne	tp,t0,80000350 <label1_test18>
@@ -343,7 +343,7 @@ Disassembly of section .text:
 800003a8:	00812f03          	lw	t5,8(sp)
 800003ac:	33001eb7          	lui	t4,0x33001
 800003b0:	122e8e93          	addi	t4,t4,290 # 33001122 <__start-0x4cffeede>
-800003b4:	0ddf1a63          	bne	t5,t4,80000488 <fail>
+800003b4:	0ddf1c63          	bne	t5,t4,8000048c <fail>
 800003b8:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800003bc:	00200293          	li	t0,2
 800003c0:	fc5216e3          	bne	tp,t0,8000038c <label1_test19>
@@ -362,7 +362,7 @@ Disassembly of section .text:
 800003e4:	00c12f03          	lw	t5,12(sp)
 800003e8:	23300eb7          	lui	t4,0x23300
 800003ec:	112e8e93          	addi	t4,t4,274 # 23300112 <__start-0x5ccffeee>
-800003f0:	09df1c63          	bne	t5,t4,80000488 <fail>
+800003f0:	09df1e63          	bne	t5,t4,8000048c <fail>
 800003f4:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800003f8:	00200293          	li	t0,2
 800003fc:	fc5218e3          	bne	tp,t0,800003cc <label1_test20>
@@ -382,7 +382,7 @@ Disassembly of section .text:
 80000424:	01012f03          	lw	t5,16(sp)
 80000428:	22330eb7          	lui	t4,0x22330
 8000042c:	011e8e93          	addi	t4,t4,17 # 22330011 <__start-0x5dccffef>
-80000430:	05df1c63          	bne	t5,t4,80000488 <fail>
+80000430:	05df1e63          	bne	t5,t4,8000048c <fail>
 80000434:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000438:	00200293          	li	t0,2
 8000043c:	fc5216e3          	bne	tp,t0,80000408 <label1_test21>
@@ -402,15 +402,17 @@ Disassembly of section .text:
 80000464:	01412f03          	lw	t5,20(sp)
 80000468:	12233eb7          	lui	t4,0x12233
 8000046c:	001e8e93          	addi	t4,t4,1 # 12233001 <__start-0x6ddccfff>
-80000470:	01df1c63          	bne	t5,t4,80000488 <fail>
+80000470:	01df1e63          	bne	t5,t4,8000048c <fail>
 80000474:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000478:	00200293          	li	t0,2
 8000047c:	fc5216e3          	bne	tp,t0,80000448 <label1_test22>
 
 80000480 <success>:
 80000480:	00a00513          	li	a0,10
-80000484:	00000073          	ecall
+80000484:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+80000488:	ff9ff06f          	j	80000480 <success>
 
-80000488 <fail>:
-80000488:	01100513          	li	a0,17
-8000048c:	00000073          	ecall
+8000048c <fail>:
+8000048c:	01100513          	li	a0,17
+80000490:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+80000494:	ff9ff06f          	j	8000048c <fail>

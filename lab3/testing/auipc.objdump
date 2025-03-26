@@ -46,8 +46,10 @@ Disassembly of section .text:
 
 80000044 <success>:
 80000044:	00a00513          	li	a0,10
-80000048:	00000073          	ecall
+80000048:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+8000004c:	ff9ff06f          	j	80000044 <success>
 
-8000004c <fail>:
-8000004c:	01100513          	li	a0,17
-80000050:	00000073          	ecall
+80000050 <fail>:
+80000050:	01100513          	li	a0,17
+80000054:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+80000058:	ff9ff06f          	j	80000050 <fail>

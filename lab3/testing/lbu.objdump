@@ -41,7 +41,7 @@ Disassembly of section .text:
 80000008:	ffc08093          	addi	ra,ra,-4 # 80001000 <tdat>
 8000000c:	0000cf03          	lbu	t5,0(ra)
 80000010:	0ff00e93          	li	t4,255
-80000014:	23df1e63          	bne	t5,t4,80000250 <fail>
+80000014:	25df1063          	bne	t5,t4,80000254 <fail>
 
 80000018 <test02>:
 80000018:	00200593          	li	a1,2
@@ -49,7 +49,7 @@ Disassembly of section .text:
 80000020:	fe408093          	addi	ra,ra,-28 # 80001000 <tdat>
 80000024:	0010cf03          	lbu	t5,1(ra)
 80000028:	00000e93          	li	t4,0
-8000002c:	23df1263          	bne	t5,t4,80000250 <fail>
+8000002c:	23df1463          	bne	t5,t4,80000254 <fail>
 
 80000030 <test03>:
 80000030:	00300593          	li	a1,3
@@ -57,7 +57,7 @@ Disassembly of section .text:
 80000038:	fcc08093          	addi	ra,ra,-52 # 80001000 <tdat>
 8000003c:	0020cf03          	lbu	t5,2(ra)
 80000040:	0f000e93          	li	t4,240
-80000044:	21df1663          	bne	t5,t4,80000250 <fail>
+80000044:	21df1863          	bne	t5,t4,80000254 <fail>
 
 80000048 <test04>:
 80000048:	00400593          	li	a1,4
@@ -65,7 +65,7 @@ Disassembly of section .text:
 80000050:	fb408093          	addi	ra,ra,-76 # 80001000 <tdat>
 80000054:	0030cf03          	lbu	t5,3(ra)
 80000058:	00f00e93          	li	t4,15
-8000005c:	1fdf1a63          	bne	t5,t4,80000250 <fail>
+8000005c:	1fdf1c63          	bne	t5,t4,80000254 <fail>
 
 80000060 <test05>:
 80000060:	00500593          	li	a1,5
@@ -73,7 +73,7 @@ Disassembly of section .text:
 80000068:	f9f08093          	addi	ra,ra,-97 # 80001003 <tdat4>
 8000006c:	ffd0cf03          	lbu	t5,-3(ra)
 80000070:	0ff00e93          	li	t4,255
-80000074:	1ddf1e63          	bne	t5,t4,80000250 <fail>
+80000074:	1fdf1063          	bne	t5,t4,80000254 <fail>
 
 80000078 <test06>:
 80000078:	00600593          	li	a1,6
@@ -81,7 +81,7 @@ Disassembly of section .text:
 80000080:	f8708093          	addi	ra,ra,-121 # 80001003 <tdat4>
 80000084:	ffe0cf03          	lbu	t5,-2(ra)
 80000088:	00000e93          	li	t4,0
-8000008c:	1ddf1263          	bne	t5,t4,80000250 <fail>
+8000008c:	1ddf1463          	bne	t5,t4,80000254 <fail>
 
 80000090 <test07>:
 80000090:	00700593          	li	a1,7
@@ -89,7 +89,7 @@ Disassembly of section .text:
 80000098:	f6f08093          	addi	ra,ra,-145 # 80001003 <tdat4>
 8000009c:	fff0cf03          	lbu	t5,-1(ra)
 800000a0:	0f000e93          	li	t4,240
-800000a4:	1bdf1663          	bne	t5,t4,80000250 <fail>
+800000a4:	1bdf1863          	bne	t5,t4,80000254 <fail>
 
 800000a8 <test08>:
 800000a8:	00800593          	li	a1,8
@@ -97,7 +97,7 @@ Disassembly of section .text:
 800000b0:	f5708093          	addi	ra,ra,-169 # 80001003 <tdat4>
 800000b4:	0000cf03          	lbu	t5,0(ra)
 800000b8:	00f00e93          	li	t4,15
-800000bc:	19df1a63          	bne	t5,t4,80000250 <fail>
+800000bc:	19df1c63          	bne	t5,t4,80000254 <fail>
 
 800000c0 <test09>:
 800000c0:	00900593          	li	a1,9
@@ -106,7 +106,7 @@ Disassembly of section .text:
 800000cc:	fe008093          	addi	ra,ra,-32
 800000d0:	0200c283          	lbu	t0,32(ra)
 800000d4:	0ff00e93          	li	t4,255
-800000d8:	17d29c63          	bne	t0,t4,80000250 <fail>
+800000d8:	17d29e63          	bne	t0,t4,80000254 <fail>
 
 800000dc <test10>:
 800000dc:	00a00593          	li	a1,10
@@ -115,7 +115,7 @@ Disassembly of section .text:
 800000e8:	ffa08093          	addi	ra,ra,-6
 800000ec:	0070c283          	lbu	t0,7(ra)
 800000f0:	00000e93          	li	t4,0
-800000f4:	15d29e63          	bne	t0,t4,80000250 <fail>
+800000f4:	17d29063          	bne	t0,t4,80000254 <fail>
 
 800000f8 <test11>:
 800000f8:	00b00593          	li	a1,11
@@ -127,7 +127,7 @@ Disassembly of section .text:
 80000108:	0010cf03          	lbu	t5,1(ra)
 8000010c:	000f0313          	mv	t1,t5
 80000110:	0f000e93          	li	t4,240
-80000114:	13d31e63          	bne	t1,t4,80000250 <fail>
+80000114:	15d31063          	bne	t1,t4,80000254 <fail>
 80000118:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 8000011c:	00200293          	li	t0,2
 80000120:	fe5210e3          	bne	tp,t0,80000100 <label1_test11>
@@ -143,7 +143,7 @@ Disassembly of section .text:
 80000138:	00000013          	nop
 8000013c:	000f0313          	mv	t1,t5
 80000140:	00f00e93          	li	t4,15
-80000144:	11d31663          	bne	t1,t4,80000250 <fail>
+80000144:	11d31863          	bne	t1,t4,80000254 <fail>
 80000148:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 8000014c:	00200293          	li	t0,2
 80000150:	fc521ee3          	bne	tp,t0,8000012c <label1_test12>
@@ -160,7 +160,7 @@ Disassembly of section .text:
 8000016c:	00000013          	nop
 80000170:	000f0313          	mv	t1,t5
 80000174:	00000e93          	li	t4,0
-80000178:	0dd31c63          	bne	t1,t4,80000250 <fail>
+80000178:	0dd31e63          	bne	t1,t4,80000254 <fail>
 8000017c:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000180:	00200293          	li	t0,2
 80000184:	fc521ce3          	bne	tp,t0,8000015c <label1_test13>
@@ -174,7 +174,7 @@ Disassembly of section .text:
 80000194:	e7108093          	addi	ra,ra,-399 # 80001001 <tdat2>
 80000198:	0010cf03          	lbu	t5,1(ra)
 8000019c:	0f000e93          	li	t4,240
-800001a0:	0bdf1863          	bne	t5,t4,80000250 <fail>
+800001a0:	0bdf1a63          	bne	t5,t4,80000254 <fail>
 800001a4:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800001a8:	00200293          	li	t0,2
 800001ac:	fe5212e3          	bne	tp,t0,80000190 <label1_test14>
@@ -189,7 +189,7 @@ Disassembly of section .text:
 800001c0:	00000013          	nop
 800001c4:	0010cf03          	lbu	t5,1(ra)
 800001c8:	00f00e93          	li	t4,15
-800001cc:	09df1263          	bne	t5,t4,80000250 <fail>
+800001cc:	09df1463          	bne	t5,t4,80000254 <fail>
 800001d0:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 800001d4:	00200293          	li	t0,2
 800001d8:	fe5210e3          	bne	tp,t0,800001b8 <label1_test15>
@@ -205,7 +205,7 @@ Disassembly of section .text:
 800001f0:	00000013          	nop
 800001f4:	0010cf03          	lbu	t5,1(ra)
 800001f8:	00000e93          	li	t4,0
-800001fc:	05df1a63          	bne	t5,t4,80000250 <fail>
+800001fc:	05df1c63          	bne	t5,t4,80000254 <fail>
 80000200:	00120213          	addi	tp,tp,1 # 1 <__start-0x7fffffff>
 80000204:	00200293          	li	t0,2
 80000208:	fc521ee3          	bne	tp,t0,800001e4 <label1_test16>
@@ -217,7 +217,7 @@ Disassembly of section .text:
 80000218:	0002c103          	lbu	sp,0(t0)
 8000021c:	00200113          	li	sp,2
 80000220:	00200e93          	li	t4,2
-80000224:	03d11663          	bne	sp,t4,80000250 <fail>
+80000224:	03d11863          	bne	sp,t4,80000254 <fail>
 
 80000228 <test18>:
 80000228:	01200593          	li	a1,18
@@ -227,12 +227,14 @@ Disassembly of section .text:
 80000238:	00000013          	nop
 8000023c:	00200113          	li	sp,2
 80000240:	00200e93          	li	t4,2
-80000244:	01d11663          	bne	sp,t4,80000250 <fail>
+80000244:	01d11863          	bne	sp,t4,80000254 <fail>
 
 80000248 <success>:
 80000248:	00a00513          	li	a0,10
-8000024c:	00000073          	ecall
+8000024c:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+80000250:	ff9ff06f          	j	80000248 <success>
 
-80000250 <fail>:
-80000250:	01100513          	li	a0,17
-80000254:	00000073          	ecall
+80000254 <fail>:
+80000254:	01100513          	li	a0,17
+80000258:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+8000025c:	ff9ff06f          	j	80000254 <fail>
