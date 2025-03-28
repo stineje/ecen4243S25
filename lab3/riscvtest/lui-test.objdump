@@ -1,0 +1,47 @@
+
+lui-test.elf:     file format elf32-littleriscv
+
+Contents of section .riscv.attributes:
+ 0000 41190000 00726973 63760001 0f000000  A....riscv......
+ 0010 05727633 32693270 3100               .rv32i2p1.      
+Contents of section .text:
+ 80000000 93053000 b7f0ff7f 93d04041 930ef07f  ..0.......@A....
+ 80000010 6398d001 1305a000 2322a006 6ff09fff  c.......#"..o...
+ 80000020 13051001 2322a006 6ff09fff           ....#"..o...    
+
+Disassembly of section .riscv.attributes:
+
+00000000 <.riscv.attributes>:
+   0:	1941                	.insn	2, 0x1941
+   2:	0000                	.insn	2, 0x
+   4:	7200                	.insn	2, 0x7200
+   6:	7369                	.insn	2, 0x7369
+   8:	01007663          	bgeu	zero,a6,14 <__start-0x7fffffec>
+   c:	0000000f          	fence	unknown,unknown
+  10:	7205                	.insn	2, 0x7205
+  12:	3376                	.insn	2, 0x3376
+  14:	6932                	.insn	2, 0x6932
+  16:	7032                	.insn	2, 0x7032
+  18:	0031                	.insn	2, 0x0031
+
+Disassembly of section .text:
+
+80000000 <__start>:
+__start():
+80000000:	00300593          	li	a1,3
+80000004:	7ffff0b7          	lui	ra,0x7ffff
+80000008:	4140d093          	srai	ra,ra,0x14
+8000000c:	7ff00e93          	li	t4,2047
+80000010:	01d09863          	bne	ra,t4,80000020 <fail>
+
+80000014 <success>:
+success():
+80000014:	00a00513          	li	a0,10
+80000018:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+8000001c:	ff9ff06f          	j	80000014 <success>
+
+80000020 <fail>:
+fail():
+80000020:	01100513          	li	a0,17
+80000024:	06a02223          	sw	a0,100(zero) # 64 <__start-0x7fffff9c>
+80000028:	ff9ff06f          	j	80000020 <fail>
