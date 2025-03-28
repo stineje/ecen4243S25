@@ -1,6 +1,6 @@
 # do riscv_pipelined.do
 # QuestaSim-64 vlog 2023.4_3 Compiler 2024.02 Feb 17 2024
-# Start time: 08:59:15 on Mar 28,2025
+# Start time: 14:03:49 on Mar 28,2025
 # vlog riscv_pipelined.sv 
 # -- Compiling module testbench
 # -- Compiling module top
@@ -25,14 +25,14 @@
 # 
 # Top level modules:
 # 	testbench
-# End time: 08:59:15 on Mar 28,2025, Elapsed time: 0:00:00
+# End time: 14:03:49 on Mar 28,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -debugdb -voptargs="+acc" work.testbench 
-# Start time: 08:59:15 on Mar 28,2025
+# Start time: 14:03:49 on Mar 28,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=256, type=RAM at location riscv_pipelined.sv:537
+# ** Note: (vopt-4301) Memory core inferred for signal 'RAM' width=32, depth=256, type=RAM at location riscv_pipelined.sv:547
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Sim-64
 # //  Version 2023.4_3 linux_x86_64 Feb 17 2024
@@ -81,11 +81,11 @@
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
 # configure wave not supported in batch mode
-# Simulation failed
-# ** Note: $stop    : riscv_pipelined.sv(120)
-#    Time: 125 ns  Iteration: 1  Instance: /testbench
-# Break in Module testbench at riscv_pipelined.sv line 120
-# Stopped at riscv_pipelined.sv line 120
+# Simulation succeeded
+# ** Note: $stop    : riscv_pipelined.sv(117)
+#    Time: 105 ns  Iteration: 1  Instance: /testbench
+# Break in Module testbench at riscv_pipelined.sv line 117
+# Stopped at riscv_pipelined.sv line 117
 # add schematic not supported in batch mode
-# End time: 08:59:17 on Mar 28,2025, Elapsed time: 0:00:02
+# End time: 14:03:51 on Mar 28,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
