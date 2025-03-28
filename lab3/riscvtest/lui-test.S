@@ -8,11 +8,10 @@
 
 __start:
 
-  li a1, 3
-  lui x1, 0x7ffff
-  srai x1,x1,20
-  li x29, 0x000007ff
-  bne x1, x29, fail
+  li a1, 5
+  lui x0, 0x80000
+  li x29, 0x00000000
+  bne x0, x29, fail
 
 success:
   li a0, 10
