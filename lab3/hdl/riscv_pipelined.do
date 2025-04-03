@@ -69,7 +69,7 @@ add wave -hex /testbench/dut/rv32pipe/dp/rf/*
 add wave -hex /testbench/dut/rv32pipe/dp/rf/rf
 
 # wave sort
-wave sort ascending
+# wave sort ascending
 
 -- Set Wave Output Items 
 TreeUpdate [SetDefaultTree]
