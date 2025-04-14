@@ -7,9 +7,9 @@ rvtest_entry_point:
     # Define region 0 to cover all addresses as RWX
     nop
 
-    # switch to supervisor mode
+    # switch to supervisor mode	
     # Set mstatus.MPP to 01, set MPEC to a trampoline address where supervisor should begin, do mret
-    nop				# probably can delete
+    
 				# fill in instructions here			
     mret                    	# enter supervisor mode at supervisorstart
     nop
