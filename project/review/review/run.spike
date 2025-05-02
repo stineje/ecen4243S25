@@ -1,0 +1,2 @@
+#!/bin/sh
+spike --isa=rv32gc_zicsr_zicntr -d review

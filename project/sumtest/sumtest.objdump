@@ -3,16 +3,16 @@ sumtest:     file format elf32-littleriscv
 
 Contents of section .text:
  80000000 17510000 13010120 97420000 938282ff  .Q..... .B......
- 80000010 03a50200 732c20c0 ef000003 f32c20c0  ....s, ......, .
+ 80000010 03a50200 732c20c0 ef004003 f32c20c0  ....s, ...@.., .
  80000020 b38c8c41 97420000 938202fe 23a0a200  ...A.B......#...
- 80000030 23a29201 17130000 1303c3fc 85422320  #............B# 
- 80000040 53002322 030001a0 611122c0 26c20144  S.#"....a.".&..D
- 80000050 85446345 95002694 8504e5bf 22850244  .DcE..&....."..D
- 80000060 92442101 8280                        .D!...          
+ 80000030 23a29201 23a28201 17130000 130383fc  #...#...........
+ 80000040 85422320 53002322 030001a0 611122c0  .B# S.#"....a.".
+ 80000050 26c20144 85446345 95002694 8504e5bf  &..D.DcE..&.....
+ 80000060 22850244 92442101 8280               "..D.D!...      
 Contents of section .tohost:
  80001000 00000000 00000000                    ........        
 Contents of section .data:
- 80004000 04000000 efbeadde efbeadde           ............    
+ 80004000 04000000 efbeadde efbeadde efbeadde  ................
 Contents of section .riscv.attributes:
  0000 41670000 00726973 63760001 5d000000  Ag...riscv..]...
  0010 05727633 32693270 315f6d32 70305f61  .rv32i2p1_m2p0_a
@@ -22,25 +22,26 @@ Contents of section .riscv.attributes:
  0050 5f7a6161 6d6f3170 305f7a61 6c727363  _zaamo1p0_zalrsc
  0060 31703000 08010a0b                    1p0.....        
 Contents of section .debug_line:
- 0000 94000000 05000400 2a000000 010101fb  ........*.......
+ 0000 9a000000 05000400 2a000000 010101fb  ........*.......
  0010 0e0d0001 01010100 00000100 00010101  ................
  0020 1f010000 00000201 1f020f02 29000000  ............)...
  0030 00290000 00000005 02000000 80170301  .)..............
  0040 09080001 03010908 00010301 09040001  ................
  0050 03010904 00010301 09040001 03010904  ................
  0060 00010301 09040001 03010908 00010301  ................
- 0070 09040001 03030904 00010301 09080001  ................
- 0080 03010902 00010301 09040001 03030904  ................
- 0090 00010902 00000101 90000000 05000400  ................
- 00a0 2a000000 010101fb 0e0d0001 01010100  *...............
- 00b0 00000100 00010101 1f010000 00000201  ................
- 00c0 1f020f02 33000000 00330000 00000005  ....3....3......
- 00d0 02480000 80030f01 03010902 00010301  .H..............
- 00e0 09020001 03020902 00010301 09020001  ................
- 00f0 03010902 00010301 09040001 03010902  ................
- 0100 00010301 09020001 03030902 00010301  ................
+ 0070 09040001 03010904 00010303 09040001  ................
+ 0080 03010908 00010301 09020001 03010904  ................
+ 0090 00010303 09040001 09020000 01019000  ................
+ 00a0 00000500 04002a00 00000101 01fb0e0d  ......*.........
+ 00b0 00010101 01000000 01000001 01011f01  ................
+ 00c0 00000000 02011f02 0f023300 00000033  ..........3....3
+ 00d0 00000000 0005024c 00008003 0f010301  .......L........
+ 00e0 09020001 03010902 00010302 09020001  ................
+ 00f0 03010902 00010301 09020001 03010904  ................
+ 0100 00010301 09020001 03010902 00010303  ................
  0110 09020001 03010902 00010301 09020001  ................
- 0120 03010902 00010902 00000101           ............    
+ 0120 03010902 00010301 09020001 09020000  ................
+ 0130 0101                                 ..              
 Contents of section .debug_line_str:
  0000 2f686f6d 652f6a73 74696e65 2f656365  /home/jstine/ece
  0010 6e343234 33533235 2f70726f 6a656374  n4243S25/project
@@ -48,9 +49,9 @@ Contents of section .debug_line_str:
  0030 2e530073 756d2e53 00                 .S.sum.S.       
 Contents of section .debug_info:
  0000 20000000 05000104 00000000 01000000   ...............
- 0010 00000000 80480000 00000a00 00003300  .....H........3.
+ 0010 00000000 804c0000 00000a00 00003300  .....L........3.
  0020 00000180 20000000 05000104 14000000  .... ...........
- 0030 01980000 00480000 801e4100 00000a00  .....H....A.....
+ 0030 019e0000 004c0000 801e4100 00000a00  .....L....A.....
  0040 00003300 00000180                    ..3.....        
 Contents of section .debug_abbrev:
  0000 01110010 17110112 0f030e1b 0e250e13  .............%..
@@ -58,9 +59,9 @@ Contents of section .debug_abbrev:
  0020 0e250e13 05000000                    .%......        
 Contents of section .debug_aranges:
  0000 1c000000 02000000 00000400 00000000  ................
- 0010 00000080 48000000 00000000 00000000  ....H...........
+ 0010 00000080 4c000000 00000000 00000000  ....L...........
  0020 1c000000 02002400 00000400 00000000  ......$.........
- 0030 48000080 1e000000 00000000 00000000  H...............
+ 0030 4c000080 1e000000 00000000 00000000  L...............
 Contents of section .debug_str:
  0000 73756d74 6573742e 53002f68 6f6d652f  sumtest.S./home/
  0010 6a737469 6e652f65 63656e34 32343353  jstine/ecen4243S
@@ -83,7 +84,7 @@ rvtest_entry_point():
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:9
 80000014:	c0202c73          	rdinstret	s8
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:10
-80000018:	030000ef          	jal	80000048 <sum>
+80000018:	034000ef          	jal	8000004c <sum>
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:11
 8000001c:	c0202cf3          	rdinstret	s9
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:12
@@ -95,60 +96,62 @@ rvtest_entry_point():
 8000002c:	00a2a023          	sw	a0,0(t0)
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:15
 80000030:	0192a223          	sw	s9,4(t0)
+/home/jstine/ecen4243S25/project/sumtest/sumtest.S:16
+80000034:	0182a223          	sw	s8,4(t0)
 
-80000034 <write_tohost>:
+80000038 <write_tohost>:
 write_tohost():
-/home/jstine/ecen4243S25/project/sumtest/sumtest.S:18
-80000034:	00001317          	auipc	t1,0x1
-80000038:	fcc30313          	addi	t1,t1,-52 # 80001000 <tohost>
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:19
-8000003c:	4285                	li	t0,1
+80000038:	00001317          	auipc	t1,0x1
+8000003c:	fc830313          	addi	t1,t1,-56 # 80001000 <tohost>
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:20
-8000003e:	00532023          	sw	t0,0(t1)
+80000040:	4285                	li	t0,1
 /home/jstine/ecen4243S25/project/sumtest/sumtest.S:21
-80000042:	00032223          	sw	zero,4(t1)
+80000042:	00532023          	sw	t0,0(t1)
+/home/jstine/ecen4243S25/project/sumtest/sumtest.S:22
+80000046:	00032223          	sw	zero,4(t1)
 
-80000046 <self_loop>:
+8000004a <self_loop>:
 self_loop():
-/home/jstine/ecen4243S25/project/sumtest/sumtest.S:24
-80000046:	a001                	j	80000046 <self_loop>
+/home/jstine/ecen4243S25/project/sumtest/sumtest.S:25
+8000004a:	a001                	j	8000004a <self_loop>
 
-80000048 <sum>:
+8000004c <sum>:
 sum():
 /home/jstine/ecen4243S25/project/sumtest/sum.S:16
-80000048:	1161                	addi	sp,sp,-8
+8000004c:	1161                	addi	sp,sp,-8
 /home/jstine/ecen4243S25/project/sumtest/sum.S:17
-8000004a:	c022                	sw	s0,0(sp)
+8000004e:	c022                	sw	s0,0(sp)
 /home/jstine/ecen4243S25/project/sumtest/sum.S:18
-8000004c:	c226                	sw	s1,4(sp)
+80000050:	c226                	sw	s1,4(sp)
 /home/jstine/ecen4243S25/project/sumtest/sum.S:20
-8000004e:	4401                	li	s0,0
+80000052:	4401                	li	s0,0
 /home/jstine/ecen4243S25/project/sumtest/sum.S:21
-80000050:	4485                	li	s1,1
+80000054:	4485                	li	s1,1
 
-80000052 <for>:
+80000056 <for>:
 for():
 /home/jstine/ecen4243S25/project/sumtest/sum.S:22
-80000052:	00954563          	blt	a0,s1,8000005c <done>
+80000056:	00954563          	blt	a0,s1,80000060 <done>
 /home/jstine/ecen4243S25/project/sumtest/sum.S:23
-80000056:	9426                	add	s0,s0,s1
+8000005a:	9426                	add	s0,s0,s1
 /home/jstine/ecen4243S25/project/sumtest/sum.S:24
-80000058:	0485                	addi	s1,s1,1
+8000005c:	0485                	addi	s1,s1,1
 /home/jstine/ecen4243S25/project/sumtest/sum.S:25
-8000005a:	bfe5                	j	80000052 <for>
+8000005e:	bfe5                	j	80000056 <for>
 
-8000005c <done>:
+80000060 <done>:
 done():
 /home/jstine/ecen4243S25/project/sumtest/sum.S:28
-8000005c:	8522                	mv	a0,s0
+80000060:	8522                	mv	a0,s0
 /home/jstine/ecen4243S25/project/sumtest/sum.S:29
-8000005e:	4402                	lw	s0,0(sp)
+80000062:	4402                	lw	s0,0(sp)
 /home/jstine/ecen4243S25/project/sumtest/sum.S:30
-80000060:	4492                	lw	s1,4(sp)
+80000064:	4492                	lw	s1,4(sp)
 /home/jstine/ecen4243S25/project/sumtest/sum.S:31
-80000062:	0121                	addi	sp,sp,8
+80000066:	0121                	addi	sp,sp,8
 /home/jstine/ecen4243S25/project/sumtest/sum.S:32
-80000064:	8082                	ret
+80000068:	8082                	ret
 
 Disassembly of section .tohost:
 
@@ -173,6 +176,7 @@ N():
 begin_signature():
 80004004:	deadbeef          	jal	t4,7ffdf5ee <XLEN+0x7ffdf5ce>
 80004008:	deadbeef          	jal	t4,7ffdf5f2 <XLEN+0x7ffdf5d2>
+8000400c:	deadbeef          	jal	t4,7ffdf5f6 <XLEN+0x7ffdf5d6>
 
 Disassembly of section .riscv.attributes:
 
@@ -222,7 +226,7 @@ Disassembly of section .riscv.attributes:
 Disassembly of section .debug_line:
 
 00000000 <.debug_line>:
-   0:	0094                	addi	a3,sp,64
+   0:	009a                	slli	ra,ra,0x6
    2:	0000                	unimp
    4:	0005                	c.nop	1
    6:	0004                	.insn	2, 0x0004
@@ -267,66 +271,66 @@ Disassembly of section .debug_line:
   6c:	0100                	addi	s0,sp,128
   6e:	04090103          	lb	sp,64(s2)
   72:	0100                	addi	s0,sp,128
-  74:	04090303          	lb	t1,64(s2)
+  74:	04090103          	lb	sp,64(s2)
   78:	0100                	addi	s0,sp,128
-  7a:	08090103          	lb	sp,128(s2)
+  7a:	04090303          	lb	t1,64(s2)
   7e:	0100                	addi	s0,sp,128
-  80:	02090103          	lb	sp,32(s2)
+  80:	08090103          	lb	sp,128(s2)
   84:	0100                	addi	s0,sp,128
-  86:	04090103          	lb	sp,64(s2)
+  86:	02090103          	lb	sp,32(s2)
   8a:	0100                	addi	s0,sp,128
-  8c:	04090303          	lb	t1,64(s2)
+  8c:	04090103          	lb	sp,64(s2)
   90:	0100                	addi	s0,sp,128
-  92:	0209                	addi	tp,tp,2 # fffe1002 <_end+0x7ffdb002>
-  94:	0000                	unimp
-  96:	0101                	addi	sp,sp,0
-  98:	0090                	addi	a2,sp,64
+  92:	04090303          	lb	t1,64(s2)
+  96:	0100                	addi	s0,sp,128
+  98:	0209                	addi	tp,tp,2 # fffe1002 <_end+0x7ffdb002>
   9a:	0000                	unimp
-  9c:	0005                	c.nop	1
-  9e:	0004                	.insn	2, 0x0004
-  a0:	002a                	c.slli	zero,0xa
-  a2:	0000                	unimp
-  a4:	0101                	addi	sp,sp,0
-  a6:	fb01                	bnez	a4,ffffffb6 <_end+0x7fff9fb6>
-  a8:	0d0e                	slli	s10,s10,0x3
-  aa:	0100                	addi	s0,sp,128
-  ac:	0101                	addi	sp,sp,0
-  ae:	0001                	nop
-  b0:	0000                	unimp
-  b2:	0001                	nop
-  b4:	0100                	addi	s0,sp,128
-  b6:	0101                	addi	sp,sp,0
-  b8:	011f 0000 0000      	.insn	6, 0x011f
-  be:	0102                	c.slli64	sp
-  c0:	021f 020f 0033      	.insn	6, 0x0033020f021f
-  c6:	0000                	unimp
-  c8:	3300                	fld	fs0,32(a4)
-  ca:	0000                	unimp
+  9c:	0101                	addi	sp,sp,0
+  9e:	0090                	addi	a2,sp,64
+  a0:	0000                	unimp
+  a2:	0005                	c.nop	1
+  a4:	0004                	.insn	2, 0x0004
+  a6:	002a                	c.slli	zero,0xa
+  a8:	0000                	unimp
+  aa:	0101                	addi	sp,sp,0
+  ac:	fb01                	bnez	a4,ffffffbc <_end+0x7fff9fbc>
+  ae:	0d0e                	slli	s10,s10,0x3
+  b0:	0100                	addi	s0,sp,128
+  b2:	0101                	addi	sp,sp,0
+  b4:	0001                	nop
+  b6:	0000                	unimp
+  b8:	0001                	nop
+  ba:	0100                	addi	s0,sp,128
+  bc:	0101                	addi	sp,sp,0
+  be:	011f 0000 0000      	.insn	6, 0x011f
+  c4:	0102                	c.slli64	sp
+  c6:	021f 020f 0033      	.insn	6, 0x0033020f021f
   cc:	0000                	unimp
-  ce:	0500                	addi	s0,sp,640
-  d0:	4802                	lw	a6,0(sp)
+  ce:	3300                	fld	fs0,32(a4)
+  d0:	0000                	unimp
   d2:	0000                	unimp
-  d4:	0380                	addi	s0,sp,448
-  d6:	0103010f          	.insn	4, 0x0103010f
-  da:	0209                	addi	tp,tp,2 # 2 <XLEN-0x1e>
-  dc:	0100                	addi	s0,sp,128
-  de:	02090103          	lb	sp,32(s2)
+  d4:	0500                	addi	s0,sp,640
+  d6:	4c02                	lw	s8,0(sp)
+  d8:	0000                	unimp
+  da:	0380                	addi	s0,sp,448
+  dc:	0103010f          	.insn	4, 0x0103010f
+  e0:	0209                	addi	tp,tp,2 # 2 <XLEN-0x1e>
   e2:	0100                	addi	s0,sp,128
-  e4:	02090203          	lb	tp,32(s2)
+  e4:	02090103          	lb	sp,32(s2)
   e8:	0100                	addi	s0,sp,128
-  ea:	02090103          	lb	sp,32(s2)
+  ea:	02090203          	lb	tp,32(s2)
   ee:	0100                	addi	s0,sp,128
   f0:	02090103          	lb	sp,32(s2)
   f4:	0100                	addi	s0,sp,128
-  f6:	04090103          	lb	sp,64(s2)
+  f6:	02090103          	lb	sp,32(s2)
   fa:	0100                	addi	s0,sp,128
-  fc:	02090103          	lb	sp,32(s2)
+  fc:	04090103          	lb	sp,64(s2)
  100:	0100                	addi	s0,sp,128
  102:	02090103          	lb	sp,32(s2)
  106:	0100                	addi	s0,sp,128
- 108:	02090303          	lb	t1,32(s2)
+ 108:	02090103          	lb	sp,32(s2)
  10c:	0100                	addi	s0,sp,128
- 10e:	02090103          	lb	sp,32(s2)
+ 10e:	02090303          	lb	t1,32(s2)
  112:	0100                	addi	s0,sp,128
  114:	02090103          	lb	sp,32(s2)
  118:	0100                	addi	s0,sp,128
@@ -334,9 +338,11 @@ Disassembly of section .debug_line:
  11e:	0100                	addi	s0,sp,128
  120:	02090103          	lb	sp,32(s2)
  124:	0100                	addi	s0,sp,128
- 126:	0209                	addi	tp,tp,2 # 2 <XLEN-0x1e>
- 128:	0000                	unimp
- 12a:	0101                	addi	sp,sp,0
+ 126:	02090103          	lb	sp,32(s2)
+ 12a:	0100                	addi	s0,sp,128
+ 12c:	0209                	addi	tp,tp,2 # 2 <XLEN-0x1e>
+ 12e:	0000                	unimp
+ 130:	0101                	addi	sp,sp,0
 
 Disassembly of section .debug_line_str:
 
@@ -377,7 +383,7 @@ Disassembly of section .debug_info:
    e:	0000                	unimp
   10:	0000                	unimp
   12:	0000                	unimp
-  14:	4880                	lw	s0,16(s1)
+  14:	4c80                	lw	s0,24(s1)
   16:	0000                	unimp
   18:	0000                	unimp
   1a:	000a                	c.slli	zero,0x2
@@ -390,9 +396,9 @@ Disassembly of section .debug_info:
   2a:	0401                	addi	s0,s0,0
   2c:	0014                	.insn	2, 0x0014
   2e:	0000                	unimp
-  30:	9801                	andi	s0,s0,-32
+  30:	9e01                	.insn	2, 0x9e01
   32:	0000                	unimp
-  34:	4800                	lw	s0,16(s0)
+  34:	4c00                	lw	s0,24(s0)
   36:	0000                	unimp
   38:	1e80                	addi	s0,sp,880
   3a:	0041                	c.nop	16
@@ -435,7 +441,7 @@ Disassembly of section .debug_aranges:
    e:	0000                	unimp
   10:	0000                	unimp
   12:	8000                	.insn	2, 0x8000
-  14:	0048                	addi	a0,sp,4
+  14:	004c                	addi	a1,sp,4
 	...
   1e:	0000                	unimp
   20:	001c                	.insn	2, 0x001c
@@ -446,7 +452,7 @@ Disassembly of section .debug_aranges:
   2a:	0004                	.insn	2, 0x0004
   2c:	0000                	unimp
   2e:	0000                	unimp
-  30:	0048                	addi	a0,sp,4
+  30:	004c                	addi	a1,sp,4
   32:	8000                	.insn	2, 0x8000
   34:	001e                	c.slli	zero,0x7
 	...

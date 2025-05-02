@@ -13,7 +13,8 @@ rvtest_entry_point:
     la t0, begin_signature	# address of signature
     sw a0, 0(t0)        	# store sum(N) in signature
     sw s9, 4(t0)        	# record performance
-
+    sw s8, 4(t0)
+	
 write_tohost:
     la t1, tohost 		# terminate with write tohost
     li t0, 1                	# 1 for success, 3 for failure
@@ -35,7 +36,7 @@ N:
 
 .EQU XLEN,32
 begin_signature:
-    .fill 2*(XLEN/32),4,0xdeadbeef  
+    .fill 3*(XLEN/32),4,0xdeadbeef  
 end_signature:
 
 # Initialize stack with room for 512 bytes
